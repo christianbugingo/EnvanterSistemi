@@ -134,31 +134,12 @@ UI katmanı doğrudan veritabanına erişmez. Temiz mimari prensipleri uygulanm�
 
 
 ## 🗃️ Veritabanı Şeması
-CREATE TABLE users (
-    user_id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) UNIQUE,
-    password VARCHAR(255),
-    role ENUM('admin', 'staff')
-);
-
-CREATE TABLE products (
-    product_id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100),
-    category VARCHAR(50),
-    quantity INT,
-    price DECIMAL(10,2),
-    supplier VARCHAR(100)
-);
-
-CREATE TABLE sales (
-    sale_id INT AUTO_INCREMENT PRIMARY KEY,
-    product_id INT,
-    user_id INT,
-    quantity_sold INT,
-    sale_date DATE,
-    FOREIGN KEY (product_id) REFERENCES products(product_id),
-    FOREIGN KEY (user_id) REFERENCES users(user_id)
-);
+- TABLE users 
+    
+- TABLE products 
+    
+- TABLE sales 
+    
 
 ### 🛠️ Kullanılan Teknolojiler
 
