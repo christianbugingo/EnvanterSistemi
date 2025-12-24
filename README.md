@@ -17,19 +17,19 @@ Kullanıcı uygulamayı başlatır → Login ekranı açılır
 
 Giriş başarılıysa → rol bazlı Dashboard yüklenir
 
-Admin:
+## Admin:
 
-Ürün ekler, günceller, siler
+- Ürün ekler, günceller, siler
 
-Raporları görüntüler
+- Raporları görüntüler
 
-CSV dışa aktarma yapar
+- CSV dışa aktarma yapar
 
-Personel (Staff):
+## Personel (Staff):
 
-Sadece satış ekleyebilir
+- Sadece satış ekleyebilir
 
-Satış yapıldığında:
+## Satış yapıldığında:
 
 Stok otomatik güncellenir
 
