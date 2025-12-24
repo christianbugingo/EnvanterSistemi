@@ -130,32 +130,7 @@ Product, Sale, ReportEntry
 📌 Not:
 UI katmanı doğrudan veritabanına erişmez. Temiz mimari prensipleri uygulanmıştır.
 
-📁 Proje Yapısı
-InventorySystem
-├── src/
-│   ├── main/
-│   │   └── Main.java
-│   ├── gui/
-│   │   ├── Dashboard.java
-│   │   └── components/
-│   │       ├── ProductTableView.java
-│   │       ├── SaleTableView.java
-│   │       ├── ReportTableView.java
-│   │       └── MenuBarBuilder.java
-│   ├── dialogs/
-│   │   ├── AddProductDialog.java
-│   │   ├── AddSaleDialog.java
-│   │   └── ConfirmDialog.java
-│   ├── services/
-│   │   ├── ProductService.java
-│   │   ├── SaleService.java
-│   │   └── ReportService.java
-│   └── utils/
-│       └── ReceiptGenerator.java
-├── module-info.java
-├── receipts/
-└── Referenced Libraries/
-    └── mysql-connector-j-8.x.jar
+
 
 🗃️ Veritabanı Şeması
 CREATE TABLE users (
