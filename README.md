@@ -1,4 +1,5 @@
-📦 Envanter Yönetim Sistemi (Inventory Management System)
+### 📦 Envanter Yönetim Sistemi (Inventory Management System)
+
 📖 Genel Bakış
 
 Envanter Yönetim Sistemi, JavaFX ve MySQL kullanılarak geliştirilmiş modern bir masaüstü uygulamasıdır.
@@ -39,22 +40,22 @@ Giriş başarılıysa → rol bazlı Dashboard yüklenir
 
 - Düşük stok uyarısı gösterilir
 
-✨ Ana Özellikler
+### ✨ Ana Özellikler
 🔐 Kullanıcı Kimlik Doğrulama
 
 - Kullanıcı adı ve şifre ile giriş
 
 - Rol tabanlı erişim kontrolü
 
-Admin → Tam yetki
+- Admin → Tam yetki
 
-Staff → Sadece satış ekleme
+- Staff → Sadece satış ekleme
 
-📦 Ürün Yönetimi
+## 📦 Ürün Yönetimi
 
 - Ürün ekleme, güncelleme ve silme
 
-### Ürün bilgileri:
+## Ürün bilgileri:
 
 - ID
 
@@ -68,11 +69,11 @@ Staff → Sadece satış ekleme
 
 - Tedarikçi
 
-### Düşük stok uyarıları:
+## Düşük stok uyarıları:
 
 Miktar < 10 → tablo üzerinde kırmızı/turuncu vurgulama
 
-🧾 Satış Yönetimi
+### 🧾 Satış Yönetimi
 
 - Satış kaydı (tekli veya çoklu ürün)
 
@@ -84,7 +85,7 @@ Miktar < 10 → tablo üzerinde kırmızı/turuncu vurgulama
 
 - Fişler otomatik olarak receipts/ klasörüne kaydedilir
 
-📊 Raporlar & Analitik
+### 📊 Raporlar & Analitik
 
 - Günlük satış özeti (toplam miktar & gelir)
 
@@ -100,7 +101,7 @@ Miktar < 10 → tablo üzerinde kırmızı/turuncu vurgulama
 
 - Raporlar
 
-🗄️ Veri Depolama
+###🗄️ Veri Depolama
 
 - MySQL ilişkisel veritabanı
 
@@ -112,8 +113,8 @@ Miktar < 10 → tablo üzerinde kırmızı/turuncu vurgulama
 
 - sales
 
-🏗️ Sistem Mimarisi
-Katmanlı Mimari
+### 🏗️ Sistem Mimarisi
+. Katmanlı Mimari
 
 . Sunum Katmanı
 JavaFX GUI (Dashboard, tablolar, diyaloglar, menüler)
@@ -127,12 +128,12 @@ DBConnection + MySQL JDBC
 . Model Katmanı
 Product, Sale, ReportEntry
 
-📌 Not:
+## 📌 Not:
 UI katmanı doğrudan veritabanına erişmez. Temiz mimari prensipleri uygulanmıştır.
 
 
 
-🗃️ Veritabanı Şeması
+## 🗃️ Veritabanı Şeması
 CREATE TABLE users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) UNIQUE,
@@ -159,7 +160,7 @@ CREATE TABLE sales (
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
-🛠️ Kullanılan Teknolojiler
+### 🛠️ Kullanılan Teknolojiler
 
 - Java 21
 
@@ -173,7 +174,7 @@ CREATE TABLE sales (
 
 - CSV Export
 
-🚀 Kurulum ve Çalıştırma
+### 🚀 Kurulum ve Çalıştırma
 ## Gereksinimler
 
 - Java 21+
@@ -194,7 +195,7 @@ CREATE TABLE sales (
 
 - Main.java → Run as Java Application
 
-🔮 Gelecek Geliştirmeler
+## 🔮 Gelecek Geliştirmeler
 
 - Şifre hash’leme (bcrypt)
 
@@ -210,7 +211,7 @@ CREATE TABLE sales (
 
 - Bulut yedekleme
 
-🤝 Katkıda Bulunma
+## 🤝 Katkıda Bulunma
 
 - Repo’yu forkla
 
@@ -220,14 +221,14 @@ CREATE TABLE sales (
 
 - Pull Request gönder
 
-📄 Lisans
+## 📄 Lisans
 
 Bu proje MIT Lisansı ile lisanslanmıştır.
 Detaylar için LICENSE dosyasına bakınız.
 
 ### “Bu proje, JavaFX ve MySQL kullanılarak geliştirilmiş, rol tabanlı erişime sahip, profesyonel fiş üretimi ve raporlama özellikleri sunan tam kapsamlı bir masaüstü envanter yönetim sistemidir.”
 
-📬 İletişim
+## 📬 İletişim
 
 Sorular ve öneriler için:
 
