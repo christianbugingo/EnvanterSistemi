@@ -31,20 +31,20 @@ Giriş başarılıysa → rol bazlı Dashboard yüklenir
 
 ## Satış yapıldığında:
 
-Stok otomatik güncellenir
+- Stok otomatik güncellenir
 
-Fiş oluşturulur ve receipts/ klasörüne kaydedilir
+- Fiş oluşturulur ve receipts/ klasörüne kaydedilir
 
-Stok miktarı 10’un altına düşerse:
+## Stok miktarı 10’un altına düşerse:
 
-Düşük stok uyarısı gösterilir
+- Düşük stok uyarısı gösterilir
 
 ✨ Ana Özellikler
 🔐 Kullanıcı Kimlik Doğrulama
 
-Kullanıcı adı ve şifre ile giriş
+- Kullanıcı adı ve şifre ile giriş
 
-Rol tabanlı erişim kontrolü
+- Rol tabanlı erişim kontrolü
 
 Admin → Tam yetki
 
@@ -52,79 +52,79 @@ Staff → Sadece satış ekleme
 
 📦 Ürün Yönetimi
 
-Ürün ekleme, güncelleme ve silme
+- Ürün ekleme, güncelleme ve silme
 
-Ürün bilgileri:
+### Ürün bilgileri:
 
-ID
+- ID
 
-Ad
+- Ad
 
-Kategori
+- Kategori
 
-Miktar
+- Miktar
 
-Fiyat
+- Fiyat
 
-Tedarikçi
+- Tedarikçi
 
-Düşük stok uyarıları:
+### Düşük stok uyarıları:
 
 Miktar < 10 → tablo üzerinde kırmızı/turuncu vurgulama
 
 🧾 Satış Yönetimi
 
-Satış kaydı (tekli veya çoklu ürün)
+- Satış kaydı (tekli veya çoklu ürün)
 
-Otomatik stok düşümü
+- Otomatik stok düşümü
 
-Stoktan fazla satış yapılması engellenir
+- Stoktan fazla satış yapılması engellenir
 
-Profesyonel fiş oluşturma
+- Profesyonel fiş oluşturma
 
-Fişler otomatik olarak receipts/ klasörüne kaydedilir
+- Fişler otomatik olarak receipts/ klasörüne kaydedilir
 
 📊 Raporlar & Analitik
 
-Günlük satış özeti (toplam miktar & gelir)
+- Günlük satış özeti (toplam miktar & gelir)
 
-Tarih aralığına göre satış raporu
+- Tarih aralığına göre satış raporu
 
-Düşük stok raporu
+- Düşük stok raporu
 
-CSV dışa aktarma:
+### CSV dışa aktarma:
 
-Ürünler
+- Ürünler
 
-Satışlar
+- Satışlar
 
-Raporlar
+- Raporlar
 
 🗄️ Veri Depolama
 
-MySQL ilişkisel veritabanı
+- MySQL ilişkisel veritabanı
 
-Tablolar:
+### Tablolar:
 
-users
+- users
 
-products
+- products
 
-sales
+- sales
 
 🏗️ Sistem Mimarisi
 Katmanlı Mimari
 
-Sunum Katmanı
+. Sunum Katmanı
 JavaFX GUI (Dashboard, tablolar, diyaloglar, menüler)
 
-İş Mantığı Katmanı
+. İş Mantığı Katmanı
 ProductService, SaleService, ReportService
 
-Veri Erişim Katmanı
+. Veri Erişim Katmanı
 DBConnection + MySQL JDBC
 
-Model Katmanı
+. Model Katmanı
 Product, Sale, ReportEntry
 
 📌 Not:
@@ -161,64 +161,64 @@ CREATE TABLE sales (
 
 🛠️ Kullanılan Teknolojiler
 
-Java 21
+- Java 21
 
-JavaFX 21
+- JavaFX 21
 
-MySQL 8+
+- MySQL 8+
 
-JDBC (mysql-connector-j)
+- JDBC (mysql-connector-j)
 
-Eclipse / IntelliJ IDEA
+- Eclipse 
 
-CSV Export
+- CSV Export
 
 🚀 Kurulum ve Çalıştırma
-Gereksinimler
+## Gereksinimler
 
-Java 21+
+- Java 21+
 
-MySQL 8+
+- MySQL 8+
 
-Eclipse IDE
+- Eclipse IDE
 
-Çalıştırma
+### Çalıştırma
 
-MySQL veritabanını oluştur
+- MySQL veritabanını oluştur
 
-Projeyi Eclipse’e import et
+- Projeyi Eclipse’e import et
 
-MySQL Connector JAR ekle
+- MySQL Connector JAR ekle
 
-DBConnection.java içinde bağlantı bilgilerini düzenle
+- DBConnection.java içinde bağlantı bilgilerini düzenle
 
-Main.java → Run as Java Application
+- Main.java → Run as Java Application
 
 🔮 Gelecek Geliştirmeler
 
-Şifre hash’leme (bcrypt)
+- Şifre hash’leme (bcrypt)
 
-Barkod tarama desteği
+- Barkod tarama desteği
 
-PDF fiş oluşturma
+- PDF fiş oluşturma
 
-Kullanıcı aktivite logları
+- Kullanıcı aktivite logları
 
-Modern JavaFX CSS tema
+- Modern JavaFX CSS tema
 
-Çoklu dil desteği
+- Çoklu dil desteği
 
-Bulut yedekleme
+- Bulut yedekleme
 
 🤝 Katkıda Bulunma
 
-Repo’yu forkla
+- Repo’yu forkla
 
-Yeni bir branch oluştur
+- Yeni bir branch oluştur
 
-Değişiklikleri commit et
+- Değişiklikleri commit et
 
-Pull Request gönder
+- Pull Request gönder
 
 📄 Lisans
 
