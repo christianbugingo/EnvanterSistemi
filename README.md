@@ -101,7 +101,7 @@ Miktar < 10 → tablo üzerinde kırmızı/turuncu vurgulama
 
 - Raporlar
 
-###🗄️ Veri Depolama
+### 🗄️ Veri Depolama
 
 - MySQL ilişkisel veritabanı
 
