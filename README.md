@@ -12,6 +12,7 @@ Temiz ve sezgisel kullanıcı arayüzü sayesinde hem yöneticiler hem de person
 Stok takibini ve satış yönetimini basitleştirirken veri bütünlüğünü, güvenliği ve kullanıcı deneyimini en üst seviyede tutmak.
 
 ⚙️ Nasıl Çalışır?
+![Image](https://github.com/user-attachments/assets/8e2bcc9d-6af5-4137-9630-d19667f28e5b)
 🔁 Temel İş Akışı
 
 Kullanıcı uygulamayı başlatır → Login ekranı açılır
