@@ -70,6 +70,9 @@ public class Dashboard {
     private final ProductService productService = new ProductService();
     private final SaleService saleService = new SaleService();
     private final ReportService reportService = new ReportService();
+
+    public String getCurrentUser() { return currentUser; }
+    public String getCurrentRole() { return currentRole; }
     
 
     public void showDashboard(Stage primaryStage, String username, String role) {

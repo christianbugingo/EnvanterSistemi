@@ -5,6 +5,8 @@ import javafx.stage.Stage;
 import gui.LocaleManager;
 import gui.Login;
 import gui.Dashboard;
+import javafx.scene.control.RadioMenuItem;
+import javafx.scene.control.ToggleGroup;
 
 public class MenuBarBuilder {
 
@@ -41,8 +43,24 @@ public class MenuBarBuilder {
 
 	    viewMenu.getItems().add(refreshAll);
 
-	    menuBar.getMenus().addAll(fileMenu, reportMenu, viewMenu);
+        Menu languageMenu = new Menu(LocaleManager.get("language.label"));
+        ToggleGroup languageGroup = new ToggleGroup();
+        RadioMenuItem english = new RadioMenuItem("English");
+        RadioMenuItem turkish = new RadioMenuItem("Türkçe");
+        english.setToggleGroup(languageGroup);
+        turkish.setToggleGroup(languageGroup);
+        ("tr".equals(LocaleManager.getLanguage()) ? turkish : english).setSelected(true);
+        english.setOnAction(e -> switchLanguage(primaryStage, dashboard, "en"));
+        turkish.setOnAction(e -> switchLanguage(primaryStage, dashboard, "tr"));
+        languageMenu.getItems().addAll(english, turkish);
+
+	    menuBar.getMenus().addAll(fileMenu, reportMenu, viewMenu, languageMenu);
 
 	    return menuBar;
 	}
+
+    private static void switchLanguage(Stage stage, Dashboard dashboard, String language) {
+        LocaleManager.setLanguage(language);
+        dashboard.showDashboard(stage, dashboard.getCurrentUser(), dashboard.getCurrentRole());
+    }
 }

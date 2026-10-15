@@ -1,0 +1,11 @@
+{
+  "version": "0.2.0",
+  "configurations": [{
+    "type": "java",
+    "name": "Inventory System",
+    "request": "launch",
+    "mainClass": "main.Main",
+    "projectName": "inventory-system",
+    "envFile": "${workspaceFolder}/.env"
+  }]
+}
