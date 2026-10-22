@@ -1,54 +1,50 @@
 # Inventory Management System
 
-JavaFX desktop inventory application. The existing source tree remains under `InventorySystemi/src`; `main.Main` starts JavaFX and opens the login screen. It uses an embedded H2 database by default, so an installer does not require a MySQL server.
+This is the existing JavaFX desktop inventory application. The only Maven project is in `InventorySystemi/`; its source remains in `InventorySystemi/src`, and `main.Main` starts the login window. The application uses embedded H2 by default and retains optional MySQL settings through `DB_URL`, `DB_USER`, and `DB_PASSWORD`.
 
-## Current project state
+## Requirements
 
-The original project was an Eclipse-only Java 21 project. Its `.classpath` referenced JavaFX and MySQL JARs under one developer's Windows `C:/Users/...` directory, and `DBConnection.java` contained a root password. It had no schema setup script or repeatable build. It already had English and Turkish property files, but startup forced Turkish and multiple UI and receipt strings were hardcoded. The Turkish properties file was not valid UTF-8. The sale service grouped updates in a transaction but did not protect against concurrent overselling.
+- JDK 21 (the project compiles with `--release 21`; use JDK 21 to run JavaFX and package the app).
+- Maven 3.9.x is downloaded by the included Maven Wrapper on first use. A globally installed Maven is not required.
+- VS Code Java, Java Debugger, and Maven extensions are recommended in `.vscode/extensions.json`.
 
-The Maven build uses Java release 21, JavaFX 21, H2, and retains MySQL Connector/J for optional external/legacy databases. `main.Main` is the entry point. English is the default. Language selection is available on login and in the dashboard; selecting a language rebuilds the dashboard immediately. On first launch, create the initial administrator account on the login screen. The current language files cover most dashboard keys, but several dialogs, receipt strings, number formats and reports still contain hardcoded Turkish text, so localization is not yet complete.
+The current Codespace is Linux x86_64 with Microsoft OpenJDK 25. It can compile and run tests targeting Java 21, but it is not your Intel Mac and does not provide an interactive desktop display. Use a local JDK 21 on macOS for the actual desktop GUI. `uname -m` reports `x86_64` for Intel or `arm64` for Apple Silicon; Maven selects the JavaFX native dependencies for the current build host.
 
-## Requirements and database setup
+## Build and run from the repository root
 
-Install JDK 21, Maven 3.9+, VS Code, and the VS Code extensions recommended by `InventorySystemi/.vscode/extensions.json`. No database server or environment variables are required for a normal install. H2 creates the database automatically and stores it persistently at `~/.inventorysystem/inventory` on macOS/Linux or `%USERPROFILE%\\.inventorysystem\\inventory` on Windows. The app creates only missing tables; it does not drop or reset data. Each computer has its own inventory and sales data. This is local storage, not a shared cloud database.
+The root-level wrapper delegates into the one existing Maven project; no second POM is maintained:
 
-For an existing MySQL installation, its data is not automatically copied into H2. Back up the MySQL database and export/import records as a separate migration before switching. To keep using MySQL, set `DB_URL`, `DB_USER`, and `DB_PASSWORD` to a configured server; `database/schema.sql` is the additive MySQL schema. The first-run H2 database is initialized by the application itself.
+```sh
+./mvnw clean package
+./mvnw test
+./mvnw javafx:run
+```
 
-For optional MySQL only, copy `.env.example` to `.env`, uncomment/configure the values, and keep `.env` untracked. The app reads database settings from environment variables or matching Java system properties. Never store real credentials in committed files.
+On Windows, use `mvnw.cmd clean package`, `mvnw.cmd test`, or `mvnw.cmd javafx:run`. From inside `InventorySystemi/`, use `./mvnw ...` on macOS/Linux or `mvnw.cmd ...` on Windows. The wrapper pins Maven 3.9.9.
 
-The current login implementation compares the supplied password directly with the database `password` field. Existing accounts therefore need the schema/application's current plain text password format. Password hashing should be implemented as a separate migration before professional deployment.
+In VS Code, open the repository root. Use **Tasks: Run Task → Run Inventory System (JavaFX)** to start it, **Test Inventory System** for tests, or **Run and Debug → Inventory System (JavaFX)** to debug. Select an installed JDK 21 through the Java extension/runtime selector; no machine-specific Java path is committed.
 
-## VS Code on macOS
+On a Mac, run `./mvnw javafx:run` from the repository root in Terminal or VS Code. This should show the native JavaFX login window when run in the local graphical session. A compile/package success only verifies compilation and tests; a Maven JavaFX launch without a visible display does not verify that an interactive window appeared.
 
-1. Install JDK 21 (for example, a current Temurin 21 distribution) and Maven 3.9+.
-2. Install the recommended Java extensions when VS Code prompts, then open `InventorySystemi` as the workspace folder.
-3. In VS Code's Java runtime settings, select JDK 21. JavaFX and Connector/J are managed by Maven; do not add machine-specific JAR paths.
-4. No database setup is needed for local H2. On first launch, select **Create first administrator**, choose a username and a password of at least 8 characters, then sign in.
-5. In the integrated terminal, run `mvn clean package` to build and `mvn javafx:run` to start. To debug, select **Run and Debug → Inventory System** from `.vscode/launch.json`.
+## Database and data safety
 
-### First-run smoke test
+H2 initializes missing tables without dropping existing tables or rows. Its persistent database is stored at `~/.inventorysystem/inventory` on macOS/Linux and `%USERPROFILE%\\.inventorysystem\\inventory` on Windows. No database server is needed. Tests use isolated in-memory databases; builds and tests do not reset the real database. Receipt files in `InventorySystemi/receipts/` are retained.
 
-1. Start with `mvn javafx:run`. On the first run, choose **Create first administrator**. Enter a username such as `demo_admin` and a password of at least 8 characters; there is no shared default password.
-2. Sign in with the account you just created. The role is `admin`.
-3. In **Products**, add a disposable product, for example name `Test item`, category `Test`, quantity `12`, price `2.50`, and supplier `Local test`.
-4. In **Sales**, add a sale for 2 units. Refresh the product list and confirm quantity is 10. This checks basic UI/database connectivity; it does not validate overselling or concurrency.
-5. Close and relaunch the app, sign in again, and confirm the product still exists. The persistent data file is under your user profile. To discard test data, use the app's delete functions; do not remove that database file if it contains real records.
+MySQL is optional. Configure credentials through environment variables or an untracked `.env` file. MySQL data does not automatically migrate to H2; back it up and use a separate, explicit migration process if needed. Never put real credentials in Git.
 
-## Tests
+## Tests and GUI limitations
 
-From `InventorySystemi`, run `mvn test`. Tests verify English/Turkish resource loading and UTF-8 Turkish characters, and create/reinitialize an isolated in-memory H2 schema while checking that existing rows remain. They do not exercise sales, authentication, reports, CSV or JavaFX interaction.
+`./mvnw test` covers additive database initialization/persistence, English and Turkish resource loading (including UTF-8), sale stock deduction, and oversell rollback. The sale stock update is conditional and transaction-bound so concurrent requests cannot decrement stock below zero. The Codespace has no `DISPLAY`, Xvfb, or X server. Do not treat a headless JavaFX launch failure (`Unable to open DISPLAY`) as a compile failure or a passed GUI test. For interactive testing, launch on the local Mac; no privileged Xvfb/system package installation is required.
 
 ## Packaging
 
-Native packages must be built and tested on their target operating system and architecture. This repository is currently being edited in a Linux environment, so no macOS `.app`/`.dmg` or Windows `.msi`/`.exe` has been built or tested here. Packaging scripts are provided at `InventorySystemi/scripts/package-macos.sh` and `InventorySystemi/scripts/package-windows.ps1`; each invokes Maven and `jpackage` with the target platform's JavaFX dependencies and bundled runtime. On a Mac, install JDK 21, Maven 3.9+, and run `bash scripts/package-macos.sh` from `InventorySystemi`. On Windows, install JDK 21 with `jpackage`, Maven 3.9+, and run `powershell -ExecutionPolicy Bypass -File scripts/package-windows.ps1` from `InventorySystemi`. Review the produced app image and exercise it against a disposable database before distributing it. The packaging commands themselves remain unverified and may need platform-specific JavaFX launcher tuning. A Windows runner, VM, or Windows CI job is required for a Windows installer. Signing and notarization require Apple developer credentials; unsigned macOS builds may trigger Gatekeeper warnings.
+Native packages must be built on their target OS with JDK 21 and `jpackage` so the runtime and JavaFX native libraries match that platform and architecture:
 
-Packaging still needs an end-to-end platform-specific input/runtime assembly and launch verification. H2 is included as a Java dependency; each installed copy keeps its own database file. Optional MySQL remains external.
+- macOS Intel or Apple Silicon: from `InventorySystemi/`, run `bash scripts/package-macos.sh`. It produces an `.app` image and `.dmg` under `InventorySystemi/dist/` when run on macOS. The script rejects non-macOS hosts and requires active JDK 21.
+- Windows: from `InventorySystemi/`, run `powershell -ExecutionPolicy Bypass -File scripts/package-windows.ps1`. It produces an app image and `.msi` under `InventorySystemi/dist/` when run on Windows with JDK 21 and `jpackage`.
 
-## Known functional gaps to address
+The installer app image bundles a Java runtime; the database remains in the user's profile, outside the installation directory. The packaging scripts are prepared but have not been executed on macOS or Windows in the Linux Codespace. Therefore neither native installer is claimed as built or tested. Test each package on the target OS with a disposable account/data set. macOS signing/notarization is not configured.
 
-- `SaleService` needs conditional stock updates and row-count checks to prevent overselling, plus service-level validation and propagated failures.
-- Authentication currently stores/checks plain text passwords and broad exception handling hides database failures.
-- Database errors across services are often only printed to stderr; report and table failure paths need consistent user-visible handling.
-- Several screens, receipts and reports remain Turkish-only despite the language selector.
-- Existing receipt files in `receipts/` are user data and must be preserved.
-- No dedicated test database or end-to-end MySQL/JavaFX test suite is configured.
+## Known application limitations
+
+Password storage is currently plaintext; replacing it requires a backwards-compatible login-time migration and has not been implemented. Several database failures elsewhere in the UI/services still use stderr logging, and some dialogs/reports/receipts still contain hardcoded Turkish text. These should be addressed in follow-up changes without invalidating existing accounts or removing application features.

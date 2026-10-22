@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Inventory System (JavaFX)",
+      "type": "shell",
+      "command": "${workspaceFolder}/mvnw",
+      "args": ["javafx:run"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Test Inventory System",
+      "type": "shell",
+      "command": "${workspaceFolder}/mvnw",
+      "args": ["test"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": "test",
+      "problemMatcher": []
+    }
+  ]
+}
