@@ -43,10 +43,11 @@ public class Dashboard {
     public void showDashboard(Stage primaryStage,String username,String role) {
         stopRefresh(); user=AuthService.current();
         if(user==null || user.mustChangePassword()) throw AuthService.failure("msg.access.denied");
-        stage=primaryStage; stage.setTitle(LocaleManager.get("title.dashboard",user.username(),LocaleManager.get("role."+user.role())));
+        stage=primaryStage; Branding.apply(stage); stage.setTitle(LocaleManager.get("title.dashboard",user.username(),LocaleManager.get("role."+user.role())));
         BorderPane root=new BorderPane(); Ui.style(root); root.setPadding(new Insets(12));
         overview=new Label(); overview.setStyle("-fx-font-size:18; -fx-font-weight:bold; -fx-padding:12;");
-        root.setTop(new VBox(MenuBarBuilder.createMenuBar(stage,this),overview));
+        HBox brandHeader=new HBox(12,Branding.logo(48),overview);brandHeader.setAlignment(javafx.geometry.Pos.CENTER_LEFT);brandHeader.setPadding(new Insets(8));
+        root.setTop(new VBox(MenuBarBuilder.createMenuBar(stage,this),brandHeader));
         TabPane tabs=new TabPane(); tabs.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
         tabs.getTabs().add(tab("tab.products",productSection())); tabs.getTabs().add(tab("tab.sales",salesSection()));
         if(user.isAdmin()) {
@@ -73,17 +74,20 @@ public class Dashboard {
         if(user.isAdmin()) {
             actions.getChildren().addAll(Ui.button("button.add",()->new AddProductDialog(null).showAndWait().ifPresent(p->{products.addProduct(p);refreshAllData();})),
                 Ui.button("button.update",()->new AddProductDialog(selected(productTable)).showAndWait().ifPresent(p->{products.updateProduct(p);refreshAllData();})),
+                Ui.button("stock.adjust",this::adjustStock),
                 Ui.button("button.delete",()->{Product p=selected(productTable);if(Ui.confirm(LocaleManager.get("confirm.product.delete",p.getName()))) {products.deleteProduct(p.getProductId());refreshAllData();}}));
         }
         return section(search,productTable,actions);
     }
     private void filterProducts() {
         String text=search.getText().trim().toLowerCase(Locale.ROOT);
-        productTable.setItems(productRows.filtered(p->(p.getProductId()+" "+p.getName()+" "+p.getCategory()+" "+p.getSupplier()).toLowerCase(Locale.ROOT).contains(text)));
+        productTable.setItems(productRows.filtered(p->(p.getProductId()+" "+p.getName()+" "+p.getCategory()+" "+p.getSupplier()+" "+p.getBarcode()).toLowerCase(Locale.ROOT).contains(text)));
     }
     private VBox salesSection() {
         saleTable=new SaleTableView(); saleTable.setId("salesTable");
-        HBox actions=buttons(Ui.button("button.add.sale",this::addSale),Ui.button("button.refresh",this::refreshAllData));
+        HBox actions=buttons(Ui.button("button.add.sale",this::addSale),Ui.button("button.refresh",this::refreshAllData),Ui.button("receipt.reprint",()->{
+            Sale selected=selected(saleTable);var file=ReceiptGenerator.generateAndSaveReceipt(sales.loadCheckout(selected.getCheckoutId()));Ui.info(LocaleManager.get("receipt.reprinted",file.toAbsolutePath().toString()));
+        }));
         if(user.isAdmin()) actions.getChildren().add(Ui.button("button.void.sale",()->{
             Sale s=selected(saleTable); if(Ui.confirm(LocaleManager.get("confirm.sale.void",s.getSaleId()))) { sales.voidSale(s.getSaleId()); refreshAllData(); }
         }));
@@ -91,14 +95,30 @@ public class Dashboard {
     }
     private void addSale() {
         refreshAllData();
-        new AddSaleDialog(productRows,user.id()).showAndWait().ifPresent(items->{
-            sales.addMultipleSales(items);
+        AddSaleDialog dialog=new AddSaleDialog(productRows,user.id());
+        dialog.showAndWait().ifPresent(items->{
+            Checkout checkout=sales.recordSale(items,dialog.getCheckoutId());
             try {
-                var file=ReceiptGenerator.generateAndSaveReceipt(items,user.username());
+                var file=ReceiptGenerator.generateAndSaveReceipt(checkout);
                 Ui.info(LocaleManager.get("sale.saved",file.toAbsolutePath().toString()));
             } catch(java.io.UncheckedIOException ex) { Ui.alert(Alert.AlertType.WARNING,"alert.warning",LocaleManager.get("msg.receipt.failed",ex.getCause().getMessage())); }
             refreshAllData();
         });
+    }
+    private void adjustStock() {
+        Product product=selected(productTable);Dialog<Boolean> dialog=new Dialog<>();dialog.initOwner(stage);Ui.style(dialog.getDialogPane());dialog.setTitle(LocaleManager.get("stock.adjust"));dialog.setHeaderText(product.toString());
+        TextField delta=new TextField(),reason=new TextField();GridPane grid=new GridPane();grid.setPadding(new Insets(20));grid.setHgap(12);grid.setVgap(12);
+        grid.addRow(0,new Label(LocaleManager.get("stock.delta")),delta);grid.addRow(1,new Label(LocaleManager.get("stock.reason")),reason);dialog.getDialogPane().setContent(grid);
+        ButtonType save=new ButtonType(LocaleManager.get("button.save"),ButtonBar.ButtonData.OK_DONE);
+        dialog.getDialogPane().getButtonTypes().addAll(save,new ButtonType(LocaleManager.get("button.cancel"),ButtonBar.ButtonData.CANCEL_CLOSE));
+        dialog.getDialogPane().lookupButton(save).addEventFilter(ActionEvent.ACTION,e->{
+            try {String text=delta.getText().trim();BigDecimal value=text.startsWith("-")?LocaleManager.decimal(text.substring(1)).negate():LocaleManager.decimal(text);products.adjustStock(product.getProductId(),value,reason.getText());}
+            catch(RuntimeException ex){e.consume();Ui.error(ex.getMessage());}
+        });dialog.setResultConverter(b->b==save);if(dialog.showAndWait().orElse(false))refreshAllData();
+    }
+    public void backupDatabase() {
+        FileChooser chooser=new FileChooser();chooser.setTitle(LocaleManager.get("backup.create"));chooser.setInitialFileName("inventory-backup-"+LocalDate.now()+".zip");chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("ZIP","*.zip"));
+        File file=chooser.showSaveDialog(stage);if(file!=null){new BackupService().create(file.toPath());Ui.info(LocaleManager.get("backup.saved",file.toPath().toAbsolutePath()));}
     }
     private VBox reportsSection() {
         start=new DatePicker(LocalDate.now().minusDays(30)); end=new DatePicker(LocalDate.now());
@@ -182,8 +202,8 @@ public class Dashboard {
         for(Product p:products.loadProducts()) rows.add(List.of(p.getProductId(),p.getName(),p.getCategory(),p.getQuantity(),p.getUnit().name(),p.getPrice(),p.getSupplier())); export("products",rows);
     }
     public void exportSalesCSV() {
-        List<List<?>> rows=new ArrayList<>(); rows.add(headers("column.sale.id","column.product.name","column.quantity","column.unit","column.price","column.total","column.date","column.sold.by","column.status"));
-        for(Sale s:sales.loadSales()) rows.add(List.of(s.getSaleId(),s.getProductName(),s.getQuantitySold(),s.getUnit().name(),s.getPrice(),s.getTotal(),s.getSaleDate(),s.getSoldBy(),LocaleManager.get(s.isVoided()?"sale.voided":"sale.completed"))); export("sales",rows);
+        List<List<?>> rows=new ArrayList<>(); rows.add(headers("column.sale.id","column.product.name","column.quantity","column.unit","column.price","column.total","column.date","column.sold.by","column.status","checkout.id"));
+        for(Sale s:sales.loadSales()) rows.add(List.of(s.getSaleId(),s.getProductName(),s.getQuantitySold(),s.getUnit().name(),s.getPrice(),s.getTotal(),s.getSaleDate(),s.getSoldBy(),LocaleManager.get(s.isVoided()?"sale.voided":"sale.completed"),s.getCheckoutId())); export("sales",rows);
     }
     public void exportReportCSV() {
         List<List<?>> rows=new ArrayList<>(); rows.add(headers("column.date","column.unit","column.quantity","column.total.revenue"));

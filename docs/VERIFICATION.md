@@ -1,19 +1,23 @@
-# Verification — 2 November 2026
+# Verification — 3 November 2026, offline version 1.2.1
 
-Host: Apple Silicon macOS, JDK 21 (local Corretto), JavaFX 21, application 1.1.0.
+Host: Apple Silicon macOS, Corretto JDK 21, JavaFX 21.
 
 | Check | Result |
 |---|---|
-| Clean build/package | Passed; 17 non-GUI tests, no failures/errors |
-| Opt-in desktop smoke test | Passed in English and Turkish, including admin/staff views, weighted cart entry and mandatory first-login password replacement |
-| MySQL 8.4 independent-client test | Passed against an isolated Docker database; separate staff JVMs competed for stock, admin saw the sale/audit, void restored stock, and disabling staff blocked an already-open session |
-| Native Apple Silicon app and DMG | Built successfully; packaged app launched against disposable data without startup errors |
-| Windows installer | Prepared, not built/tested on this Mac |
+| Clean build and service/unit tests | 24 passed; no failures/errors. The opt-in desktop test is skipped in the normal run. |
+| Desktop test | Passed separately in English/Turkish: role switching, required password change, barcode cart entry, weighted quantities and cash input. |
+| Offline database workflows | Tested checkout retry protection, cash/card separation, change, insufficient cash, shift opening/closing/discrepancies, single active shift, closed-shift void prevention and retained sale history. |
+| Backup and restore | A persistent temporary H2 database was backed up and restored; login, product and stock data survived. |
+| Mac release | Native .app and DMG built; final app launched using its bundled runtime and disposable data without startup errors. |
+| Windows portable release | ZIP built with InventorySystem.exe, Windows x64 Java runtime and Windows JavaFX. ZIP CRC, launcher/classpath paths, PE x64 architecture, DLL architecture, module resolution and matching Mac/Windows app-JAR hashes checked. |
+| Old release cleanup | Only dist/macos and dist/windows remain as application release folders; earlier generated app caches removed. Shop data was not removed or used for these checks. |
 
-The default test run reports 19 tests with 2 skipped: the desktop and external MySQL tests are opt-in. Each of those was run separately and passed. The desktop test logs JavaFX's classpath/unnamed-module warning; it did not log an application exception.
+The Windows executable has **not** been run on Windows. Test it there using the checklist in [SHOP_SETUP.md](SHOP_SETUP.md). The release is a portable ZIP, not a tested MSI installer. The app's offline database restriction is tested before any remote JDBC connection can occur; physically disconnect networking during final acceptance on each laptop as an additional deployment check.
 
-The service tests cover price snapshots, unit-separated reports, three-decimal kg quantities, integer-only pieces, oversell prevention, complete cart rollback including audit records, once-only void/restock, stale stock edits, staff authorization, temporary-password restrictions, resets/disabling, legacy password upgrades and password secrecy in activity records. Other tests cover additive legacy schema migration, restart persistence, translation coverage, UTF-8 receipts and safe CSV encoding.
+The desktop test logs JavaFX's classpath/unnamed-module warning; it did not log an application exception. Barcode input was simulated as keyboard text plus Enter; physical scanner and scale hardware were not tested. Card selection records an externally completed payment and does not process a charge. Native app signing/notarization is not configured.
 
-Generated UI previews are in `InventorySystemi/target/ui-previews/`. They contain disposable example data. The temporary MySQL container and its anonymous data volume were removed after testing; the downloaded image remains cached for future use.
+The GUI test normally writes target/ui-previews. Previews retained during packaging are in the ignored .tools/ui-previews-1.2 folder at the repository root.
 
-Limits: this verified separate application processes on one Mac, not two physical shop computers, Windows clients, external LAN/TLS configuration, MySQL migration of a real shop, or payment/receipt hardware. Your existing local inventory database was not used for these tests. The full two-computer checklist is in [SHOP_SETUP.md](SHOP_SETUP.md).
+Branding update: the supplied PNG is included byte-for-byte in the JAR. The English/Turkish desktop check verified that the stage icon loads and captured the branded login/dashboard. The Mac bundle's ICNS matches the generated logo asset. The Windows native launcher receives six icon sizes; its previous code sections and non-icon resources are verified unchanged after resource embedding. Version 1.2.1 package validation includes the original image, native icons and matching application JARs. Windows execution remains untested.
+
+Latest branding previews are in `.tools/ui-previews-1.2.1` at the repository root.

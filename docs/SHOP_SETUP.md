@@ -1,54 +1,50 @@
-# One shop, several computers
+# Offline shop: one laptop, separate logins
 
-The intended setup is one shared MySQL database on an always-on shop server, with the desktop app installed on each staff PC and the owner's Mac. “Same family” is treated here as the same shop and private LAN/Wi-Fi. Being on the same Wi-Fi does not automatically share the default H2 database.
+This replaces the earlier shared-MySQL plan. No internet, Wi-Fi, server or cloud account is required to use the packaged application. Admin and staff take turns on the same laptop and operating-system profile. Each app login has its own role; all logins use the same local database.
 
-```mermaid
-flowchart LR
-  A[Owner's Mac: admin account] --> D[(Shop server: MySQL)]
-  B[Checkout PC 1: staff account] --> D
-  C[Checkout PC 2: staff account] --> D
-```
+## First setup
 
-The admin computer is a client too. It need not stay on, provided the database server stays on. If the server is the admin's computer, that computer must remain awake and connected while staff work. All computers use the same database URL and database credentials, but each person signs in with a separate application account. The owner sees committed sales, product changes, logins, password/account changes and voids through Staff activity. This is an application activity log, not monitoring of the employee's other computer applications.
+1. Close older app windows. Open the latest Mac app, or extract the entire Windows ZIP and open InventorySystem.exe.
+2. Choose Create first administrator if the database is empty. Otherwise sign in with your existing account. No account is automatically reset during an update.
+3. In Staff accounts, create a username and a temporary password (8–128 characters). Staff signs in and replaces that password. Admin can later reset it or disable the account.
+4. Create shop products. Piece quantities must be whole numbers; kg quantities allow 3 decimal places. Selling price is per selected unit. A unique barcode is optional. Barcode scanners must behave like a keyboard and send Enter; camera and weighing-scale drivers are not included.
+5. Use Receive / adjust stock to record deliveries, losses or corrections, with a reason. Price/name/category edits do not silently change stock.
 
-## Set up a shared test shop
+## Cashier handover
 
-1. Install MySQL 8 on a server with a stable LAN address/DNS name. This workstation has not been provisioned as a MySQL server by this change. The current local `.env` still uses H2.
-2. Create an empty database and a dedicated database account. Run the following with a MySQL administrator, replacing the example LAN prefix and password:
+Open a shift with the cash physically in the drawer. Enter sales, selecting cash or card bookkeeping for each checkout. Cash received must cover the total; the receipt includes change.
 
-```sql
-CREATE DATABASE inventory_shop CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-CREATE USER 'inventory_app'@'192.168.1.%' IDENTIFIED BY 'REPLACE_WITH_A_STRONG_DATABASE_PASSWORD' REQUIRE SSL;
-GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER, REFERENCES, INDEX
-ON inventory_shop.* TO 'inventory_app'@'192.168.1.%';
-```
+At handover, count the drawer and close the shift. A discrepancy must have a note. Sign out. The next staff member signs in and opens the next shift. Only one shift may remain open on this laptop. An administrator can close a forgotten staff shift using the actual counted cash and a note. Signing out does not discard an open shift.
 
-The app currently creates and upgrades its tables at startup, hence the CREATE/ALTER permissions. Start the upgraded version on one machine first so the initial migration finishes before starting other clients. Thereafter schema changes are restartable. Do not mix 1.0 and 1.1 clients: old clients bypass the new price/unit/password rules.
+Expected cash = opening cash + non-voided cash sale line totals. The cashier must perform any recorded cash refund manually. Card payments do not affect the cash count and must be confirmed separately on a real card terminal. The app does not connect to payment networks.
 
-3. Configure MySQL to accept connections on its LAN interface. Permit port 3306 only from the shop computers/subnet. Configure a server TLS certificate whose name matches `shop-server.local` (or your chosen DNS name) and whose issuing CA is trusted by the bundled Java runtime. The template uses `sslMode=VERIFY_IDENTITY`; a self-signed/untrusted certificate will fail until its CA is trusted. See [MySQL's certificate verification instructions](https://dev.mysql.com/doc/connector-j/en/connector-j-server-authentication.html). Do not expose MySQL to the public internet.
-4. On **each** computer, create `~/.inventorysystem/.env` (Windows: `%USERPROFILE%\.inventorysystem\.env`) using [the shared-shop template](../InventorySystemi/.env.shop.example). Replace the server hostname and database password. Keep the same currency on all machines. The app reads this file automatically at launch; restart after changes. Environment variables override the file, so remove stale `DB_URL`/`DB_USER` values from the shell when changing profiles.
-5. Install the matching native app on each computer. macOS apps are built on a Mac of the matching architecture; Windows apps are built on Windows. They use the same source, not the same installer binary.
-6. Start the admin app first, create the first administrator if the database is empty, and add staff accounts in **Staff accounts**. Give each person a unique username and temporary password privately. At first login, staff must replace it before seeing products or creating sales. Canceling the password dialog leaves them signed out.
-7. Sign in from the staff computers. The admin's dashboard reloads every 10 seconds, or immediately with Refresh. Staff can see products and their own latest 1,000 sale lines. Admins see all staff sales, reports, account management and the latest 500 audit events.
+## Back up and restore
 
-Existing local H2 stock/accounts are **not automatically copied to MySQL**. For the final-project demonstration, create a fresh shared test shop and seed products through the admin UI. A real data migration needs an explicit export/import and reconciliation procedure; do not just change DB_URL and expect local data to appear.
+Admin → File → Back up database saves a consistent ZIP while the app is open. It includes the database, not the separate receipt text folder. Receipts for 1.2 checkouts can be regenerated from the database; back up older receipt files separately if required. Backup files contain business data and account hashes, so store them privately.
 
-## Check the complete two-computer workflow
+To restore on the same or another laptop:
 
-1. Admin creates `cashier1` with a temporary password. Staff logs in on PC 1, changes it, signs out, and confirms the temporary password no longer works.
-2. Admin adds `Milk carton`, Piece, quantity `20`, unit price `30.00`, threshold `5`; and `Apples`, kg, quantity `10.000`, unit price `49.99`, threshold `2.000`.
-3. Staff sells `2` cartons and `1.250` kg of apples. Stock becomes `18` pieces and `8.750` kg. Expected revenue is `60.00 + 62.49 = 122.49`. The receipt and report use the same rounded line totals. Reports show piece and kg quantities separately.
-4. On the admin computer, press Refresh (or wait 10 seconds). Confirm the staff username, sale IDs, quantity/unit and workstation in Staff activity and Sales.
-5. Two staff PCs attempt to buy all remaining apples simultaneously. Only the checkout with sufficient stock may commit. A failed cart must save no partial sale, no stock change and no sale audit entry.
-6. Admin changes the apple price. Existing reports retain the original sale price. A staff checkout using an old cart price is rejected and must be rebuilt after refreshing.
-7. Admin voids a sale. Its row remains marked Voided, stock is restored once, reports exclude it and the action remains in the audit log. A second void cannot restore stock again. Staff cannot void sales.
-8. Admin disables the staff account while its app is open. The next application read/write is rejected. Resetting a staff password also invalidates an already-open staff session; staff sign out, log back in with the new temporary password and change it again.
-9. Restart both apps and verify persistence. Disconnect a client from the LAN: expect an error, not a successful/offline sale. Reconnect and refresh before selling. Receipts are local to the selling PC, while sales/audit records are shared.
+1. Close every InventorySystem window on that laptop.
+2. Keep a copy of its current `~/.inventorysystem/inventory.mv.db` (Windows: `%USERPROFILE%\.inventorysystem\inventory.mv.db`) before replacing anything.
+3. Extract the backup ZIP into a temporary folder. Copy its `inventory.mv.db` to that user data location. Create `.inventorysystem` if necessary. Replace only after preserving the previous database.
+4. Start the same or newer app version. Sign in with an account from the restored backup and verify product quantities and recent sales.
 
-## Trust boundary and next deployment step
+Do not copy a live database file while the app is writing; use the backup command. A copy moved to another laptop is an independent shop database, not a synchronized second register. This offline edition does not merge independently modified copies.
 
-This is a desktop client connected directly to a database. Application services enforce roles and password-change requirements, but a person with the database connection password or a modified client can bypass those Java checks. The activity table is not tamper-proof against database administrators. Treat this deployment as a trusted-LAN final-project/pilot setup, not a finished security boundary for untrusted staff computers.
+## Final-project acceptance test
 
-For a production rollout, put an authenticated HTTPS application server between clients and MySQL. The server should hold the database credentials, verify every role, perform stock transactions and write the audit log. Clients should receive short-lived user sessions rather than database passwords. Add login throttling, backups with restore drills, receipt reprinting, shift close/cash reconciliation, payment methods, and product barcode/scale integration. Do not enable offline selling until conflict/reconciliation rules exist.
+Disconnect Wi-Fi and Ethernet before starting.
 
-For a real shop, also add a checkout/order ID grouping the sale lines, payment status, returns with reasons and supervisor approval, and configurable tax rules reviewed for the shop's jurisdiction. Receipts here are non-fiscal records; this release calculates no extra tax.
+1. Admin signs in, creates a staff account, signs out. Staff changes its temporary password. Confirm its temporary password no longer works.
+2. Admin adds `Milk`, Piece, quantity 20, price 30.00, barcode `8691234567890`; and `Apples`, kg, quantity 10.000, price 49.99.
+3. Admin receives 5 more milk cartons with reason `Supplier delivery`. Quantity must become 25 and activity must record the adjustment.
+4. Staff signs in, opens a shift with 100.00, scans/enters the milk barcode twice, and adds 1.250 kg of apples. Checkout total: 122.49. Enter 150.00 cash. Change: 27.51. Stocks: 23 cartons and 8.750 kg.
+5. Select one sale line and reprint its receipt. All lines from that checkout, its ID, payment, cash received and change must be present.
+6. Record one additional milk carton as Card. Confirm expected drawer cash remains 222.49. Card selection records the external payment, not an actual charge.
+7. Try an oversell, fractional piece quantity and insufficient cash: each must be rejected without partial stock/payment changes.
+8. Admin may void a sale while the shift is open. Its stock restores once and expected cash decreases if the sale was cash. The cashier gives the corresponding cash refund manually. A second void must fail.
+9. Close the shift using its expected cash value. Try a different count without a note: it must fail. With a discrepancy note it may close and record the difference. Closed-shift sales must not be voidable.
+10. Admin checks Reports, Staff activity, Staff accounts and Shifts / cash. Staff must not see admin-only tabs/actions. Sign out and restart while still offline; data must persist.
+11. Admin creates a backup and verifies the restore procedure on a disposable copy. Repeat this checklist on the Windows test PC using the extracted portable app.
+
+Changing the interface language must translate buttons/dialogs and number formatting, while keeping product data and the shop currency intact.

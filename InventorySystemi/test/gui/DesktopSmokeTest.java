@@ -23,6 +23,7 @@ class DesktopSmokeTest {
         DatabaseInitializer.initialize(); AuthService auth=new AuthService();auth.createFirstAdmin("admin","AdminTest123!");auth.login("admin","AdminTest123!");
         auth.createStaff("cashier","TempPass123!");
         new ProductService().addProduct(new Product(0,"Apples","Fruit",new BigDecimal("10"),new BigDecimal("40"),"Farm",Unit.KG,new BigDecimal("2"),0));
+        Product milk=new Product(0,"Milk","Dairy",20,30,"Farm");milk.setBarcode("8691234567890");new ProductService().addProduct(milk);
         CompletableFuture<Void> done=new CompletableFuture<>();
         Platform.startup(()->{});
         Platform.runLater(()->{
@@ -31,11 +32,13 @@ class DesktopSmokeTest {
                 for(String language:List.of("en","tr")) {
                     LocaleManager.setLanguage(language);
                     new Login().showLogin(stage);assertTrue(stage.isShowing());
+                    assertFalse(stage.getIcons().isEmpty());assertFalse(stage.getIcons().getFirst().isError());
+                    snapshot(stage.getScene().getRoot(),language+"-login");
                     ((TextField)stage.getScene().lookup("#loginUsername")).setText("admin");
                     ((PasswordField)stage.getScene().lookup("#loginPassword")).setText("AdminTest123!");
                     ((Button)stage.getScene().lookup("#signIn")).fire();
-                    TabPane tabs=(TabPane)stage.getScene().lookup(".tab-pane");assertEquals(5,tabs.getTabs().size());
-                    assertEquals(LocaleManager.get("tab.staff"),tabs.getTabs().get(3).getText());
+                    TabPane tabs=(TabPane)stage.getScene().lookup(".tab-pane");assertEquals(6,tabs.getTabs().size());
+                    assertEquals(LocaleManager.get("tab.staff"),tabs.getTabs().get(4).getText());
                     stage.getScene().getRoot().applyCss(); assertTranslated(stage.getScene().getRoot());
                     snapshot(stage.getScene().getRoot(),language+"-admin");
                     AddProductDialog product=new AddProductDialog(null);product.show();product.getDialogPane().applyCss();assertTranslated(product.getDialogPane());product.close();
@@ -46,6 +49,10 @@ class DesktopSmokeTest {
                     ((Button)sale.getDialogPane().lookup("#addCartItem")).fire();
                     @SuppressWarnings("unchecked") TableView<Sale> table=(TableView<Sale>)sale.getDialogPane().lookup(".table-view");assertEquals(1,table.getItems().size());
                     assertEquals(new BigDecimal("1.250"),table.getItems().getFirst().getQuantitySold());
+                    TextField scan=(TextField)sale.getDialogPane().lookup("#barcodeSearch");scan.setText("8691234567890");scan.fireEvent(new javafx.event.ActionEvent());
+                    assertEquals(2,table.getItems().size());assertEquals("Milk",table.getItems().get(1).getProductName());
+                    ((TextField)sale.getDialogPane().lookup("#cashReceived")).setText("100");
+                    assertEquals(new BigDecimal("100"),sale.getCashReceived());assertEquals(PaymentMethod.CASH,sale.getPaymentMethod());
                     snapshot(sale.getDialogPane(),language+"-sale-dialog");sale.close();
                     // Logout through the menu so its refresh timer is stopped.
                     menu(stage,LocaleManager.get("menu.logout")).fire();
@@ -64,7 +71,7 @@ class DesktopSmokeTest {
                 });
                 ((Button)stage.getScene().lookup("#signIn")).fire();
                 assertFalse(AuthService.current().mustChangePassword());
-                assertEquals(2,((TabPane)stage.getScene().lookup(".tab-pane")).getTabs().size());
+                assertEquals(3,((TabPane)stage.getScene().lookup(".tab-pane")).getTabs().size());
                 snapshot(stage.getScene().getRoot(),"en-staff");
                 menu(stage,LocaleManager.get("menu.logout")).fire();stage.close();done.complete(null);
             } catch(Throwable e) { done.completeExceptionally(e); }

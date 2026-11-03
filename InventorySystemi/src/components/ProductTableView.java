@@ -8,6 +8,7 @@ public class ProductTableView extends TableView<Product> {
         setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY_FLEX_LAST_COLUMN);
         getColumns().add(Ui.numberColumn("column.id",p->java.math.BigDecimal.valueOf(p.getProductId()),false));
         getColumns().add(Ui.column("column.name",Product::getName));
+        getColumns().add(Ui.column("column.barcode",Product::getBarcode));
         getColumns().add(Ui.column("column.category",Product::getCategory));
         getColumns().add(Ui.numberColumn("column.quantity",Product::getQuantity,false));
         getColumns().add(Ui.column("column.unit",p->p.getUnit().label()));

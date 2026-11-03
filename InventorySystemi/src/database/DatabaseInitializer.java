@@ -22,6 +22,19 @@ public final class DatabaseInitializer {
         add(c, "sales", "product_name", "VARCHAR(255)");
         add(c, "sales", "voided", "BOOLEAN NOT NULL DEFAULT FALSE");
         add(c, "sales", "created_at", "TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP");
+        add(c, "products", "barcode", "VARCHAR(64)");
+        execute(c, "CREATE UNIQUE INDEX IF NOT EXISTS ux_product_barcode ON products(barcode)");
+        execute(c, "CREATE TABLE IF NOT EXISTS shifts (shift_id BIGINT AUTO_INCREMENT PRIMARY KEY, user_id INT NOT NULL REFERENCES users(user_id), opened_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, closed_at TIMESTAMP, opening_cash DECIMAL(14,2) NOT NULL, expected_cash DECIMAL(14,2), closing_cash DECIMAL(14,2), difference DECIMAL(14,2), note VARCHAR(500) NOT NULL DEFAULT '')");
+        execute(c, "CREATE TABLE IF NOT EXISTS checkouts (checkout_id VARCHAR(36) PRIMARY KEY, user_id INT NOT NULL REFERENCES users(user_id), shift_id BIGINT REFERENCES shifts(shift_id), payment_method VARCHAR(10) NOT NULL, total DECIMAL(14,2) NOT NULL, cash_received DECIMAL(14,2), change_due DECIMAL(14,2), fingerprint VARCHAR(64) NOT NULL, created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP)");
+        // Older versions required cash/shift fields. Keep their records but allow simple sales.
+        for(String column:new String[]{"shift_id","cash_received","change_due"}) {
+            try(ResultSet info=c.getMetaData().getColumns(c.getCatalog(),null,"checkouts",column)) {
+                if(info.next() && info.getInt("NULLABLE")==DatabaseMetaData.columnNoNulls)
+                    execute(c,"ALTER TABLE checkouts ALTER COLUMN "+column+" DROP NOT NULL");
+            }
+        }
+        add(c, "sales", "checkout_id", "VARCHAR(36) REFERENCES checkouts(checkout_id)");
+        add(c, "sales", "line_no", "INT");
         // Legacy sales have no original price snapshot: use the current price once, then freeze it.
         execute(c, "UPDATE sales SET unit_price = (SELECT price FROM products WHERE products.product_id = sales.product_id) WHERE unit_price IS NULL");
         execute(c, "UPDATE sales SET product_name = (SELECT name FROM products WHERE products.product_id = sales.product_id) WHERE product_name IS NULL");

@@ -6,6 +6,7 @@ import java.time.LocalDate;
 
 public class Sale {
     private int saleId;
+    private String checkoutId="";
     private final int productId, userId;
     private final BigDecimal quantitySold;
     private final LocalDate saleDate;
@@ -13,12 +14,17 @@ public class Sale {
     private BigDecimal price=BigDecimal.ZERO;
     private Unit unit=Unit.PIECE;
     private boolean voided;
+    private PaymentMethod method;
+    public void setPaymentMethod(PaymentMethod value){method=value;}
+    public String getPaymentLabel(){return method==null?gui.LocaleManager.get("payment.legacy"):method.toString();}
     public Sale(int id, int product, int user, double quantity, LocalDate date) {
         this(id, product, user, BigDecimal.valueOf(quantity), date);
     }
     public Sale(int id, int product, int user, BigDecimal quantity, LocalDate date) {
         saleId=id; productId=product; userId=user; quantitySold=quantity; saleDate=date;
     }
+    public String getCheckoutId() { return checkoutId; }
+    public void setCheckoutId(String value) { checkoutId=value==null?"":value; }
     public int getSaleId() { return saleId; }
     public void setSaleId(int id) { saleId=id; }
     public int getProductId() { return productId; }

@@ -26,7 +26,7 @@ public final class LocaleManager {
         return format.format(value);
     }
     public static BigDecimal decimal(String text) {
-        if(text==null || !text.trim().matches("[+]?[0-9]+([.,][0-9]+)?")) throw new IllegalArgumentException(get("validation.number"));
+        if(text==null || !text.trim().matches("[+]?(?:[0-9]+(?:[.,][0-9]+)?|[.,][0-9]+)")) throw new IllegalArgumentException(get("validation.number"));
         return new BigDecimal(text.trim().replace(',','.'));
     }
 }

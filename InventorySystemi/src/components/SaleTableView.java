@@ -7,6 +7,7 @@ public class SaleTableView extends TableView<Sale> {
         setPlaceholder(new Label(LocaleManager.get("table.empty")));
         setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY_FLEX_LAST_COLUMN);
         getColumns().add(Ui.numberColumn("column.sale.id",s->java.math.BigDecimal.valueOf(s.getSaleId()),false));
+        getColumns().add(Ui.column("checkout.id",Sale::getCheckoutId));
         getColumns().add(Ui.column("column.product.name",Sale::getProductName));
         getColumns().add(Ui.numberColumn("column.quantity.sold",Sale::getQuantitySold,false));
         getColumns().add(Ui.column("column.unit",s->s.getUnit().label()));

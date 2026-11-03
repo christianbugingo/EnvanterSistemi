@@ -13,17 +13,20 @@ public class Login {
     private final AuthService auth=new AuthService();
     public void showLogin(Stage stage) {
         AuthService.clearSession();
+        Branding.apply(stage);
         stage.setTitle(LocaleManager.get("login.title")); stage.setMaximized(false);
         TextField username=new TextField(); username.setId("loginUsername");
         PasswordField password=new PasswordField(); password.setId("loginPassword");
         Label title=new Label(LocaleManager.get("login.heading")); title.setStyle("-fx-font-size:24; -fx-font-weight:bold;");
+        title.setGraphic(Branding.logo(112));title.setGraphicTextGap(18);title.setWrapText(true);
         Button signIn=Ui.button("login.submit",()->{
             AuthService.User user=auth.login(username.getText(),password.getText()); password.clear();
             if(user.mustChangePassword() && !PasswordDialog.change(true)) { auth.logout(); return; }
             new Dashboard().showDashboard(stage,user.username(),user.role());
         }); signIn.setId("signIn"); signIn.setDefaultButton(true);
         Button setup=Ui.button("login.setup.admin",()->setup(stage));
-        setup.setDisable(auth.hasUsers());
+        boolean firstRun=!auth.hasUsers();
+        setup.setVisible(firstRun);setup.setManaged(firstRun);signIn.setDisable(firstRun);
         ComboBox<String> language=new ComboBox<>(); language.getItems().addAll("English","Türkçe");
         language.setValue("tr".equals(LocaleManager.getLanguage())?"Türkçe":"English");
         language.setOnAction(e->{LocaleManager.setLanguage("Türkçe".equals(language.getValue())?"tr":"en");showLogin(stage);});
@@ -31,8 +34,9 @@ public class Login {
         grid.add(title,0,0,2,1); grid.addRow(1,new Label(LocaleManager.get("login.username")),username);
         grid.addRow(2,new Label(LocaleManager.get("login.password")),password); grid.add(signIn,1,3);
         grid.addRow(4,new Label(LocaleManager.get("language.label")),language); grid.add(setup,1,5);
+        Label offline=new Label(LocaleManager.get(firstRun?"setup.first.run.hint":"offline.login.hint"));offline.setWrapText(true);offline.setMaxWidth(440);grid.add(offline,0,6,2,1);
         Ui.style(grid);
-        stage.setScene(new Scene(grid,560,400)); stage.setMinWidth(500); stage.setMinHeight(380); stage.show();
+        stage.setScene(new Scene(grid,660,540)); stage.setMinWidth(600); stage.setMinHeight(500); stage.show();
         stage.setOnCloseRequest(e->auth.logout());
     }
     private void setup(Stage stage) {

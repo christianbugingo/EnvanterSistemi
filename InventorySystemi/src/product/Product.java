@@ -8,6 +8,7 @@ public class Product {
     private final BigDecimal quantity, price, lowStock;
     private final Unit unit;
     private int version;
+    private String barcode="";
     public Product(int id, String name, String category, double quantity, double price, String supplier) {
         this(id, name, category, BigDecimal.valueOf(quantity), BigDecimal.valueOf(price), supplier, Unit.PIECE, BigDecimal.TEN, 0);
     }
@@ -15,6 +16,8 @@ public class Product {
         this.productId=id; this.name=name; this.category=category; this.quantity=quantity; this.price=price;
         this.supplier=supplier; this.unit=unit; this.lowStock=lowStock; this.version=version;
     }
+    public String getBarcode() { return barcode; }
+    public void setBarcode(String value) { barcode=value==null?"":value.trim(); }
     public int getProductId() { return productId; }
     public String getName() { return name; }
     public String getCategory() { return category; }

@@ -9,73 +9,106 @@ import java.time.LocalDate;
 import java.util.*;
 
 public class SaleService {
+    private static Sale read(ResultSet rs) throws SQLException {
+        Sale sale=new Sale(rs.getInt("sale_id"),rs.getInt("product_id"),rs.getInt("user_id"),rs.getBigDecimal("quantity_sold"),rs.getDate("sale_date").toLocalDate());
+        sale.setProductName(rs.getString("product_name"));sale.setPrice(rs.getBigDecimal("unit_price"));sale.setUnit(Unit.valueOf(rs.getString("unit")));sale.setSoldBy(rs.getString("sold_by"));sale.setVoided(rs.getBoolean("voided"));sale.setCheckoutId(rs.getString("checkout_id"));sale.setPaymentMethod(rs.getString("payment_method")==null?null:PaymentMethod.valueOf(rs.getString("payment_method")));return sale;
+    }
     public ObservableList<Sale> loadSales() {
         try(Connection c=DBConnection.connect()) {
-            AuthService.User actor=AuthService.require(c,false);
-            ObservableList<Sale> rows=FXCollections.observableArrayList();
-            String sql="SELECT s.*, u.username AS sold_by FROM sales s JOIN users u ON s.user_id=u.user_id"+(actor.isAdmin()?"":" WHERE s.user_id=?")+" ORDER BY s.sale_id DESC LIMIT 1000";
-            try(PreparedStatement ps=c.prepareStatement(sql)) {
-                if(!actor.isAdmin()) ps.setInt(1,actor.id());
-                try(ResultSet rs=ps.executeQuery()) {
-                    while(rs.next()) {
-                        Sale sale=new Sale(rs.getInt("sale_id"),rs.getInt("product_id"),rs.getInt("user_id"),rs.getBigDecimal("quantity_sold"),rs.getDate("sale_date").toLocalDate());
-                        sale.setProductName(rs.getString("product_name")); sale.setPrice(rs.getBigDecimal("unit_price")); sale.setUnit(Unit.valueOf(rs.getString("unit"))); sale.setSoldBy(rs.getString("sold_by")); sale.setVoided(rs.getBoolean("voided")); rows.add(sale);
-                    }
-                }
+            var actor=AuthService.require(c,false);ObservableList<Sale> rows=FXCollections.observableArrayList();
+            try(PreparedStatement ps=c.prepareStatement("SELECT s.*,u.username AS sold_by,ch.payment_method FROM sales s JOIN users u ON s.user_id=u.user_id LEFT JOIN checkouts ch ON s.checkout_id=ch.checkout_id"+(actor.isAdmin()?"":" WHERE s.user_id=?")+" ORDER BY s.sale_id DESC LIMIT 1000")) {
+                if(!actor.isAdmin())ps.setInt(1,actor.id());try(ResultSet rs=ps.executeQuery()) {while(rs.next())rows.add(read(rs));}
             }
             return rows;
-        } catch(SQLException e) { throw AuthService.databaseError(e); }
+        } catch(SQLException e) {throw AuthService.databaseError(e);}
     }
-    public void addMultipleSales(List<Sale> items) {
-        if(items==null || items.isEmpty() || items.stream().anyMatch(Objects::isNull)) throw AuthService.failure("sale.empty");
+    public void addMultipleSales(List<Sale> items) {recordSale(items,UUID.randomUUID().toString());}
+    /** Record quantities and totals only; no drawer shift or payment entry is required. */
+    public Checkout recordSale(List<Sale> items,String checkoutId) {
+        if(items==null || items.isEmpty() || items.stream().anyMatch(Objects::isNull))throw AuthService.failure("sale.empty");
+        try {UUID.fromString(checkoutId);}catch(RuntimeException e){throw AuthService.failure("checkout.invalid");}
+        BigDecimal total=items.stream().map(Sale::getTotal).reduce(BigDecimal.ZERO,BigDecimal::add);
+        if(total.signum()<0 || total.compareTo(new BigDecimal("999999999999.99"))>0)throw AuthService.failure("payment.invalid.amount");
+        PaymentMethod method=PaymentMethod.UNRECORDED;
+        String fingerprint=fingerprint(items);
         try(Connection c=DBConnection.connect()) {
             c.setAutoCommit(false);
             try {
-                AuthService.User actor=AuthService.require(c,false);
-                // Consistent product lock order prevents carts taking locks in opposite order.
-                for(Sale sale:items.stream().sorted(Comparator.comparingInt(Sale::getProductId)).toList()) {
-                    if(sale.getUserId()!=actor.id()) throw AuthService.failure("msg.access.denied");
+                var actor=AuthService.require(c,false);
+                // A stable checkout ID makes repeating the same checkout harmless.
+                try(PreparedStatement ps=c.prepareStatement("SELECT user_id,fingerprint FROM checkouts WHERE checkout_id=?")) {
+                    ps.setString(1,checkoutId);try(ResultSet rs=ps.executeQuery()) {
+                        if(rs.next()) {
+                            if(rs.getInt(1)!=actor.id() || !fingerprint.equals(rs.getString(2)))throw AuthService.failure("checkout.conflict");
+                            Checkout existing=load(c,checkoutId,actor);c.commit();return existing;
+                        }
+                    }
+                }
+                try(PreparedStatement ps=c.prepareStatement("INSERT INTO checkouts(checkout_id,user_id,shift_id,payment_method,total,cash_received,change_due,fingerprint) VALUES(?,?,?,?,?,?,?,?)")) {
+                    ps.setString(1,checkoutId);ps.setInt(2,actor.id());ps.setNull(3,Types.BIGINT);ps.setString(4,method.name());ps.setBigDecimal(5,total);ps.setNull(6,Types.DECIMAL);ps.setNull(7,Types.DECIMAL);ps.setString(8,fingerprint);ps.executeUpdate();
+                }
+                var indices=java.util.stream.IntStream.range(0,items.size()).boxed().sorted(Comparator.comparingInt(i->items.get(i).getProductId())).toList();
+                for(int index:indices) {
+                    Sale sale=items.get(index);if(sale.getUserId()!=actor.id())throw AuthService.failure("msg.access.denied");
                     Product product;
                     try(PreparedStatement ps=c.prepareStatement("SELECT * FROM products WHERE product_id=? FOR UPDATE")) {
-                        ps.setInt(1,sale.getProductId());
-                        try(ResultSet rs=ps.executeQuery()) { if(!rs.next()) throw AuthService.failure("error.stale"); product=ProductService.read(rs); }
+                        ps.setInt(1,sale.getProductId());try(ResultSet rs=ps.executeQuery()) {if(!rs.next())throw AuthService.failure("error.stale");product=ProductService.read(rs);}
                     }
                     BigDecimal quantity=product.getUnit().validate(sale.getQuantitySold(),false);
-                    // Never silently sell at a changed price or unit from a stale terminal/cart.
-                    if(sale.getPrice().compareTo(product.getPrice())!=0 || sale.getUnit()!=product.getUnit()) throw AuthService.failure("sale.price.changed");
-                    try(PreparedStatement ps=c.prepareStatement("UPDATE products SET quantity=quantity-?, version=version+1 WHERE product_id=? AND quantity>=?")) {
-                        ps.setBigDecimal(1,quantity); ps.setInt(2,product.getProductId()); ps.setBigDecimal(3,quantity);
-                        if(ps.executeUpdate()!=1) throw AuthService.failure("sale.stock.changed");
+                    if(sale.getPrice().compareTo(product.getPrice())!=0 || sale.getUnit()!=product.getUnit())throw AuthService.failure("sale.price.changed");
+                    try(PreparedStatement ps=c.prepareStatement("UPDATE products SET quantity=quantity-?,version=version+1 WHERE product_id=? AND quantity>=?")) {
+                        ps.setBigDecimal(1,quantity);ps.setInt(2,product.getProductId());ps.setBigDecimal(3,quantity);if(ps.executeUpdate()!=1)throw AuthService.failure("sale.stock.changed");
                     }
-                    try(PreparedStatement ps=c.prepareStatement("INSERT INTO sales(product_id,user_id,quantity_sold,sale_date,unit_price,unit,product_name) VALUES(?,?,?,?,?,?,?)",Statement.RETURN_GENERATED_KEYS)) {
-                        ps.setInt(1,product.getProductId()); ps.setInt(2,actor.id()); ps.setBigDecimal(3,quantity); ps.setDate(4,java.sql.Date.valueOf(LocalDate.now())); ps.setBigDecimal(5,product.getPrice()); ps.setString(6,product.getUnit().name()); ps.setString(7,product.getName()); ps.executeUpdate();
-                        try(ResultSet rs=ps.getGeneratedKeys()) { rs.next(); sale.setSaleId(rs.getInt(1)); }
+                    try(PreparedStatement ps=c.prepareStatement("INSERT INTO sales(product_id,user_id,quantity_sold,sale_date,unit_price,unit,product_name,checkout_id,line_no) VALUES(?,?,?,?,?,?,?,?,?)",Statement.RETURN_GENERATED_KEYS)) {
+                        ps.setInt(1,product.getProductId());ps.setInt(2,actor.id());ps.setBigDecimal(3,quantity);ps.setDate(4,java.sql.Date.valueOf(LocalDate.now()));ps.setBigDecimal(5,product.getPrice());ps.setString(6,product.getUnit().name());ps.setString(7,product.getName());ps.setString(8,checkoutId);ps.setInt(9,index);ps.executeUpdate();
+                        try(ResultSet rs=ps.getGeneratedKeys()) {rs.next();sale.setSaleId(rs.getInt(1));}
                     }
-                    sale.setProductName(product.getName()); sale.setSoldBy(actor.username());
-                    AuditService.record(c,actor,"SALE_CREATED","#"+sale.getSaleId()+" | "+product.getName()+" | "+quantity+" "+product.getUnit().name()+" | "+sale.getTotal());
+                    sale.setCheckoutId(checkoutId);sale.setProductName(product.getName());sale.setSoldBy(actor.username());
+                    AuditService.record(c,actor,"SALE_CREATED","#"+sale.getSaleId()+" | "+product.getName()+" | "+quantity+" "+product.getUnit().name()+" | "+sale.getTotal()+" | "+checkoutId);
                 }
-                c.commit();
-            } catch(Exception e) { c.rollback(); throw e; }
-        } catch(SQLException e) { throw AuthService.databaseError(e); }
+                AuditService.record(c,actor,"CHECKOUT_CREATED",checkoutId+" | "+method.name()+" | "+total);
+                Checkout result=load(c,checkoutId,actor);c.commit();return result;
+            } catch(Exception e) {c.rollback();throw e;}
+        } catch(SQLException e) {throw AuthService.databaseError(e);}
     }
-    /** Keep the sale and its audit trail; restore stock exactly once from the stored record. */
+    public Checkout loadCheckout(String id) {
+        try(Connection c=DBConnection.connect()) {return load(c,id,AuthService.require(c,false));}
+        catch(SQLException e) {throw AuthService.databaseError(e);}
+    }
+    private Checkout load(Connection c,String id,AuthService.User actor) throws SQLException {
+        try(PreparedStatement ps=c.prepareStatement("SELECT ch.*,u.username FROM checkouts ch JOIN users u ON ch.user_id=u.user_id WHERE checkout_id=?")) {
+            ps.setString(1,id);try(ResultSet rs=ps.executeQuery()) {
+                if(!rs.next())throw AuthService.failure("checkout.legacy");
+                if(rs.getInt("user_id")!=actor.id()&&!actor.isAdmin())throw AuthService.failure("msg.access.denied");
+                List<Sale> lines=new ArrayList<>();
+                try(PreparedStatement line=c.prepareStatement("SELECT s.*,u.username AS sold_by,ch.payment_method FROM sales s JOIN users u ON s.user_id=u.user_id LEFT JOIN checkouts ch ON s.checkout_id=ch.checkout_id WHERE s.checkout_id=? ORDER BY line_no,sale_id")) {
+                    line.setString(1,id);try(ResultSet rows=line.executeQuery()) {while(rows.next())lines.add(read(rows));}
+                }
+                return new Checkout(id,rs.getString("username"),PaymentMethod.valueOf(rs.getString("payment_method")),rs.getBigDecimal("total"),rs.getBigDecimal("cash_received"),rs.getBigDecimal("change_due"),rs.getTimestamp("created_at").toLocalDateTime(),List.copyOf(lines));
+            }
+        }
+    }
     public void voidSale(int id) {
         try(Connection c=DBConnection.connect()) {
             c.setAutoCommit(false);
             try {
-                AuthService.User actor=AuthService.require(c,true);
-                int productId; BigDecimal quantity;
-                try(PreparedStatement ps=c.prepareStatement("SELECT product_id,quantity_sold,voided FROM sales WHERE sale_id=? FOR UPDATE")) {
-                    ps.setInt(1,id);
-                    try(ResultSet rs=ps.executeQuery()) {
-                        if(!rs.next() || rs.getBoolean("voided")) throw AuthService.failure("sale.already.void");
-                        productId=rs.getInt(1); quantity=rs.getBigDecimal(2);
-                    }
+                var actor=AuthService.require(c,true);int productId;BigDecimal quantity;String checkoutId;
+                try(PreparedStatement ps=c.prepareStatement("SELECT product_id,quantity_sold,voided,checkout_id FROM sales WHERE sale_id=? FOR UPDATE")) {
+                    ps.setInt(1,id);try(ResultSet rs=ps.executeQuery()) {if(!rs.next()||rs.getBoolean("voided"))throw AuthService.failure("sale.already.void");productId=rs.getInt(1);quantity=rs.getBigDecimal(2);checkoutId=rs.getString(4);}
                 }
-                try(PreparedStatement ps=c.prepareStatement("UPDATE products SET quantity=quantity+?, version=version+1 WHERE product_id=?")) { ps.setBigDecimal(1,quantity); ps.setInt(2,productId); if(ps.executeUpdate()!=1) throw AuthService.failure("error.stale"); }
-                try(PreparedStatement ps=c.prepareStatement("UPDATE sales SET voided=TRUE WHERE sale_id=?")) { ps.setInt(1,id); ps.executeUpdate(); }
-                AuditService.record(c,actor,"SALE_VOIDED","#"+id+" | "+quantity); c.commit();
-            } catch(Exception e) { c.rollback(); throw e; }
-        } catch(SQLException e) { throw AuthService.databaseError(e); }
+                if(checkoutId!=null)try(PreparedStatement ps=c.prepareStatement("SELECT s.closed_at FROM checkouts ch JOIN shifts s ON ch.shift_id=s.shift_id WHERE ch.checkout_id=? FOR UPDATE")) {
+                    ps.setString(1,checkoutId);try(ResultSet rs=ps.executeQuery()) {if(rs.next()&&rs.getString(1)!=null)throw AuthService.failure("sale.shift.closed");}
+                }
+                try(PreparedStatement ps=c.prepareStatement("UPDATE products SET quantity=quantity+?,version=version+1 WHERE product_id=?")) {ps.setBigDecimal(1,quantity);ps.setInt(2,productId);if(ps.executeUpdate()!=1)throw AuthService.failure("error.stale");}
+                try(PreparedStatement ps=c.prepareStatement("UPDATE sales SET voided=TRUE WHERE sale_id=?")) {ps.setInt(1,id);ps.executeUpdate();}
+                AuditService.record(c,actor,"SALE_VOIDED","#"+id+" | "+quantity);c.commit();
+            } catch(Exception e) {c.rollback();throw e;}
+        } catch(SQLException e) {throw AuthService.databaseError(e);}
+    }
+    private static String fingerprint(List<Sale> items) {
+        StringBuilder text=new StringBuilder("SALE");
+        for(Sale s:items)text.append('|').append(s.getProductId()).append(':').append(s.getQuantitySold().stripTrailingZeros().toPlainString()).append(':').append(s.getPrice().stripTrailingZeros().toPlainString()).append(':').append(s.getUnit().name());
+        try {return HexFormat.of().formatHex(java.security.MessageDigest.getInstance("SHA-256").digest(text.toString().getBytes(java.nio.charset.StandardCharsets.UTF_8)));}
+        catch(java.security.NoSuchAlgorithmException e){throw new IllegalStateException(e);}
     }
 }

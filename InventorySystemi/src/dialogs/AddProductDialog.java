@@ -17,6 +17,8 @@ public class AddProductDialog extends Dialog<Product> {
         TextField category=new TextField(existing==null?"":existing.getCategory()); category.setId("categoryField");
         TextField supplier=new TextField(existing==null?"":existing.getSupplier()); supplier.setId("supplierField");
         TextField quantity=new TextField(existing==null?"0":existing.getQuantity().toPlainString()); quantity.setId("quantityField");
+        quantity.setDisable(existing!=null);
+        TextField barcode=new TextField(existing==null?"":existing.getBarcode()); barcode.setId("barcodeField");
         TextField price=new TextField(existing==null?"":existing.getPrice().toPlainString()); price.setId("priceField");
         TextField threshold=new TextField(existing==null?"10":existing.getLowStock().toPlainString()); threshold.setId("lowStockField");
         ComboBox<Unit> unit=new ComboBox<>(); unit.getItems().addAll(Unit.values()); unit.setValue(existing==null?Unit.PIECE:existing.getUnit()); unit.setId("unitField");
@@ -30,6 +32,7 @@ public class AddProductDialog extends Dialog<Product> {
         grid.addRow(4,priceLabel,price);
         grid.addRow(5,new Label(LocaleManager.get("product.threshold")),threshold);
         grid.addRow(6,new Label(LocaleManager.get("label.supplier")),supplier);
+        grid.addRow(7,new Label(LocaleManager.get("column.barcode")),barcode);
         getDialogPane().setContent(grid);
         ButtonType save=new ButtonType(LocaleManager.get("button.save"),ButtonBar.ButtonData.OK_DONE);
         getDialogPane().getButtonTypes().addAll(save,new ButtonType(LocaleManager.get("button.cancel"),ButtonBar.ButtonData.CANCEL_CLOSE));
@@ -41,7 +44,9 @@ public class AddProductDialog extends Dialog<Product> {
                 BigDecimal low=unit.getValue().validate(LocaleManager.decimal(threshold.getText()),true);
                 BigDecimal amount=LocaleManager.decimal(price.getText());
                 if(amount.stripTrailingZeros().scale()>2 || amount.compareTo(new BigDecimal("9999999999.99"))>0) throw services.AuthService.failure("msg.invalid.price");
+                if(!barcode.getText().isBlank() && !barcode.getText().trim().matches("[A-Za-z0-9._-]{1,64}")) throw services.AuthService.failure("barcode.invalid");
                 result[0]=new Product(existing==null?0:existing.getProductId(),name.getText().trim(),category.getText().trim(),qty,amount,supplier.getText().trim(),unit.getValue(),low,existing==null?0:existing.getVersion());
+                result[0].setBarcode(barcode.getText());
             } catch(RuntimeException ex) { e.consume(); Ui.error(ex.getMessage()); }
         });
         setResultConverter(b->b==save?result[0]:null);

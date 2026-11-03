@@ -43,6 +43,18 @@
         "cwd": "${workspaceFolder}/InventorySystemi"
       },
       "problemMatcher": []
+    },
+    {
+      "label": "Package Inventory System (Windows portable)",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "scripts/package-windows-portable.py"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/InventorySystemi"
+      },
+      "problemMatcher": []
     }
   ]
 }
