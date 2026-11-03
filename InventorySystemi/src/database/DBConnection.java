@@ -1,40 +1,18 @@
-
-
 package database;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-
+import java.nio.file.*;
+import java.sql.*;
 
 public class DBConnection {
-    private static String setting(String name, String fallback) {
-        String value = System.getenv(name);
-        return value == null || value.isBlank() ? System.getProperty(name, fallback) : value;
-    }
-
     public static Connection connect() {
+        String path=Path.of(System.getProperty("user.home"),".inventorysystem","inventory").toAbsolutePath().toString().replace('\\','/');
+        String url=AppConfig.get("DB_URL","jdbc:h2:file:"+path+";MODE=MySQL;DATABASE_TO_LOWER=TRUE");
         try {
-            String url = setting("DB_URL", defaultUrl());
-            String user = setting("DB_USER", "sa");
-            String password = setting("DB_PASSWORD", "");
-            if (url.startsWith("jdbc:h2:file:")) {
-                Files.createDirectories(Path.of(System.getProperty("user.home"), ".inventorysystem"));
-            }
-            return DriverManager.getConnection(url, user, password);
-        } catch (SQLException e) {
-            throw new IllegalStateException("Could not open the application database. Check database settings and file permissions.", e);
-        } catch (java.io.IOException e) {
-            throw new IllegalStateException("Could not create the application database directory.", e);
+            if(url.startsWith("jdbc:h2:file:")) Files.createDirectories(Path.of(System.getProperty("user.home"),".inventorysystem"));
+            DriverManager.setLoginTimeout(10);
+            return DriverManager.getConnection(url,AppConfig.get("DB_USER","sa"),AppConfig.get("DB_PASSWORD",""));
+        } catch(SQLException | java.io.IOException e) {
+            throw new IllegalStateException(gui.LocaleManager.get("database.connection.failed"),e);
         }
     }
-
-    private static String defaultUrl() {
-        String path = Path.of(System.getProperty("user.home"), ".inventorysystem", "inventory")
-                .toAbsolutePath().toString().replace('\\', '/');
-        return "jdbc:h2:file:" + path + ";MODE=MySQL;DATABASE_TO_LOWER=TRUE";
-    }
-    
 }

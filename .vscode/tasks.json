@@ -5,17 +5,43 @@
       "label": "Run Inventory System (JavaFX)",
       "type": "shell",
       "command": "${workspaceFolder}/mvnw",
-      "args": ["javafx:run"],
-      "options": { "cwd": "${workspaceFolder}" },
-      "problemMatcher": []
+      "args": [
+        "javafx:run"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "windows": {
+        "command": "${workspaceFolder}/mvnw.cmd"
+      }
     },
     {
       "label": "Test Inventory System",
       "type": "shell",
       "command": "${workspaceFolder}/mvnw",
-      "args": ["test"],
-      "options": { "cwd": "${workspaceFolder}" },
+      "args": [
+        "test"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
       "group": "test",
+      "problemMatcher": [],
+      "windows": {
+        "command": "${workspaceFolder}/mvnw.cmd"
+      }
+    },
+    {
+      "label": "Package Inventory System (macOS)",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "scripts/package-macos.sh"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/InventorySystemi"
+      },
       "problemMatcher": []
     }
   ]

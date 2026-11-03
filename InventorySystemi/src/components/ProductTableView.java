@@ -1,61 +1,21 @@
 package components;
-
-import gui.LocaleManager;
-import javafx.scene.control.TableCell;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
+import gui.*;
 import product.Product;
-
+import javafx.scene.control.*;
 public class ProductTableView extends TableView<Product> {
-
     public ProductTableView() {
-    	super();
-        initializeColumns();
-        
-    }
-
-    private void initializeColumns() {
-    	TableColumn<Product, Integer> idCol = new TableColumn<>(LocaleManager.get("column.id"));
-        idCol.setCellValueFactory(new PropertyValueFactory<>("productId"));
-
-        TableColumn<Product, String> nameCol = new TableColumn<>(LocaleManager.get("column.name"));
-        nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
-
-        TableColumn<Product, String> categoryCol = new TableColumn<>(LocaleManager.get("column.category"));
-        categoryCol.setCellValueFactory(new PropertyValueFactory<>("category"));
-
-        TableColumn<Product, Integer> quantityCol = new TableColumn<>(LocaleManager.get("column.quantity"));
-        quantityCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
-        quantityCol.setCellFactory(col -> new TableCell<Product, Integer>() {
-            @Override
-            protected void updateItem(Integer item, boolean empty) {
-                super.updateItem(item, empty);
-                if (empty || item == null) {
-                    setText(null);
-                    setStyle("");
-                } else {
-                    setText(item.toString());
-                    if (item < 5) setStyle("-fx-background-color: #ffcccc; -fx-font-weight: bold;");
-                    else if (item < 10) setStyle("-fx-background-color: #fff0cc;");
-                    else setStyle("");
-                }
-            }
+        setPlaceholder(new Label(LocaleManager.get("table.empty")));
+        setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY_FLEX_LAST_COLUMN);
+        getColumns().add(Ui.numberColumn("column.id",p->java.math.BigDecimal.valueOf(p.getProductId()),false));
+        getColumns().add(Ui.column("column.name",Product::getName));
+        getColumns().add(Ui.column("column.category",Product::getCategory));
+        getColumns().add(Ui.numberColumn("column.quantity",Product::getQuantity,false));
+        getColumns().add(Ui.column("column.unit",p->p.getUnit().label()));
+        getColumns().add(Ui.numberColumn("column.price",Product::getPrice,true));
+        getColumns().add(Ui.numberColumn("product.threshold",Product::getLowStock,false));
+        getColumns().add(Ui.column("column.supplier",Product::getSupplier));
+        setRowFactory(t->new TableRow<>() {
+            @Override protected void updateItem(Product p,boolean empty) { super.updateItem(p,empty); setStyle(!empty && p!=null && p.isLowStock()?"-fx-background-color:#fff0cc;":""); }
         });
-
-        TableColumn<Product, Double> priceCol = new TableColumn<>(LocaleManager.get("column.price"));
-        priceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
-        priceCol.setCellFactory(col -> new TableCell<Product, Double>() {
-            @Override
-            protected void updateItem(Double item, boolean empty) {
-                super.updateItem(item, empty);
-                setText(empty || item == null ? null : String.format("%.2f", item));
-            }
-        });
-
-        TableColumn<Product, String> supplierCol = new TableColumn<>(LocaleManager.get("column.supplier"));
-        supplierCol.setCellValueFactory(new PropertyValueFactory<>("supplier"));
-
-        getColumns().addAll(idCol, nameCol, categoryCol, quantityCol, priceCol, supplierCol);
     }
 }

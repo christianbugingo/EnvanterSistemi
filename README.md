@@ -1,50 +1,107 @@
-# Inventory Management System
+# Inventory System 1.1
 
-This is the existing JavaFX desktop inventory application. The only Maven project is in `InventorySystemi/`; its source remains in `InventorySystemi/src`, and `main.Main` starts the login window. The application uses embedded H2 by default and retains optional MySQL settings through `DB_URL`, `DB_USER`, and `DB_PASSWORD`.
+A JavaFX shop application for an owner and staff, with English/Turkish interfaces, piece/kg stock, staff account management, and an activity dashboard. The Maven project is `InventorySystemi/`; the root wrapper delegates to it.
 
-## Requirements
-
-- JDK 21 (the project compiles with `--release 21`; use JDK 21 to run JavaFX and package the app).
-- Maven 3.9.x is downloaded by the included Maven Wrapper on first use. A globally installed Maven is not required.
-- VS Code Java, Java Debugger, and Maven extensions are recommended in `.vscode/extensions.json`.
-
-The current Codespace is Linux x86_64 with Microsoft OpenJDK 25. It can compile and run tests targeting Java 21, but it is not your Intel Mac and does not provide an interactive desktop display. Use a local JDK 21 on macOS for the actual desktop GUI. `uname -m` reports `x86_64` for Intel or `arm64` for Apple Silicon; Maven selects the JavaFX native dependencies for the current build host.
-
-## Build and run from the repository root
-
-The root-level wrapper delegates into the one existing Maven project; no second POM is maintained:
+## Run on this Mac
 
 ```sh
 ./mvnw clean package
-./mvnw test
 ./mvnw javafx:run
 ```
 
-On Windows, use `mvnw.cmd clean package`, `mvnw.cmd test`, or `mvnw.cmd javafx:run`. From inside `InventorySystemi/`, use `./mvnw ...` on macOS/Linux or `mvnw.cmd ...` on Windows. The wrapper pins Maven 3.9.9.
+This checkout has an ignored Apple Silicon JDK 21 at `.tools/jdk`. The wrapper uses it when `JAVA_HOME` is unset. On another computer install JDK 21 of the correct architecture. VS Code's **Run Inventory System (JavaFX)** task runs the app; select the same JDK for editor features/debugging.
 
-In VS Code, open the repository root. Use **Tasks: Run Task → Run Inventory System (JavaFX)** to start it, **Test Inventory System** for tests, or **Run and Debug → Inventory System (JavaFX)** to debug. Select an installed JDK 21 through the Java extension/runtime selector; no machine-specific Java path is committed.
+Close the older 1.0 app before using 1.1. Back up your database with the app closed before upgrading. The new version adds schema columns and changes stock quantities to decimals. Existing accounts/products/sales are retained; do not run old clients against an upgraded database.
 
-On a Mac, run `./mvnw javafx:run` from the repository root in Terminal or VS Code. This should show the native JavaFX login window when run in the local graphical session. A compile/package success only verifies compilation and tests; a Maven JavaFX launch without a visible display does not verify that an interactive window appeared.
+## Admin and staff
 
-## Database and data safety
+For an empty database, click **Create first administrator** and choose a username and password (8–128 characters). There is no built-in password. If you created `admin` / `AdminDemo123!` during the earlier demo, that account keeps its password. Existing plaintext account passwords are upgraded to salted PBKDF2 hashes on successful login.
 
-H2 initializes missing tables without dropping existing tables or rows. Its persistent database is stored at `~/.inventorysystem/inventory` on macOS/Linux and `%USERPROFILE%\\.inventorysystem\\inventory` on Windows. No database server is needed. Tests use isolated in-memory databases; builds and tests do not reset the real database. Receipt files in `InventorySystemi/receipts/` are retained.
+After admin sign-in:
 
-MySQL is optional. Configure credentials through environment variables or an untracked `.env` file. MySQL data does not automatically migrate to H2; back it up and use a separate, explicit migration process if needed. Never put real credentials in Git.
+- **Products:** create/edit stock, unit, per-unit selling price, and a configurable low-stock threshold.
+- **Sales:** view all staff sale lines and void a sale if necessary. A void restores stock once and retains the original sale/audit records.
+- **Reports:** choose dates, see quantities separated by unit and revenue based on sale-time prices, and export CSV.
+- **Staff accounts:** add staff with temporary passwords, reset a temporary password, or enable/disable a staff account.
+- **Staff activity:** see usernames, actions, record details, timestamps and workstation names. The latest 500 events refresh every 10 seconds.
 
-## Tests and GUI limitations
+Staff must replace an admin-issued temporary password before using the dashboard. Canceling that dialog leaves them signed out. Staff can sell and view their own latest 1,000 sale lines; they cannot edit products, manage accounts, void sales, or read shop-wide reports/activity. Both roles can change their own password from the File menu. Password resets and account disabling are checked again on subsequent operations, including already-open sessions.
 
-`./mvnw test` covers additive database initialization/persistence, English and Turkish resource loading (including UTF-8), sale stock deduction, and oversell rollback. The sale stock update is conditional and transaction-bound so concurrent requests cannot decrement stock below zero. The Codespace has no `DISPLAY`, Xvfb, or X server. Do not treat a headless JavaFX launch failure (`Unable to open DISPLAY`) as a compile failure or a passed GUI test. For interactive testing, launch on the local Mac; no privileged Xvfb/system package installation is required.
+## Products by piece and kilogram
 
-## Packaging
+| Product type | Example stock | Example sale | Price means |
+|---|---:|---:|---|
+| Piece | 20 | 2 | Price of one piece |
+| kg | 10.000 | 1.250 | Price of one kilogram |
 
-Native packages must be built on their target OS with JDK 21 and `jpackage` so the runtime and JavaFX native libraries match that platform and architecture:
+Piece quantities and thresholds must be whole numbers. kg supports up to 3 decimal places. Enter a decimal point or comma without thousands separators. Prices allow 2 decimal places. Stock updates use exact database decimals and transactions, not floating-point subtraction.
 
-- macOS Intel or Apple Silicon: from `InventorySystemi/`, run `bash scripts/package-macos.sh`. It produces an `.app` image and `.dmg` under `InventorySystemi/dist/` when run on macOS. The script rejects non-macOS hosts and requires active JDK 21.
-- Windows: from `InventorySystemi/`, run `powershell -ExecutionPolicy Bypass -File scripts/package-windows.ps1`. It produces an app image and `.msi` under `InventorySystemi/dist/` when run on Windows with JDK 21 and `jpackage`.
+Each sale records its product name, unit and price. Later product price/name changes do not rewrite sales history. Sale line totals round to 2 decimal places, and reports sum those same rounded totals. The product unit cannot change after sales exist; create a new product instead. Old sales without price snapshots are backfilled once using the current product price because their original price was not stored.
 
-The installer app image bundles a Java runtime; the database remains in the user's profile, outside the installation directory. The packaging scripts are prepared but have not been executed on macOS or Windows in the Linux Codespace. Therefore neither native installer is claimed as built or tested. Test each package on the target OS with a disposable account/data set. macOS signing/notarization is not configured.
+Receipts no longer add an arbitrary fixed tax. They record selling prices and are **not fiscal invoices**. Payment methods, jurisdiction-specific tax configuration, shift/cash closing and order-level receipts remain future work.
 
-## Known application limitations
+## Configuration and data
 
-Password storage is currently plaintext; replacing it requires a backwards-compatible login-time migration and has not been implemented. Several database failures elsewhere in the UI/services still use stderr logging, and some dialogs/reports/receipts still contain hardcoded Turkish text. These should be addressed in follow-up changes without invalidating existing accounts or removing application features.
+`.env` is now read automatically when the app starts. The first file found is used:
+
+1. `~/.inventorysystem/.env` (Windows: `%USERPROFILE%\.inventorysystem\.env`). Recommended for installed apps.
+2. `.env` in the current working directory.
+3. `InventorySystemi/.env` when running from the repository root.
+
+Set `INVENTORY_ENV_FILE` to explicitly choose a file. JVM `-D` properties override environment variables, which override file values. Values are literal: quoted values work, but shell commands, variable expansion and inline comments are not evaluated. Restart after changing configuration.
+
+The existing ignored `.env` uses local H2 with database user `sa` and an empty database password. This is separate from application login accounts. `SHOP_CURRENCY` defaults to `TRY` and stays the same when the UI language changes; configure it identically on every shop PC.
+
+Default local data: `~/.inventorysystem/inventory.mv.db`. Receipts: `~/.inventorysystem/receipts`. A packaged app keeps data outside the installation directory. Tests use temporary/in-memory databases. The earlier `database/demo-users.sql` now contains a read-only account query; use the UI to create accounts with hashed passwords.
+
+**For staff on different computers, follow [the shared-shop setup guide](docs/SHOP_SETUP.md).** Every computer needs the same shared MySQL database, not a separate H2 file. The guide includes server/database setup, the `.env.shop.example` profile and a two-computer acceptance test. Existing local H2 data is not automatically migrated into MySQL.
+
+## Test the final project
+
+```sh
+./mvnw test
+# Local desktop required; opens/closes test windows using disposable data:
+./mvnw -Dinventory.guiTest=true -Dtest=DesktopSmokeTest test
+```
+
+Checks cover migration/persistence, translation-key coverage, UTF-8 receipts, fractional kg sales, concurrent checkout, cart rollback, price snapshots, stale product edits, void/restock, staff restrictions, forced password changes, resets and disabled sessions. The GUI test checks both languages, admin/staff tabs, cart entry and the actual forced-change dialog. It saves previews under `InventorySystemi/target/ui-previews/`.
+
+The optional `MySqlMultiPcTest` requires an **empty disposable** `inventory_test` schema and the environment variables `INVENTORY_MYSQL_TEST_URL`, `INVENTORY_MYSQL_TEST_USER`, and `INVENTORY_MYSQL_TEST_PASSWORD`. Run `./mvnw -Dtest=MySqlMultiPcTest test`. It starts independent staff JVMs against the same server, tests competing checkouts, verifies the admin audit/report, and checks that disabling staff rejects an already-open remote session. Never point it at a real shop database; it refuses a nonempty schema.
+
+Manual acceptance:
+
+1. Admin creates a staff member. Staff changes the temporary password; the old password then fails.
+2. Add 20 milk cartons (Piece, 30.00) and 10 kg of apples (49.99/kg). Sell 2 cartons and 1.250 kg of apples.
+3. Check stocks 18 and 8.750; revenue must be 122.49. Verify the staff username and computer in admin activity.
+4. Attempt an oversell and a fractional piece sale: both must fail without partial changes.
+5. Change a product price: existing report revenue must stay unchanged. Void the test sale: stock must restore once and the report must exclude the void.
+6. Switch English/Turkish, inspect the cart and low-stock report, export CSV, reopen the app, and verify persistence.
+7. Repeat with two clients against the shared database, following the network guide.
+
+## Native applications
+
+macOS, from the repository root:
+
+```sh
+bash InventorySystemi/scripts/package-macos.sh
+open InventorySystemi/dist/macos-arm64-1.1.0/InventorySystem.app
+```
+
+The script creates a bundled `.app` and `.dmg` under `dist/macos-<architecture>-1.1.0` inside `InventorySystemi/`. It preserves the earlier 1.0 app. To rebuild into another folder, set `INVENTORY_DIST_DIR` (relative paths are relative to `InventorySystemi/`). Signing/notarization is not configured. Build separately on an Intel Mac for Intel users.
+
+Windows: install JDK 21 plus the installer tooling required by its `jpackage` (WiX for MSI), then run from PowerShell:
+
+```powershell
+.\mvnw.cmd clean package
+powershell -ExecutionPolicy Bypass -File InventorySystemi/scripts/package-windows.ps1
+```
+
+Output: `InventorySystemi/dist/windows-1.1.0/InventorySystem/InventorySystem.exe` and an MSI. Java is bundled in native app images. Windows packaging must be executed/tested on Windows.
+
+## Scope and recommendations
+
+The direct database client is suitable for a trusted-LAN project/pilot. Staff roles are checked in the application services, but clients still have database credentials. For production, move authentication, permissions and transactions into an HTTPS server, add login throttling and enforce audit integrity there. Database administrators can currently change audit records. No offline selling or automatic H2-to-MySQL migration is implemented. Periodic database calls are synchronous and can delay the UI on a slow/unavailable server.
+
+See [the review and recommended next features](docs/PROJECT_REVIEW.md) for comparisons with Odoo/ERPNext and the deployment priorities.
+
+Verification results and their limits are recorded in [docs/VERIFICATION.md](docs/VERIFICATION.md).
