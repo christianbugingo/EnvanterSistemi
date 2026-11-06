@@ -1,0 +1,769 @@
+Staging: /Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7
+JDK: /Users/a/Documents/EnvanterSistemi/.tools/jdk/Contents/Home
+Picked up JAVA_TOOL_OPTIONS:  -Duser.home=/Users/a/Documents/EnvanterSistemi/.tools/build-home -Djava.io.tmpdir=/Users/a/Documents/EnvanterSistemi/.tools/tmp
+openjdk version "21.0.13" 2026-10-20 LTS
+OpenJDK Runtime Environment Corretto-21.0.13.0.11 (build 21.0.13+11-LTS)
+OpenJDK 64-Bit Server VM Corretto-21.0.13.0.11 (build 21.0.13+11-LTS, mixed mode, sharing)
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-73ty4fze/0-libjavafx_iio.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-73ty4fze/0-libjavafx_iio.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-73ty4fze/0-libjavafx_iio.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-73ty4fze/1-libglass.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-73ty4fze/1-libglass.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-73ty4fze/1-libglass.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-73ty4fze/2-libjavafx_font.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-73ty4fze/2-libjavafx_font.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-73ty4fze/2-libjavafx_font.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-73ty4fze/3-libprism_common.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-73ty4fze/3-libprism_common.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-73ty4fze/3-libprism_common.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-73ty4fze/4-libprism_es2.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-73ty4fze/4-libprism_es2.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-73ty4fze/4-libprism_es2.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-73ty4fze/5-libdecora_sse.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-73ty4fze/5-libdecora_sse.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-73ty4fze/5-libdecora_sse.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-73ty4fze/6-libprism_sw.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-73ty4fze/6-libprism_sw.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-73ty4fze/6-libprism_sw.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/server/libjvm.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/server/libjvm.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/server/libjvm.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/server/libjsig.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/server/libjsig.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/server/libjsig.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libnet.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libnet.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libnet.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libnio.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libnio.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libnio.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libinstrument.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libinstrument.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libinstrument.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libzip.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libzip.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libzip.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libfreetype.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libfreetype.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libfreetype.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjli.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjli.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjli.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libsplashscreen.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libsplashscreen.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libsplashscreen.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjimage.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjimage.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjimage.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxkrb5.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxkrb5.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxkrb5.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxui.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxui.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxui.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/librmi.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/librmi.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/librmi.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libawt_lwawt.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libawt_lwawt.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libawt_lwawt.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjavajpeg.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjavajpeg.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjavajpeg.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libmlib_image.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libmlib_image.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libmlib_image.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libmanagement.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libmanagement.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libmanagement.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjsound.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjsound.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjsound.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjsig.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjsig.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjsig.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libprefs.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libprefs.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libprefs.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libsyslookup.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libsyslookup.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libsyslookup.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjawt.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjawt.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjawt.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libfontmanager.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libfontmanager.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libfontmanager.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/jspawnhelper: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/jspawnhelper: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/jspawnhelper: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxsecurity.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxsecurity.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxsecurity.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/liblcms.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/liblcms.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/liblcms.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libverify.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libverify.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libverify.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libj2gss.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libj2gss.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libj2gss.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjava.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjava.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjava.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libawt.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libawt.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libawt.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosx.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosx.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosx.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxapp.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxapp.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxapp.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/MacOS/libjli.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/MacOS/libjli.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/MacOS/libjli.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/MacOS/InventorySystem: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/MacOS/InventorySystem: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/MacOS/InventorySystem: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app: satisfies its Designated Requirement
+Signed and verified 41 native items plus nested bundles and outer app.
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app: satisfies its Designated Requirement
+Executable=/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app/Contents/MacOS/InventorySystem
+Identifier=com.coodiclabs.inventorysystem
+Format=app bundle with Mach-O thin (arm64)
+CodeDirectory v=20500 size=682 flags=0x10000(runtime) hashes=10+7 location=embedded
+VersionPlatform=1
+VersionMin=720896
+VersionSDK=983552
+Hash type=sha256 size=32
+CandidateCDHash sha256=c7c453fc9507f74fe93f4c8493e2b8d8c4e3aefb
+CandidateCDHashFull sha256=c7c453fc9507f74fe93f4c8493e2b8d8c4e3aefb62f8e28d8d6eefd943cae992
+Hash choices=sha256
+CMSDigest=c7c453fc9507f74fe93f4c8493e2b8d8c4e3aefb62f8e28d8d6eefd943cae992
+CMSDigestType=2
+Executable Segment base=0
+Executable Segment limit=81920
+Executable Segment flags=0x1
+Page size=16384
+CDHash=c7c453fc9507f74fe93f4c8493e2b8d8c4e3aefb
+Signature size=8973
+Authority=Developer ID Application: COODIC LABS (T2KX7KN7KU)
+Authority=Developer ID Certification Authority
+Authority=Apple Root CA
+Timestamp=6 Nov 2026 at 14:32:39
+Info.plist entries=19
+TeamIdentifier=T2KX7KN7KU
+Runtime Version=15.2.0
+Sealed Resources version=2 rules=13 files=188
+Internal requirements count=1 size=192
+Total signatures=1
+Chosen signature=1
+Picked up JAVA_TOOL_OPTIONS:  -Duser.home=/Users/a/Documents/EnvanterSistemi/.tools/build-home -Djava.io.tmpdir=/Users/a/Documents/EnvanterSistemi/.tools/tmp
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.dmg: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.dmg: satisfies its Designated Requirement
+Checksumming Protective Master Boot Record (MBR : 0)…
+Protective Master Boot Record (MBR :: verified   CRC32 $96167430
+Checksumming GPT Header (Primary GPT Header : 1)…
+ GPT Header (Primary GPT Header : 1): verified   CRC32 $01541246
+Checksumming GPT Partition Data (Primary GPT Table : 2)…
+GPT Partition Data (Primary GPT Tabl: verified   CRC32 $8BF28ED2
+Checksumming  (Apple_Free : 3)…
+                    (Apple_Free : 3): verified   CRC32 $00000000
+Checksumming disk image (Apple_HFS : 4)…
+          disk image (Apple_HFS : 4): verified   CRC32 $41D4750A
+Checksumming  (Apple_Free : 5)…
+                    (Apple_Free : 5): verified   CRC32 $00000000
+Checksumming GPT Partition Data (Backup GPT Table : 6)…
+GPT Partition Data (Backup GPT Table: verified   CRC32 $8BF28ED2
+Checksumming GPT Header (Backup GPT Header : 7)…
+  GPT Header (Backup GPT Header : 7): verified   CRC32 $83F32A7F
+verified   CRC32 $2DD5A412
+hdiutil: verify: checksum of "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.dmg" is VALID
+{"id":"e6e2c89a-71cd-4369-8f01-0bf86fe5df03","message":"Processing complete","status":"Invalid"}
+Successfully downloaded submission log
+  id: e6e2c89a-71cd-4369-8f01-0bf86fe5df03
+  location: /Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/evidence/notary-log.json
+{
+  "logFormatVersion": 1,
+  "jobId": "e6e2c89a-71cd-4369-8f01-0bf86fe5df03",
+  "status": "Invalid",
+  "statusSummary": "Archive contains critical validation errors",
+  "statusCode": 4000,
+  "archiveFilename": "InventorySystem-1.3.0-macos-arm64.dmg",
+  "uploadDate": "2026-11-06T11:33:33.661Z",
+  "sha256": "d25b671099c0e07da5cb35dc4bc5f1004800e9575c3900a0c48d3af19f4a2dd0",
+  "ticketContents": null,
+  "issues": [
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/MacOS/InventorySystem",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/MacOS/InventorySystem",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/MacOS/InventorySystem",
+      "message": "The executable does not have the hardened runtime enabled.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087724",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/jspawnhelper",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/jspawnhelper",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/jspawnhelper",
+      "message": "The executable does not have the hardened runtime enabled.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087724",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libawt.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libawt.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libawt_lwawt.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libawt_lwawt.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libfontmanager.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libfontmanager.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libfreetype.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libfreetype.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libinstrument.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libinstrument.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libj2gss.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libj2gss.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjava.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjava.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjavajpeg.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjavajpeg.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjawt.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjawt.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjimage.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjimage.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjli.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjli.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjsig.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjsig.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjsound.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjsound.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/liblcms.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/liblcms.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libmanagement.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libmanagement.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libmlib_image.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libmlib_image.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libnet.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libnet.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libnio.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libnio.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libosx.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libosx.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libosxapp.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libosxapp.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libosxkrb5.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libosxkrb5.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libosxsecurity.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libosxsecurity.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libosxui.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libosxui.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libprefs.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libprefs.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/librmi.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/librmi.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libsplashscreen.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libsplashscreen.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libsyslookup.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libsyslookup.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libverify.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libverify.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libzip.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libzip.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/server/libjsig.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/server/libjsig.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/server/libjvm.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/server/libjvm.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/MacOS/libjli.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/MacOS/libjli.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    }
+  ]
+}Notarization not accepted. Fix reported issues and rerun; release not replaced.
+SIGNING/NOTARIZATION FAILED (1). Existing release preserved. Evidence: /Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/evidence

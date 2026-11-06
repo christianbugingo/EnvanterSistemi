@@ -1,7 +1,10 @@
-/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app (application bundle)
+Local-only Inventory System 1.3.0
+Accepted Apple submission: 574c51af-bf90-46f7-8be8-84d00e28afb6
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app
+  app bundle (tree SHA-256) SHA-256: e9874c9b8dd7dc06211874cfe0cfb1b56b4292030b8618068b51e3250e3eda08
 /Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.dmg
-  bytes: 47469026
-  SHA-256: 92bdac69e131b6f792e175d5f0a6567f95c2fe2c2ad0101faecb62b36514d121
-Retained unchanged: /Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/windows/InventorySystem-Windows-x64.zip
-  SHA-256: 70d52d8467371506ea6b32eac52f17959913ba74c3f94f33e5bb2de6959348a5
-Intel/Linux artifacts: not generated; native hosts required.
+  file SHA-256: 1a319414f8290f2c2858a16f2aaaf62620e8d2584554e0ae32f661775123fdb9
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.dmg.sha256
+  file SHA-256: 3a738c7b432cac1411ced7a4688c47042bacb3b5a708a6eca8f153a8b7b85b3a
+Previous signed release archived at /Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2
+Windows, Intel macOS and Linux: not updated for this release.

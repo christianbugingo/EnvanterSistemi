@@ -1,0 +1,270 @@
+{
+  "logFormatVersion": 1,
+  "jobId": "574c51af-bf90-46f7-8be8-84d00e28afb6",
+  "status": "Accepted",
+  "statusSummary": "Ready for distribution",
+  "statusCode": 0,
+  "archiveFilename": "InventorySystem-1.3.0-macos-arm64.dmg",
+  "uploadDate": "2026-11-06T12:23:26.868Z",
+  "sha256": "81e3fbc73caf1fba6060167d1d59766e8c2dca78e46c9dd628d51d3142e4b368",
+  "ticketContents": [
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/app/lib/javafx-graphics-21.0.6-mac-aarch64.jar/libjavafx_iio.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "8ea93fc53cbc57f8142b3ec53f90fd2143ecae6f",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/app/lib/javafx-graphics-21.0.6-mac-aarch64.jar/libglass.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "6719e19fc242c925c0ff4c8d0272f7dd8e723463",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/app/lib/javafx-graphics-21.0.6-mac-aarch64.jar/libjavafx_font.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "fa9eb7b248c50d2f59ec2b9bfdfc54c17262654f",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/app/lib/javafx-graphics-21.0.6-mac-aarch64.jar/libprism_common.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "f1896cd3236ced39bec3b9ef564634ea77c1fb7a",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/app/lib/javafx-graphics-21.0.6-mac-aarch64.jar/libprism_es2.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "ba5c63f938feb2c4d9b7618dfbc58328d3688f2d",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/app/lib/javafx-graphics-21.0.6-mac-aarch64.jar/libdecora_sse.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "55f9b49c6e4d7387d0a506d9d5fe6902bf8bd390",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/app/lib/javafx-graphics-21.0.6-mac-aarch64.jar/libprism_sw.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "42624bfc75d9b8401a4e233d0e35d8015f64ff49",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "035dc176f5268deb569094499ab20ec434be1a0f",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/MacOS/InventorySystem",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "035dc176f5268deb569094499ab20ec434be1a0f",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/jspawnhelper",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "01339ac073716e8a01a2f28306536e1786e47b98",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libawt.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "8f27ddf60657cbc887e562d1b940da90549772d5",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libawt_lwawt.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "3c8f74e7dbbc04f2f6da99892cbf9dd5bc22a24f",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libfontmanager.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "4d442d265e9b6e05af4e9bdf33d793c491bae1bd",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libfreetype.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "6ae538583415de94382bff52a30ceb36b70eff40",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libinstrument.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "b90284bb76e97a15a94ba27bd58e0aeb359a3527",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libj2gss.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "0d03e77113243b40245c393270af37c7adb24917",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjava.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "858f5bbdceb2963ac95a6eb03a37b7c9a4c80b91",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjavajpeg.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "99f96c6f18d3d5633a65e30e6ba5862df3929fc7",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjawt.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "a7fbc1f23319ff5606767dd44eebe51c8dbadb0c",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjimage.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "e81ef81a179b5619e1d82bee2bc3fa2d32326ece",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjli.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "bff0503a8890a884ab58fc6a7e5221c9aed574e9",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjsig.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "da09b82d42f9cc3bfb6ed067bbbe05508220285e",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjsound.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "cfa365b231f46d49a468b56750d442af69a30d64",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/liblcms.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "a8e39f1b06c422296f48ae2589688e63a07a2fbd",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libmanagement.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "d696cbd8001db6b18a4c2a261bf05fa6fad92166",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libmlib_image.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "c640248f26551a5b9d80fc1d31b7b32d9afa4099",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libnet.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "a7186ea3a68687383f35e9024ffceb30670c704d",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libnio.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "416896882b6107b5363cc46ed1fda73ec1fa01f6",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libosx.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "6e176a23fec881c6ef5ed8f276c8dd0b074f0b41",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libosxapp.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "a7f00d548682f2200306fddc412ff204f315944a",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libosxkrb5.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "929f4f97c5e15b56cc00de07637bb85a2475a67c",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libosxsecurity.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "3d667f16ae06203844732f2e74b76cd5211c79ef",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libosxui.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "86e8edfd810d3a77222b25a3976dd1f48e040b11",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libprefs.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "33b4db8a1fb0530906e84dbdf670ec78dc17d500",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/librmi.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "57c9261d3e832fbd1eaed901db583ec411c2d56f",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libsplashscreen.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "8d68108e2f7a196f2ebba65f88fdd60aac35f92e",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libsyslookup.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "d0049d92977ccda1a0904b9aba95617befedbb2f",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libverify.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "0811e727c532db4a1003928b5158540d83cf1359",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libzip.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "5ebe1bf4219ae865d2dae11665350d02d418d74c",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/server/libjsig.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "da09b82d42f9cc3bfb6ed067bbbe05508220285e",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/server/libjvm.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "7cc1ec79b9981ff62ff091de53c9d4447eec7d2a",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/MacOS/libjli.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "64404539aa25c95b1010a1cc0c1ccb1244c64537",
+      "arch": "arm64"
+    },
+    {
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "e10ea127c905a58cdbd432f5d1c7c1ab4f7762f0"
+    }
+  ],
+  "issues": null
+}

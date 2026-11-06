@@ -14,11 +14,17 @@ class GlobalShopTest {
     }
     @AfterEach void cleanup(){AuthService.clearSession();for(String k:List.of("DB_URL","DB_USER","DB_PASSWORD"))System.clearProperty(k);}
     void owner(){LegalService.accept();auth.createFirstAdmin("owner","PrivateOwner123!");auth.login("owner","PrivateOwner123!");}
+    @Test void currencySymbolsSurviveReloadWithoutChangingOriginalPrecision(){
+        assertEquals("$ 12.50 USD",Currencies.snapshot("USD",2).format(new BigDecimal("12.5")));
+        assertEquals("$ 1.235 USD",Currencies.snapshot("USD",3).format(new BigDecimal("1.2345")));
+        assertEquals("1,250 RWF",Currencies.snapshot("RWF",0).format(new BigDecimal("1250")));
+        assertEquals("12.50 ?",Currencies.snapshot(null,2).format(new BigDecimal("12.5")));
+    }
     @Test void currentCatalogueAndStableFormatting(){
         assertTrue(Currencies.all().size()>150);assertEquals(-1,Currencies.get("XAU").minorUnits());
         try(Connection c=DBConnection.connect();Statement s=c.createStatement();ResultSet r=s.executeQuery("SELECT COUNT(*) FROM currencies")){r.next();assertEquals(Currencies.all().size(),r.getInt(1));}catch(SQLException ex){fail(ex);}
         assertEquals(0,Currencies.get("RWF").minorUnits());assertEquals(0,Currencies.get("JPY").minorUnits());assertEquals(2,Currencies.get("USD").minorUnits());assertEquals(3,Currencies.get("KWD").minorUnits());
-        gui.LocaleManager.setLanguage("tr");try{assertEquals("1,250 RWF",Currencies.get("RWF").format(new BigDecimal("1250")));assertEquals("12.50 USD",Currencies.get("USD").format(new BigDecimal("12.5")));assertEquals("12.346 KWD",Currencies.get("KWD").format(new BigDecimal("12.3455")));}finally{gui.LocaleManager.setLanguage("en");}
+        gui.LocaleManager.setLanguage("tr");try{assertEquals("1,250 RWF",Currencies.get("RWF").format(new BigDecimal("1250")));assertEquals("$ 12.50 USD",Currencies.get("USD").format(new BigDecimal("12.5")));assertEquals("12.346 KWD",Currencies.get("KWD").format(new BigDecimal("12.3455")));}finally{gui.LocaleManager.setLanguage("en");}
     }
     @Test void roundingAndTaxAtCurrencyPrecision(){
         assertEquals(new BigDecimal("13"),Currencies.get("RWF").round(new BigDecimal("12.5")));assertEquals(new BigDecimal("12.35"),Currencies.get("USD").round(new BigDecimal("12.345")));assertEquals(new BigDecimal("12.346"),Currencies.get("KWD").round(new BigDecimal("12.3455")));

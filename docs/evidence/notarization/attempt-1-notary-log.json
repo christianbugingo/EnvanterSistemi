@@ -1,0 +1,573 @@
+{
+  "logFormatVersion": 1,
+  "jobId": "e6e2c89a-71cd-4369-8f01-0bf86fe5df03",
+  "status": "Invalid",
+  "statusSummary": "Archive contains critical validation errors",
+  "statusCode": 4000,
+  "archiveFilename": "InventorySystem-1.3.0-macos-arm64.dmg",
+  "uploadDate": "2026-11-06T11:33:33.661Z",
+  "sha256": "d25b671099c0e07da5cb35dc4bc5f1004800e9575c3900a0c48d3af19f4a2dd0",
+  "ticketContents": null,
+  "issues": [
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/MacOS/InventorySystem",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/MacOS/InventorySystem",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/MacOS/InventorySystem",
+      "message": "The executable does not have the hardened runtime enabled.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087724",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/jspawnhelper",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/jspawnhelper",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/jspawnhelper",
+      "message": "The executable does not have the hardened runtime enabled.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087724",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libawt.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libawt.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libawt_lwawt.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libawt_lwawt.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libfontmanager.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libfontmanager.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libfreetype.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libfreetype.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libinstrument.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libinstrument.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libj2gss.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libj2gss.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjava.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjava.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjavajpeg.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjavajpeg.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjawt.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjawt.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjimage.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjimage.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjli.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjli.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjsig.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjsig.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjsound.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libjsound.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/liblcms.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/liblcms.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libmanagement.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libmanagement.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libmlib_image.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libmlib_image.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libnet.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libnet.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libnio.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libnio.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libosx.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libosx.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libosxapp.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libosxapp.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libosxkrb5.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libosxkrb5.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libosxsecurity.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libosxsecurity.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libosxui.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libosxui.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libprefs.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libprefs.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/librmi.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/librmi.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libsplashscreen.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libsplashscreen.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libsyslookup.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libsyslookup.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libverify.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libverify.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libzip.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/libzip.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/server/libjsig.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/server/libjsig.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/server/libjvm.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/Home/lib/server/libjvm.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/MacOS/libjli.dylib",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "InventorySystem-1.3.0-macos-arm64.dmg/InventorySystem.app/Contents/runtime/Contents/MacOS/libjli.dylib",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+      "architecture": "arm64"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+.............
+----------------------------------------------------------------------
+Ran 13 tests in 0.039s
+
+OK
+{
+  "local_only": true,
+  "submission_id": "test-submission",
+  "previous_release": "/Users/a/Documents/EnvanterSistemi/.tools/tmp/release-install-test-0eqnq6hi/docs/evidence/previous-release/20261106T121847Z-fccf2d2c",
+  "deleted_files": [],
+  "artifacts": [
+    "/Users/a/Documents/EnvanterSistemi/.tools/tmp/release-install-test-0eqnq6hi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app",
+    "/Users/a/Documents/EnvanterSistemi/.tools/tmp/release-install-test-0eqnq6hi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.dmg",
+    "/Users/a/Documents/EnvanterSistemi/.tools/tmp/release-install-test-0eqnq6hi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.dmg.sha256"
+  ],
+  "dmg_sha256": "ac6dd869b241f2d00499c9a5a328610176a646d61b521b8a3cd86370c3284df8"
+}
+/Users/a/Documents/EnvanterSistemi/.tools/tmp/packaging-test-c56o1gvt/InventorySystemi/dist/macos

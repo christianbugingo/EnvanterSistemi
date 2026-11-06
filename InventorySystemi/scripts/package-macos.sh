@@ -2,7 +2,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 requested_arch="${1:-$(uname -m)}"
-[[ $# -le 1 && ( "$requested_arch" == arm64 || "$requested_arch" == x86_64 ) ]] || { echo 'Usage: package-macos.sh [arm64|x86_64]' >&2; exit 2; }
+[[ $# -le 2 && ( "$requested_arch" == arm64 || "$requested_arch" == x86_64 ) && ( -z "${2:-}" || "$2" == --stage-only ) ]] || { echo 'Usage: package-macos.sh [arm64|x86_64] [--stage-only]' >&2; exit 2; }
 source scripts/package-common.sh
 setup_target "macos-$requested_arch"
 build_input
@@ -15,6 +15,11 @@ python3 scripts/metadata.py mac "$stage/InventorySystem.app"
 python3 scripts/package_target.py verify "$target" "$stage/InventorySystem.app"
 codesign --force --deep --sign - "$stage/InventorySystem.app"
 codesign --verify --deep --strict "$stage/InventorySystem.app"
+if [[ "${2:-}" == --stage-only ]]; then
+  mv "$stage/InventorySystem.app" "$stage/$stem.app"
+  echo "STAGED ONLY: $stage/$stem.app — existing dist/ release unchanged."
+  exit 0
+fi
 jpackage --type dmg --name InventorySystem --app-version "$version" \
   --app-image "$stage/InventorySystem.app" --dest "$stage"
 hdiutil verify "$stage/InventorySystem-$version.dmg"

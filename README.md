@@ -4,18 +4,27 @@
 
 An offline Java 21 / JavaFX application for local shop accounts, products, stock, sales, receipts, reports and backups. It has no network calls, cloud sync, telemetry, remote database or payment processing. Currency and optional tax are chosen by the shop; no country's currency is selected by default. Original code is proprietary, all rights reserved. Third-party software retains its own licenses.
 
+## Download / 1.3.0 local release
+
+**Only the macOS Apple Silicon arm64 DMG is designated for the 1.3.0 release.** The DMG and its SHA-256 sidecar are prepared locally in `InventorySystemi/dist/macos/`; no GitHub Release, website upload or public download was created by this task.
+
+- `InventorySystem-1.3.0-macos-arm64.dmg`
+- `InventorySystem-1.3.0-macos-arm64.dmg.sha256`
+
+Intel macOS, Linux and Windows builds are **not yet released** and **not updated for this release**. An existing Windows ZIP is retained as a historical build; it is not part of this release. See [RELEASE-1.3.0.md](docs/RELEASE-1.3.0.md) for the accepted notarization ID, checksum, tested scope and manual quarantine/upload instructions.
+
 ## Requirements and installation
 
 | Computer | Package / requirements | Real execution status |
 |---|---|---|
 | macOS Apple Silicon (M1 or newer) | arm64, macOS 11+ deployment target; `.app` / `.dmg` | Tested on this arm64 host, including a process-network-denied sale/receipt/backup workflow; other OS versions still need acceptance. |
-| macOS Intel | x86_64 JDK/JavaFX build, macOS 11+ deployment target | **Not built or tested here.** Requires a native Intel Mac; Rosetta is refused. |
-| Linux x86_64 | 64-bit Ubuntu/Debian-based graphical desktop; GTK 3, X11/XWayland, font/OpenGL libraries; `.tar.gz` app image | **Not built or tested here.** No Linux machine was available; no distribution version is certified yet. |
-| Windows 10/11 x64 | Complete portable ZIP, bundled runtime | ZIP structurally verified; **not execution-tested** on a Windows PC. Existing ZIP retained unchanged in this update. |
+| macOS Intel | x86_64 JDK/JavaFX build, macOS 11+ deployment target | **Not updated for this release; not yet released.** Native Intel build/execution not tested. |
+| Linux x86_64 | 64-bit Ubuntu/Debian-based graphical desktop; GTK 3, X11/XWayland, font/OpenGL libraries; `.tar.gz` app image | **Not updated for this release; not yet released.** Linux build/execution not tested. |
+| Windows 10/11 x64 | Complete portable ZIP, bundled runtime | ZIP structurally verified; **not execution-tested** on a Windows PC. **Not updated for this release; not yet released.** Existing ZIP retained unchanged. |
 
 Check your Mac: **Apple menu → About This Mac**. “Chip: Apple M…” means arm64; “Processor: Intel…” means x86_64. On Linux, `uname -m` must show `x86_64`.
 
-Mac: open `InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.dmg` and copy the app to Applications, or open `InventorySystem-1.3.0-macos-arm64.app` directly. The Intel builder produces separately named `InventorySystem-1.3.0-macos-x86_64.app/.dmg` when run on an Intel Mac. Close older copies first. Mac builds are ad-hoc signed, not Developer ID signed/notarized.
+Mac: open `InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.dmg` and copy the app to Applications, or open `InventorySystem-1.3.0-macos-arm64.app` directly. The Intel builder produces separately named `InventorySystem-1.3.0-macos-x86_64.app/.dmg` when run on an Intel Mac. Close older copies first. The published arm64 build is Developer ID signed, notarized by Apple and stapled. The ordinary development packager creates ad-hoc builds; use the separate signing/notarization workflow for public releases. See [NOTARIZATION.md](docs/NOTARIZATION.md).
 
 Linux: on a Linux build machine, the builder creates `InventorySystemi/dist/linux/InventorySystem-1.3.0-linux-x86_64.tar.gz`. Extract the whole archive and run `InventorySystem/launch.sh`. Move the folder to a permanent location before optionally running `InventorySystem/install-desktop.sh` to add its menu entry. Remove `~/.local/share/applications/com.coodiclabs.inventorysystem.desktop` when uninstalling that entry (or the corresponding XDG_DATA_HOME location).
 
@@ -38,7 +47,7 @@ Each fresh computer starts an independent shop. Copying the application does not
 
 Admin → File → **Admin settings** changes currency, tax and language. Changing currency requires confirmation: existing sales retain their original currency, precision and tax. Current product prices are interpreted in the new currency and rounded to its minor units; **no exchange conversion** occurs. Review prices before selling.
 
-Amounts use consistent grouping and code suffixes, independent of UI language: `1,250 RWF`, `12.50 USD`, `1.234 KWD`. Names and symbols are shown in the currency chooser. Prices and line totals use BigDecimal and HALF_UP at the currency precision. Sales without a recorded currency from older versions remain `?`, with their historical two-decimal amounts; a new shop currency is never silently applied to them. Keep original records to identify those legacy amounts.
+Amounts include the bundled symbol when it differs from the code, with consistent grouping and code suffixes independent of UI language: `1,250 RWF`, `$ 12.50 USD`, `1.234 KWD`. Names and symbols are shown in the currency chooser. Prices and line totals use BigDecimal and HALF_UP at the currency precision. Sales without a recorded currency from older versions remain `?`, with their historical two-decimal amounts; a new shop currency is never silently applied to them. Keep original records to identify those legacy amounts.
 
 The tax field shows “If you do not use tax, enter 00.” Both `00` and `0` store zero; default is 0. Tax rate accepts 0–100%, with up to four decimals. Tax is calculated **once per checkout**, after rounded line totals are summed, at that checkout's currency precision. With tax above zero, the screen, receipt and report show subtotal, tax and total; with zero, the receipt shows only total. Reports keep currencies separate. Tax across unit-separated report rows is allocated with rounding residue on the last unit; voided lines are excluded and remaining checkout tax is recomputed using its original rate. Original receipts retain their original amounts and mark voids.
 

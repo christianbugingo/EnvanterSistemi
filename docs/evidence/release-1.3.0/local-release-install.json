@@ -1,0 +1,2348 @@
+{
+  "local_only": true,
+  "submission_id": "574c51af-bf90-46f7-8be8-84d00e28afb6",
+  "previous_release": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2",
+  "deleted_files": [],
+  "moved_files": [
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/CodeResources",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/CodeResources",
+      "sha256": "8bdf1301b68f61488ce9842338dd9366661405bdc2f9718fb2d3bac76550501a",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Info.plist",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/Info.plist",
+      "sha256": "f2a001177f52fe30c1ac85efb8fd0972a6472fa754ac7ff786fddee15d48867d",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/MacOS/InventorySystem",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/MacOS/InventorySystem",
+      "sha256": "9d2663ca93bec845373858457ba60264ba7906601509bdbedd0f13f3bea94081",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/PkgInfo",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/PkgInfo",
+      "sha256": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/InventorySystem.icns",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/InventorySystem.icns",
+      "sha256": "fbaece5a7440ffa1ed69de295ac31cb5c2064ceec7b87b55be9f498318d2f43e",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/LICENSE.txt",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/LICENSE.txt",
+      "sha256": "e76d11406c8100aa49403114662d012fb1542d9b2f5bf5b5c11db2713d3aeb0d",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/PRIVACY.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/PRIVACY.md",
+      "sha256": "b237100cac420a2866b061de05a7c984c3fde2a9b8bf7dbe60c941b0bfa0eb82",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/TERMS.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/TERMS.md",
+      "sha256": "5f1503f3fefbe1efe6bfd64cfd24bd3db91f4d6fc3d189b2249798610209e2a5",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/THIRD-PARTY-NOTICES.txt",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/THIRD-PARTY-NOTICES.txt",
+      "sha256": "78b7210640f8564ac12a84bc4809b994f291bd650c6dcf724f32f5c252f41845",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/app-metadata.properties",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/app-metadata.properties",
+      "sha256": "2fd3a6c2535bc40f4cb5315586354ee4e13ff5a9dd4bd8cc083c20691af2358f",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/apache/LICENSE.txt",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/apache/LICENSE.txt",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/apiguardian/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/apiguardian/LICENSE",
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/h2/LICENSE.txt",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/h2/LICENSE.txt",
+      "sha256": "827b84bb8f84dbd60d1a8955cefab142d65cc17d267e32996db400138a1e0fcf",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/h2/MPL-2.0.txt",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/h2/MPL-2.0.txt",
+      "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/javafx/ADDITIONAL_LICENSE_INFO.txt",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/javafx/ADDITIONAL_LICENSE_INFO.txt",
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/javafx/ASSEMBLY_EXCEPTION.txt",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/javafx/ASSEMBLY_EXCEPTION.txt",
+      "sha256": "75292f03bf23d3db7c985aecc191029b93883200721ed23ed34a2e601463df33",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/javafx/LICENSE.txt",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/javafx/LICENSE.txt",
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/jbcrypt/LICENSE.txt",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/jbcrypt/LICENSE.txt",
+      "sha256": "a85927641ed1c8b95a5cef79b127b2392d80e0aa9d8e2d6f3b7b7401c5396af9",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/junit/LICENSE-notice.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/junit/LICENSE-notice.md",
+      "sha256": "c7d843e0faf8a251278c9220f6b5326a42a01f08b855c1ec871bcef6211a7e2a",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/junit/LICENSE.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/junit/LICENSE.md",
+      "sha256": "5aa4cd44c111add178d1c2e2fe36d58a484012c80167df925f826cd64d411bf0",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/logback/EPL-1.0.html",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/logback/EPL-1.0.html",
+      "sha256": "a40741b59364cc49449255e9b9bfe1fcfe6a2e7ab4d37ca89db3bacbfb14e9d2",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/logback/LICENSE.txt",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/logback/LICENSE.txt",
+      "sha256": "39a40e634ad63b550cc3e9e20d5a8dd740bed89f22650150b55fc298b9be736e",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/opentest4j/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/opentest4j/LICENSE",
+      "sha256": "c6596eb7be8581c18be736c846fb9173b69eccf6ef94c5135893ec56bd92ba08",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/slf4j/LICENSE.txt",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/slf4j/LICENSE.txt",
+      "sha256": "4e7f90c86ab51278228bce153122f1d8df30149d13ce9ef524c8444a84c32dcc",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/architecture-check.json",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/architecture-check.json",
+      "sha256": "351b96021a1b417f863f54cd0263eeae7e2ce77b28032a8726cc8e3dfd9b2977",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/_CodeSignature/CodeResources",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/_CodeSignature/CodeResources",
+      "sha256": "49dce90dd1d04cf68305ad390beb8bdd61f30b0abfd1f84ca85ba4756fddd755",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/app/.jpackage.xml",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/app/.jpackage.xml",
+      "sha256": "d33d9d01c2bf9a69b225ae5174c01b5785daffcb6f4c9a7f572d2d1571e03386",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/app/InventorySystem.cfg",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/app/InventorySystem.cfg",
+      "sha256": "d5a0fddb6d38cfdceee9fa1bc73d556b66d5f844aea2b6f220430bef1d361c3c",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/app/inventory-system-1.3.0.jar",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/app/inventory-system-1.3.0.jar",
+      "sha256": "308e507ca3d9b1926a72b70372c283c94f7c9ccdb8be79284e263e2c0a17381b",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/h2-2.3.232.jar",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/h2-2.3.232.jar",
+      "sha256": "8dae62d22db8982c3dcb3826edb9c727c5d302063a67eef7d63d82de401f07d3",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/javafx-base-21.0.6-mac-aarch64.jar",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/javafx-base-21.0.6-mac-aarch64.jar",
+      "sha256": "cd8b4f765343a78edaa53a05dd07fbd06b817fbaa8e8388829d81dcaa644ed2a",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/javafx-base-21.0.6.jar",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/javafx-base-21.0.6.jar",
+      "sha256": "9a87f4251873a273a7c5a9e91ed9b63ff4ffbbf28b8a9f57e983208410fc3462",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/javafx-controls-21.0.6-mac-aarch64.jar",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/javafx-controls-21.0.6-mac-aarch64.jar",
+      "sha256": "00ed3f55bdbf6b1787bc39758bafccb266eea8115cdd511164566b27c2e1acc4",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/javafx-controls-21.0.6.jar",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/javafx-controls-21.0.6.jar",
+      "sha256": "3a8a5d956dedc148556d854a328ca6515ee4320bb3c1d9e626a001e7a0990a96",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/javafx-graphics-21.0.6-mac-aarch64.jar",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/javafx-graphics-21.0.6-mac-aarch64.jar",
+      "sha256": "354d6bf8fc570694eb1e31b0d85a6a0319d505ae9dff3cedaac16dc1a15e35a6",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/javafx-graphics-21.0.6.jar",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/javafx-graphics-21.0.6.jar",
+      "sha256": "d0562705a63b7dc7802840a3ae067cce351c62c6a57d2a678f7c67a6609d55bd",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/jbcrypt-0.4.jar",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/jbcrypt-0.4.jar",
+      "sha256": "e183f6f59404fc1e12073cfea4ace7ea103c900463cd21fb609a7c617ecdf624",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/logback-classic-1.5.18.jar",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/logback-classic-1.5.18.jar",
+      "sha256": "3e1533d0321f8815eef46750aee0111b41554f9a4644c3c4d2d404744b09f60f",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/logback-core-1.5.18.jar",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/logback-core-1.5.18.jar",
+      "sha256": "85139e7b57b464f8e5e36326dd81317648bed199ccc4f98cd42585f8d7571027",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/slf4j-api-2.0.17.jar",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/slf4j-api-2.0.17.jar",
+      "sha256": "7b751d952061954d5abfed7181c1f645d336091b679891591d63329c622eb832",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/jaxp.properties",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/jaxp.properties",
+      "sha256": "7d95c49465d0c836d608d02856d3b097934dfb5dc4bd2279affaf337d045b708",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/logging.properties",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/logging.properties",
+      "sha256": "b62d2733ab99556b108a1951d894c5a8d76b1ac7a00c02c388f9eb9be046c56f",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/net.properties",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/net.properties",
+      "sha256": "2e070ed1d97052f0ce8771ed2ef74a38d7c260a45fde7a3682c8844e5fdf58a4",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/java.policy",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/java.policy",
+      "sha256": "d51bcab7ed301caeff3779a5e777e6019864cecee5e2abc102ef991b0de77af2",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/java.security",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/java.security",
+      "sha256": "a7975ff49305cdf5082be1498fc1b736e3ad69e8717357294f76106c0c772bdb",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/policy/README.txt",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/policy/README.txt",
+      "sha256": "6da0747334b0fea7592fd92614b2bbc8b126535e129b1fee483774d914e98eb5",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/policy/limited/default_US_export.policy",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/policy/limited/default_US_export.policy",
+      "sha256": "758b930a526fc670ab7537f8c26321527050a31f5f42149a2dda623c56a0a1a9",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/policy/limited/default_local.policy",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/policy/limited/default_local.policy",
+      "sha256": "2b2627548e61316150d47ffc3e6cad465ca05b3cccd4785eb7d21aa7baa0f441",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/policy/limited/exempt_local.policy",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/policy/limited/exempt_local.policy",
+      "sha256": "8c3d7648abcd95a272ce12db870082937f4d7f6878d730d83cb7fbb31eb8b2c9",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/policy/unlimited/default_US_export.policy",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/policy/unlimited/default_US_export.policy",
+      "sha256": "758b930a526fc670ab7537f8c26321527050a31f5f42149a2dda623c56a0a1a9",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/policy/unlimited/default_local.policy",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/policy/unlimited/default_local.policy",
+      "sha256": "8d8a318e6d90dfd7e26612d2b6385aa704f686ca6134c551f8928418d92b851a",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/sound.properties",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/sound.properties",
+      "sha256": "299c2360b6155eb28990ec49cd21753f97e43442fe8fab03e04f3e213df43a66",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/ADDITIONAL_LICENSE_INFO",
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/ASSEMBLY_EXCEPTION",
+      "sha256": "75292f03bf23d3db7c985aecc191029b93883200721ed23ed34a2e601463df33",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/LICENSE",
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/aes.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/aes.md",
+      "sha256": "45c6d4da48325edfbff3dcf71c704e504c057904435ed23c6d57046d551eb69d",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/asm.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/asm.md",
+      "sha256": "683be15695bd248272d60f5b7fbe5e126a935ea6bf231a624a9aa164733e1d1d",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/c-libutl.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/c-libutl.md",
+      "sha256": "bef40679922d6fdfb7e4ddb223ad6722300f6054ba737bbf6188d60fcec517f9",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/cldr.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/cldr.md",
+      "sha256": "19515e14a240e022640e95b61b5095127fa9690755950b4a2b0a02e783e08163",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/icu.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/icu.md",
+      "sha256": "1bf28459c6e0af9f3429f4f8becd1668d6544055f8df240277456bc4b3d8a752",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/public_suffix.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/public_suffix.md",
+      "sha256": "861de1e4992a7d28f1de25c73cd50d26a94779ebd749c0643fecfa56442c3429",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/siphash.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/siphash.md",
+      "sha256": "5a792b5a74ad2a5f3d6a7ad8b7a841116e58a772c18bc6e392320a365b222c76",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/unicode.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/unicode.md",
+      "sha256": "6f72f10d166b2c2e8a395e03e734c5afc852b59aeca73ced124f6b9c96268d53",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/zlib.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/zlib.md",
+      "sha256": "c9c70c36a1f0325e8788771906202d42ba6ab4205caca44ec0f665707e83226b",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.compiler/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.compiler/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.compiler/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.compiler/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.compiler/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.compiler/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.datatransfer/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.datatransfer/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.datatransfer/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.datatransfer/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.datatransfer/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.datatransfer/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/colorimaging.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/colorimaging.md",
+      "sha256": "04d61e3e8e71dd452ebe52008af5378d9f6640d14578aeb515dc5375973b0189",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/freetype.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/freetype.md",
+      "sha256": "553e804baecb7de7129d77c7259a6b70037d1893f1c600b41b35201695fb7758",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/giflib.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/giflib.md",
+      "sha256": "206aab89ec75968e48a6a1ed6df7d8b9bfb7aea12cbe4c9345d93e5d97460a25",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/harfbuzz.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/harfbuzz.md",
+      "sha256": "5ec7cba7f8e7fc3a089213140aab6fa1b3bd5bf8a91bf8bddb3b8d315fc5f7d0",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/jpeg.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/jpeg.md",
+      "sha256": "c1dfb9719a71ad9f861f8728550542d681e25c8ef40e6393606e6e2a0c1d653a",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/lcms.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/lcms.md",
+      "sha256": "843f9f6fa9c3f8109fcf4d5fe74caf7f2ae8e9bcd92238e4aff2d428c932b24b",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/libpng.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/libpng.md",
+      "sha256": "f73afb394792f3aeecd959e89487603677a430e56b44eba596d8b572accfd540",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/mesa3d.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/mesa3d.md",
+      "sha256": "63f4e6f75caebbccb95d903fb43e46ac7111b3624d0a34f146b276d7d9e7b152",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/pipewire.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/pipewire.md",
+      "sha256": "56a8fb1652c70ac204d13bb52ca4d678162e7d21a97d10209c2a633de8082de0",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/xwd.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/xwd.md",
+      "sha256": "1d4ffa93c87f35084b02a7aa90a21084b4019db4fe1003c2e5ce775b4a384f59",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.instrument/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.instrument/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.instrument/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.instrument/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.instrument/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.instrument/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.logging/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.logging/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.logging/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.logging/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.logging/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.logging/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.management/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.management/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.management/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.management/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.management/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.management/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.management.rmi/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.management.rmi/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.management.rmi/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.management.rmi/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.management.rmi/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.management.rmi/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.naming/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.naming/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.naming/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.naming/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.naming/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.naming/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.net.http/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.net.http/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.net.http/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.net.http/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.net.http/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.net.http/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.prefs/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.prefs/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.prefs/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.prefs/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.prefs/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.prefs/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.rmi/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.rmi/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.rmi/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.rmi/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.rmi/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.rmi/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.scripting/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.scripting/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.scripting/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.scripting/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.scripting/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.scripting/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.se/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.se/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.se/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.se/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.se/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.se/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.security.jgss/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.security.jgss/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.security.jgss/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.security.jgss/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.security.jgss/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.security.jgss/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.security.sasl/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.security.sasl/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.security.sasl/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.security.sasl/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.security.sasl/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.security.sasl/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.sql/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.sql/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.sql/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.sql/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.sql/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.sql/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.sql.rowset/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.sql.rowset/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.sql.rowset/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.sql.rowset/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.sql.rowset/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.sql.rowset/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.transaction.xa/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.transaction.xa/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.transaction.xa/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.transaction.xa/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.transaction.xa/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.transaction.xa/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/bcel.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/bcel.md",
+      "sha256": "cd578186ad93de46cca29ec8ace2b11f9da751987f3f140e6095c528596cc8c1",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/dom.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/dom.md",
+      "sha256": "6686e8877667584a3a7c07344baadca1a03e29f677162d87c3c0811e990d1148",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/jcup.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/jcup.md",
+      "sha256": "8d5dcfdf50455a3c34c753a98f21e953248af200415a9084e3f102cb6c43b8bf",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/xalan.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/xalan.md",
+      "sha256": "c27eb875da4be683d4d7422be986e5e30f636ede31958ff1d39f9cd6109e7a00",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/xerces.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/xerces.md",
+      "sha256": "4a6bf6b367193ee68681cb2d9fed30ffc5d62dd2d477bd62e0271707d71b3244",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml.crypto/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml.crypto/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml.crypto/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml.crypto/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml.crypto/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml.crypto/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml.crypto/santuario.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml.crypto/santuario.md",
+      "sha256": "d08690d25f660f145c73365d260ed522cd0aace8a0e1396706551b7a1ae8c9a3",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/jdk.unsupported/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/jdk.unsupported/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/jdk.unsupported/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/jdk.unsupported/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/jdk.unsupported/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/jdk.unsupported/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/classlist",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/classlist",
+      "sha256": "01b9c997aa616618b9cd713dda43b66fbcf5f25976cfe12240415d0641db801a",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/fontconfig.bfc",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/fontconfig.bfc",
+      "sha256": "5409952a218126c5c11cf0e4963665711aeeab50f5648264d70866fca705a950",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/fontconfig.properties.src",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/fontconfig.properties.src",
+      "sha256": "c8d20a4a39240665252306bdd3dbc8d71e1e246c8cd8c7985b32e4101658a148",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/jrt-fs.jar",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/jrt-fs.jar",
+      "sha256": "d4c5d1b596c178c97ede7dafda7918b46884de0240f00db20b7294ed1d6a79fc",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/jspawnhelper",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/jspawnhelper",
+      "sha256": "09fbe62e5270a334b06ae2a517c393f15a8da8386ba0b8e99e680b4cb15b5377",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/jvm.cfg",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/jvm.cfg",
+      "sha256": "aa9efb969444c1484e29adecab55a122458090616e766b2f1230ef05bc3867e0",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libawt.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libawt.dylib",
+      "sha256": "162ff11f561fea328cc3a8be3b3ffbab7f439f4f6439474bedbbed071f2c97fd",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libawt_lwawt.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libawt_lwawt.dylib",
+      "sha256": "ed77cccaffffdc9549f1412cddff97cf86d1273b465612371c7f9a2f566dfb8c",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libfontmanager.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libfontmanager.dylib",
+      "sha256": "d19e4ccad7ced4d40ea129dd683b372309494c74b19cb57444176ef20c5c09dc",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libfreetype.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libfreetype.dylib",
+      "sha256": "613eca1c36f5cec003848c5e7c08476773ddb241316315ebb596ef433512ead3",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libinstrument.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libinstrument.dylib",
+      "sha256": "887a97236febe46c7cec95a6465710a50f1a170caa7f76e4675405fbc54a074a",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libj2gss.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libj2gss.dylib",
+      "sha256": "362dd1f48483eb45a856e89a8d48cb12634e12ed19e4dc34f91276478024de95",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjava.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjava.dylib",
+      "sha256": "e8e49fe6778a3ea9e9eb06b6486205776ad1907b1f79a4b4ad6266d1aec62627",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjavajpeg.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjavajpeg.dylib",
+      "sha256": "e545f95247544595dd988000b2412d3da8194703d22c1d3b48ef44c187df8983",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjawt.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjawt.dylib",
+      "sha256": "9b9aab800a3b540d089d8a29718f3110b19b446c78e970e1dc52754bc29ac0e8",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjimage.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjimage.dylib",
+      "sha256": "68e7110e86d4de43a4067143d1c0d4ebffb98d0be4ed4a81c344ab840a55728f",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjli.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjli.dylib",
+      "sha256": "6b2378ed10e5fb5669e74c825f7ae2dd050073375e02116b3c2bfdc1c03563e7",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjsig.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjsig.dylib",
+      "sha256": "e10817c8af5b543238ec9e79558d8dc931f511e538722ac414a5510dec5ee2b9",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjsound.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjsound.dylib",
+      "sha256": "6285f2e4f5d04a9f3741ab941711771386573ffe4a71c8007d5778473ec879a9",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/liblcms.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/liblcms.dylib",
+      "sha256": "0aaf93bcd8b3e2c31f643ccc569f5f118078cfcc0a62ba4111785f14722b216a",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libmanagement.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libmanagement.dylib",
+      "sha256": "88fa708403d0a4c696e1951c4caad591b6970693046f5125698b2f43a508d535",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libmlib_image.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libmlib_image.dylib",
+      "sha256": "0f7055fb2c2d4287434b567d5dff6842261768c77a478cf563009f6995c37aa9",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libnet.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libnet.dylib",
+      "sha256": "2e16357a046479cc186f266026c84faabcbbe6181c108010c47710863adef4f1",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libnio.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libnio.dylib",
+      "sha256": "bea0c2928fef1c024cff5a7c52763bc4ac4ef2540835923ef61d0b806f376c1e",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosx.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosx.dylib",
+      "sha256": "49dc41e8a5a64b9004afa9f76325af478f3fe28922eef6a24360bb179075b19a",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxapp.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxapp.dylib",
+      "sha256": "1b707edecfddf6312f2309e628fe063c1e88c5d32b47b05a300f372d95014247",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxkrb5.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxkrb5.dylib",
+      "sha256": "164166cba5f1991679b63e9517dd6b393654b6f2f30d505b2545a802f4d533f1",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxsecurity.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxsecurity.dylib",
+      "sha256": "ebeeaf4940a7534d2aac83107a710ef72badfdf94b0c7117e5d460d4d789a6ab",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxui.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxui.dylib",
+      "sha256": "1a859932ed3e2c76f605d86f4377a33c379e053a6ad57f9bec2ba1d28cc0e692",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libprefs.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libprefs.dylib",
+      "sha256": "d0eb14b0ebb2f79d298f85d67bfbaad4732dd44df9c417083d4d3fb90e419b90",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/librmi.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/librmi.dylib",
+      "sha256": "646d98e254b52b6adf2fa2dad21429b7e79500bb6d6b72a353f767cb4beb7c6f",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libsplashscreen.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libsplashscreen.dylib",
+      "sha256": "5ea91b23324bc0828608c6ba8b425de8f1d0ffa311c0fe3915b97da8fc3a2ae6",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libsyslookup.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libsyslookup.dylib",
+      "sha256": "2889f8db0bf63cc52e48956f9c03796d7c4f5ef1a7e8d749c8e1846d64db7e95",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libverify.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libverify.dylib",
+      "sha256": "88959bc799b0b5e4407ad557e9b23b186d75d9e7a178bb115c3b75c559855c18",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libzip.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libzip.dylib",
+      "sha256": "d7335563d2128b47967946bc8894d64547522091f2abfbe053679caaa40274ee",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/modules",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/modules",
+      "sha256": "8b4df5c31f2b1fd9e3b374e67e934e228a08caa5b51ac20e8173add8afb0599e",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/psfont.properties.ja",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/psfont.properties.ja",
+      "sha256": "5a4bd51b969bf187ff86d94f4a71fdfbfa602762975fa3c73d264b4575f7c78f",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/psfontj2d.properties",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/psfontj2d.properties",
+      "sha256": "780c565d5af3ee6f68b887b75c041cdf46a0592f67012f12eeb691283e92630a",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/security/blocked.certs",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/security/blocked.certs",
+      "sha256": "2596bb6dda83c66d96c5a252d7b2ae1f24cc1ae3f1890223b4f3591a8d52bf10",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/security/cacerts",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/security/cacerts",
+      "sha256": "b754182d18788dcc3d34213665a027e4f8d1dc620a9fa63e45f7326f3672881e",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/security/default.policy",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/security/default.policy",
+      "sha256": "9b77a722ab832082b8f9312f72da1528989a3ca1b9fa4f9bf32767dfd5ebe099",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/security/public_suffix_list.dat",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/security/public_suffix_list.dat",
+      "sha256": "16b42002aa6f83a7763c4cdbd399ecf738460377d447e362884495545afd60a3",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/server/libjsig.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/server/libjsig.dylib",
+      "sha256": "bc5966e32b02afd6f58abc1d05d11e0fa3a35766a771ba30436a6daad66910e5",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/server/libjvm.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/server/libjvm.dylib",
+      "sha256": "23d3fb46b54763998b665fac5ed4323a2fd5eb1c6bca234b51929ff225cc7103",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/shaders.metallib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/shaders.metallib",
+      "sha256": "5c06d99e36d98a4bade040412d6454cee1d4aaa90788cfd760f7960c87319460",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/tzdb.dat",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/tzdb.dat",
+      "sha256": "a02e3a23d67255782b11ab81070902235ab564080f0f65ffe2a989cdaa86fe89",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/release",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/release",
+      "sha256": "093110c29fa1fa9c6d9b86f043f06bd4ce88053c2502b6de320659f879b5b613",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Info.plist",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Info.plist",
+      "sha256": "366d62e920adc936180b059963948d7a43fa8def7804ae6e52ba71bafd83796b",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/MacOS/libjli.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/MacOS/libjli.dylib",
+      "sha256": "15e927edff20db03f3e2b2582b66163e33183ac9f685ddcf4c093f7cc59adadd",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/_CodeSignature/CodeResources",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/_CodeSignature/CodeResources",
+      "sha256": "7eb8c6f7a6b941db6b8e6ec334c16d2a90a1d869195dd5de0ff318b6b1494a30",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.dmg",
+      "to": "/Users/a/Documents/EnvanterSistemi/docs/evidence/previous-release/20261106T122451Z-94ce9ca2/InventorySystem-1.3.0-macos-arm64.dmg",
+      "sha256": "ead72caa52f2746add26bf7e9e51e2cab2c89fa253aad32245db3a71a12b6a8f",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/CodeResources",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/CodeResources",
+      "sha256": "870a43c5bdcb8334458671fad46fc15b497e1512d673752cec7a53c9132851b1",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/Info.plist",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Info.plist",
+      "sha256": "f2a001177f52fe30c1ac85efb8fd0972a6472fa754ac7ff786fddee15d48867d",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/MacOS/InventorySystem",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/MacOS/InventorySystem",
+      "sha256": "1720ec44987fd4debfc26090768a290d9830e8bf8dde92b7a16408cd8188e7f2",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/PkgInfo",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/PkgInfo",
+      "sha256": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/InventorySystem.icns",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/InventorySystem.icns",
+      "sha256": "fbaece5a7440ffa1ed69de295ac31cb5c2064ceec7b87b55be9f498318d2f43e",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/LICENSE.txt",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/LICENSE.txt",
+      "sha256": "e76d11406c8100aa49403114662d012fb1542d9b2f5bf5b5c11db2713d3aeb0d",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/PRIVACY.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/PRIVACY.md",
+      "sha256": "b237100cac420a2866b061de05a7c984c3fde2a9b8bf7dbe60c941b0bfa0eb82",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/TERMS.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/TERMS.md",
+      "sha256": "5f1503f3fefbe1efe6bfd64cfd24bd3db91f4d6fc3d189b2249798610209e2a5",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/THIRD-PARTY-NOTICES.txt",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/THIRD-PARTY-NOTICES.txt",
+      "sha256": "78b7210640f8564ac12a84bc4809b994f291bd650c6dcf724f32f5c252f41845",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/app-metadata.properties",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/app-metadata.properties",
+      "sha256": "2fd3a6c2535bc40f4cb5315586354ee4e13ff5a9dd4bd8cc083c20691af2358f",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/apache/LICENSE.txt",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/apache/LICENSE.txt",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/apiguardian/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/apiguardian/LICENSE",
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/h2/LICENSE.txt",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/h2/LICENSE.txt",
+      "sha256": "827b84bb8f84dbd60d1a8955cefab142d65cc17d267e32996db400138a1e0fcf",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/h2/MPL-2.0.txt",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/h2/MPL-2.0.txt",
+      "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/javafx/ADDITIONAL_LICENSE_INFO.txt",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/javafx/ADDITIONAL_LICENSE_INFO.txt",
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/javafx/ASSEMBLY_EXCEPTION.txt",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/javafx/ASSEMBLY_EXCEPTION.txt",
+      "sha256": "75292f03bf23d3db7c985aecc191029b93883200721ed23ed34a2e601463df33",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/javafx/LICENSE.txt",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/javafx/LICENSE.txt",
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/jbcrypt/LICENSE.txt",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/jbcrypt/LICENSE.txt",
+      "sha256": "a85927641ed1c8b95a5cef79b127b2392d80e0aa9d8e2d6f3b7b7401c5396af9",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/junit/LICENSE-notice.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/junit/LICENSE-notice.md",
+      "sha256": "c7d843e0faf8a251278c9220f6b5326a42a01f08b855c1ec871bcef6211a7e2a",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/junit/LICENSE.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/junit/LICENSE.md",
+      "sha256": "5aa4cd44c111add178d1c2e2fe36d58a484012c80167df925f826cd64d411bf0",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/logback/EPL-1.0.html",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/logback/EPL-1.0.html",
+      "sha256": "a40741b59364cc49449255e9b9bfe1fcfe6a2e7ab4d37ca89db3bacbfb14e9d2",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/logback/LICENSE.txt",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/logback/LICENSE.txt",
+      "sha256": "39a40e634ad63b550cc3e9e20d5a8dd740bed89f22650150b55fc298b9be736e",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/opentest4j/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/opentest4j/LICENSE",
+      "sha256": "c6596eb7be8581c18be736c846fb9173b69eccf6ef94c5135893ec56bd92ba08",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/slf4j/LICENSE.txt",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/Legal/legal-licenses/slf4j/LICENSE.txt",
+      "sha256": "4e7f90c86ab51278228bce153122f1d8df30149d13ce9ef524c8444a84c32dcc",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/architecture-check.json",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/Resources/architecture-check.json",
+      "sha256": "351b96021a1b417f863f54cd0263eeae7e2ce77b28032a8726cc8e3dfd9b2977",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/_CodeSignature/CodeResources",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/_CodeSignature/CodeResources",
+      "sha256": "c02cd08d17598df801a36560bb1fcca15603e73e7a38eb3b6c7ad46e47f0d0cc",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/app/.jpackage.xml",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/app/.jpackage.xml",
+      "sha256": "d33d9d01c2bf9a69b225ae5174c01b5785daffcb6f4c9a7f572d2d1571e03386",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/app/InventorySystem.cfg",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/app/InventorySystem.cfg",
+      "sha256": "d5a0fddb6d38cfdceee9fa1bc73d556b66d5f844aea2b6f220430bef1d361c3c",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/app/inventory-system-1.3.0.jar",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/app/inventory-system-1.3.0.jar",
+      "sha256": "3842b289eadbbbea7bdd10e2b674354f0dd5bceabac0b79bf1f70f1780067421",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/h2-2.3.232.jar",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/h2-2.3.232.jar",
+      "sha256": "8dae62d22db8982c3dcb3826edb9c727c5d302063a67eef7d63d82de401f07d3",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/javafx-base-21.0.6-mac-aarch64.jar",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/javafx-base-21.0.6-mac-aarch64.jar",
+      "sha256": "cd8b4f765343a78edaa53a05dd07fbd06b817fbaa8e8388829d81dcaa644ed2a",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/javafx-base-21.0.6.jar",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/javafx-base-21.0.6.jar",
+      "sha256": "9a87f4251873a273a7c5a9e91ed9b63ff4ffbbf28b8a9f57e983208410fc3462",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/javafx-controls-21.0.6-mac-aarch64.jar",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/javafx-controls-21.0.6-mac-aarch64.jar",
+      "sha256": "00ed3f55bdbf6b1787bc39758bafccb266eea8115cdd511164566b27c2e1acc4",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/javafx-controls-21.0.6.jar",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/javafx-controls-21.0.6.jar",
+      "sha256": "3a8a5d956dedc148556d854a328ca6515ee4320bb3c1d9e626a001e7a0990a96",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/javafx-graphics-21.0.6-mac-aarch64.jar",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/javafx-graphics-21.0.6-mac-aarch64.jar",
+      "sha256": "a89e469d47d37711fa36888838d33dd1055684220ae6e4e3971171fc0a89a65f",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/javafx-graphics-21.0.6.jar",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/javafx-graphics-21.0.6.jar",
+      "sha256": "d0562705a63b7dc7802840a3ae067cce351c62c6a57d2a678f7c67a6609d55bd",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/jbcrypt-0.4.jar",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/jbcrypt-0.4.jar",
+      "sha256": "e183f6f59404fc1e12073cfea4ace7ea103c900463cd21fb609a7c617ecdf624",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/logback-classic-1.5.18.jar",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/logback-classic-1.5.18.jar",
+      "sha256": "3e1533d0321f8815eef46750aee0111b41554f9a4644c3c4d2d404744b09f60f",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/logback-core-1.5.18.jar",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/logback-core-1.5.18.jar",
+      "sha256": "85139e7b57b464f8e5e36326dd81317648bed199ccc4f98cd42585f8d7571027",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/slf4j-api-2.0.17.jar",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/app/lib/slf4j-api-2.0.17.jar",
+      "sha256": "7b751d952061954d5abfed7181c1f645d336091b679891591d63329c622eb832",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/jaxp.properties",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/jaxp.properties",
+      "sha256": "7d95c49465d0c836d608d02856d3b097934dfb5dc4bd2279affaf337d045b708",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/logging.properties",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/logging.properties",
+      "sha256": "b62d2733ab99556b108a1951d894c5a8d76b1ac7a00c02c388f9eb9be046c56f",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/net.properties",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/net.properties",
+      "sha256": "2e070ed1d97052f0ce8771ed2ef74a38d7c260a45fde7a3682c8844e5fdf58a4",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/java.policy",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/java.policy",
+      "sha256": "d51bcab7ed301caeff3779a5e777e6019864cecee5e2abc102ef991b0de77af2",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/java.security",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/java.security",
+      "sha256": "a7975ff49305cdf5082be1498fc1b736e3ad69e8717357294f76106c0c772bdb",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/policy/README.txt",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/policy/README.txt",
+      "sha256": "6da0747334b0fea7592fd92614b2bbc8b126535e129b1fee483774d914e98eb5",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/policy/limited/default_US_export.policy",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/policy/limited/default_US_export.policy",
+      "sha256": "758b930a526fc670ab7537f8c26321527050a31f5f42149a2dda623c56a0a1a9",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/policy/limited/default_local.policy",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/policy/limited/default_local.policy",
+      "sha256": "2b2627548e61316150d47ffc3e6cad465ca05b3cccd4785eb7d21aa7baa0f441",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/policy/limited/exempt_local.policy",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/policy/limited/exempt_local.policy",
+      "sha256": "8c3d7648abcd95a272ce12db870082937f4d7f6878d730d83cb7fbb31eb8b2c9",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/policy/unlimited/default_US_export.policy",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/policy/unlimited/default_US_export.policy",
+      "sha256": "758b930a526fc670ab7537f8c26321527050a31f5f42149a2dda623c56a0a1a9",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/policy/unlimited/default_local.policy",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/security/policy/unlimited/default_local.policy",
+      "sha256": "8d8a318e6d90dfd7e26612d2b6385aa704f686ca6134c551f8928418d92b851a",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/sound.properties",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/conf/sound.properties",
+      "sha256": "299c2360b6155eb28990ec49cd21753f97e43442fe8fab03e04f3e213df43a66",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/ADDITIONAL_LICENSE_INFO",
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/ASSEMBLY_EXCEPTION",
+      "sha256": "75292f03bf23d3db7c985aecc191029b93883200721ed23ed34a2e601463df33",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/LICENSE",
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/aes.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/aes.md",
+      "sha256": "45c6d4da48325edfbff3dcf71c704e504c057904435ed23c6d57046d551eb69d",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/asm.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/asm.md",
+      "sha256": "683be15695bd248272d60f5b7fbe5e126a935ea6bf231a624a9aa164733e1d1d",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/c-libutl.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/c-libutl.md",
+      "sha256": "bef40679922d6fdfb7e4ddb223ad6722300f6054ba737bbf6188d60fcec517f9",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/cldr.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/cldr.md",
+      "sha256": "19515e14a240e022640e95b61b5095127fa9690755950b4a2b0a02e783e08163",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/icu.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/icu.md",
+      "sha256": "1bf28459c6e0af9f3429f4f8becd1668d6544055f8df240277456bc4b3d8a752",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/public_suffix.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/public_suffix.md",
+      "sha256": "861de1e4992a7d28f1de25c73cd50d26a94779ebd749c0643fecfa56442c3429",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/siphash.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/siphash.md",
+      "sha256": "5a792b5a74ad2a5f3d6a7ad8b7a841116e58a772c18bc6e392320a365b222c76",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/unicode.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/unicode.md",
+      "sha256": "6f72f10d166b2c2e8a395e03e734c5afc852b59aeca73ced124f6b9c96268d53",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/zlib.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.base/zlib.md",
+      "sha256": "c9c70c36a1f0325e8788771906202d42ba6ab4205caca44ec0f665707e83226b",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.compiler/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.compiler/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.compiler/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.compiler/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.compiler/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.compiler/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.datatransfer/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.datatransfer/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.datatransfer/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.datatransfer/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.datatransfer/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.datatransfer/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/colorimaging.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/colorimaging.md",
+      "sha256": "04d61e3e8e71dd452ebe52008af5378d9f6640d14578aeb515dc5375973b0189",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/freetype.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/freetype.md",
+      "sha256": "553e804baecb7de7129d77c7259a6b70037d1893f1c600b41b35201695fb7758",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/giflib.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/giflib.md",
+      "sha256": "206aab89ec75968e48a6a1ed6df7d8b9bfb7aea12cbe4c9345d93e5d97460a25",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/harfbuzz.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/harfbuzz.md",
+      "sha256": "5ec7cba7f8e7fc3a089213140aab6fa1b3bd5bf8a91bf8bddb3b8d315fc5f7d0",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/jpeg.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/jpeg.md",
+      "sha256": "c1dfb9719a71ad9f861f8728550542d681e25c8ef40e6393606e6e2a0c1d653a",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/lcms.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/lcms.md",
+      "sha256": "843f9f6fa9c3f8109fcf4d5fe74caf7f2ae8e9bcd92238e4aff2d428c932b24b",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/libpng.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/libpng.md",
+      "sha256": "f73afb394792f3aeecd959e89487603677a430e56b44eba596d8b572accfd540",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/mesa3d.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/mesa3d.md",
+      "sha256": "63f4e6f75caebbccb95d903fb43e46ac7111b3624d0a34f146b276d7d9e7b152",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/pipewire.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/pipewire.md",
+      "sha256": "56a8fb1652c70ac204d13bb52ca4d678162e7d21a97d10209c2a633de8082de0",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/xwd.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.desktop/xwd.md",
+      "sha256": "1d4ffa93c87f35084b02a7aa90a21084b4019db4fe1003c2e5ce775b4a384f59",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.instrument/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.instrument/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.instrument/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.instrument/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.instrument/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.instrument/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.logging/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.logging/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.logging/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.logging/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.logging/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.logging/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.management/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.management/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.management/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.management/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.management/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.management/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.management.rmi/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.management.rmi/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.management.rmi/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.management.rmi/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.management.rmi/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.management.rmi/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.naming/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.naming/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.naming/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.naming/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.naming/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.naming/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.net.http/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.net.http/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.net.http/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.net.http/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.net.http/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.net.http/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.prefs/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.prefs/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.prefs/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.prefs/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.prefs/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.prefs/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.rmi/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.rmi/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.rmi/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.rmi/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.rmi/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.rmi/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.scripting/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.scripting/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.scripting/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.scripting/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.scripting/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.scripting/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.se/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.se/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.se/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.se/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.se/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.se/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.security.jgss/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.security.jgss/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.security.jgss/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.security.jgss/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.security.jgss/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.security.jgss/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.security.sasl/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.security.sasl/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.security.sasl/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.security.sasl/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.security.sasl/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.security.sasl/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.sql/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.sql/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.sql/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.sql/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.sql/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.sql/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.sql.rowset/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.sql.rowset/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.sql.rowset/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.sql.rowset/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.sql.rowset/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.sql.rowset/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.transaction.xa/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.transaction.xa/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.transaction.xa/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.transaction.xa/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.transaction.xa/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.transaction.xa/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/bcel.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/bcel.md",
+      "sha256": "cd578186ad93de46cca29ec8ace2b11f9da751987f3f140e6095c528596cc8c1",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/dom.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/dom.md",
+      "sha256": "6686e8877667584a3a7c07344baadca1a03e29f677162d87c3c0811e990d1148",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/jcup.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/jcup.md",
+      "sha256": "8d5dcfdf50455a3c34c753a98f21e953248af200415a9084e3f102cb6c43b8bf",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/xalan.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/xalan.md",
+      "sha256": "c27eb875da4be683d4d7422be986e5e30f636ede31958ff1d39f9cd6109e7a00",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/xerces.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml/xerces.md",
+      "sha256": "4a6bf6b367193ee68681cb2d9fed30ffc5d62dd2d477bd62e0271707d71b3244",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml.crypto/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml.crypto/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml.crypto/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml.crypto/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml.crypto/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml.crypto/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml.crypto/santuario.md",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/java.xml.crypto/santuario.md",
+      "sha256": "d08690d25f660f145c73365d260ed522cd0aace8a0e1396706551b7a1ae8c9a3",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/jdk.unsupported/ADDITIONAL_LICENSE_INFO",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/jdk.unsupported/ADDITIONAL_LICENSE_INFO",
+      "sha256": null,
+      "symlink": "../java.base/ADDITIONAL_LICENSE_INFO"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/jdk.unsupported/ASSEMBLY_EXCEPTION",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/jdk.unsupported/ASSEMBLY_EXCEPTION",
+      "sha256": null,
+      "symlink": "../java.base/ASSEMBLY_EXCEPTION"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/jdk.unsupported/LICENSE",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/legal/jdk.unsupported/LICENSE",
+      "sha256": null,
+      "symlink": "../java.base/LICENSE"
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/classlist",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/classlist",
+      "sha256": "01b9c997aa616618b9cd713dda43b66fbcf5f25976cfe12240415d0641db801a",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/fontconfig.bfc",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/fontconfig.bfc",
+      "sha256": "5409952a218126c5c11cf0e4963665711aeeab50f5648264d70866fca705a950",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/fontconfig.properties.src",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/fontconfig.properties.src",
+      "sha256": "c8d20a4a39240665252306bdd3dbc8d71e1e246c8cd8c7985b32e4101658a148",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/jrt-fs.jar",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/jrt-fs.jar",
+      "sha256": "d4c5d1b596c178c97ede7dafda7918b46884de0240f00db20b7294ed1d6a79fc",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/jspawnhelper",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/jspawnhelper",
+      "sha256": "bed485cb1de023970ad7ea9d6f7d60c413d3b9baccb6116a3614260d500b7fb1",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/jvm.cfg",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/jvm.cfg",
+      "sha256": "aa9efb969444c1484e29adecab55a122458090616e766b2f1230ef05bc3867e0",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libawt.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libawt.dylib",
+      "sha256": "44cdb5b7dad7b4223bb3751f0e68e1fccc0fd58b2f1d5469d31f7d00bd412973",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libawt_lwawt.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libawt_lwawt.dylib",
+      "sha256": "30c751e98ec7f832f73b1bcdd761567a47557d09e7732264880877e98495915d",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libfontmanager.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libfontmanager.dylib",
+      "sha256": "f690d50860b20293e2bda5bb5fd0e55098c6e599be8d4496f088782f9db6cc78",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libfreetype.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libfreetype.dylib",
+      "sha256": "11d6d1e4da3175e0d3b07eb56a7817c2542822a65aeab7692f487d4a7ca5bcf7",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libinstrument.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libinstrument.dylib",
+      "sha256": "8a2f2cc0568d248316b793d23c3a2a71a97f2e38eacc3a403252439616a9e91c",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libj2gss.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libj2gss.dylib",
+      "sha256": "66b5b0589fad9cba4bf3b87e7b49be747d082f875ff3fe549ef26138efafd6e7",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjava.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjava.dylib",
+      "sha256": "0a8e74ac919969b601fe0da3e9f76a0e0684e063be208d79108d1050afaac620",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjavajpeg.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjavajpeg.dylib",
+      "sha256": "2a8dea37ffe151822cff3b8273ab94d633c9f78f1de185092009f73bc415e120",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjawt.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjawt.dylib",
+      "sha256": "b16450d66f5d12915a3f90fe5cb4dcaad1e5775bcf95642c80eba916d3e403a6",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjimage.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjimage.dylib",
+      "sha256": "9e3d49d6efb4ef19e11007bee442ce6284c32f0c34ff1d85fd7ce3e0bf6274ef",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjli.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjli.dylib",
+      "sha256": "8a69770a157fd1466cb8db65db188004c3cac2c90303bbff138e0fbaeb18b67e",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjsig.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjsig.dylib",
+      "sha256": "06cca0111d253cd5216c17fcb4efc97d28dcc4d569dc4d63aa02e49d7c02dc86",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjsound.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjsound.dylib",
+      "sha256": "2649a2fe96f5ac29f91f98bb3308d59f938d3e614e0cf5294f98efa23f2dcdb0",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/liblcms.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/liblcms.dylib",
+      "sha256": "6b8e323873b6b7205c3db6bd172b10825dc96adf5354df5ee308666605af4531",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libmanagement.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libmanagement.dylib",
+      "sha256": "e576996f628819cd3ea893607f708b82333f3c2de86f480e8274ab3c12f4ef7f",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libmlib_image.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libmlib_image.dylib",
+      "sha256": "098b6aa1c66583055cefbcae861e58f950193c8748825692c6aeabe81f6bd352",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libnet.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libnet.dylib",
+      "sha256": "d4b1aaffd0723651b307603edd71fa72cd49881df2913afe9a6942ffd93ee942",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libnio.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libnio.dylib",
+      "sha256": "f89ba28373b1b29bebc7a78ec986c41e196dc676b24ef06b3e95f9dcb048fea6",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosx.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosx.dylib",
+      "sha256": "dbc7ce1dd2bf93c44abb9d68a5ba5611ff90643cea9ff4d7f54e89097157675b",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxapp.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxapp.dylib",
+      "sha256": "05ab0096716caaef15321a2fc84a6a50f3b991cedb5beb2c670c871510ad8c5a",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxkrb5.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxkrb5.dylib",
+      "sha256": "b55487c473d47a0df386833b0c1c5adafe7f3eacb03649edd7ccdc97386acf66",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxsecurity.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxsecurity.dylib",
+      "sha256": "8ac6990612dc8953913b79f02227f1376e991e456e81ff5886eaa1c0329dbb2b",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxui.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxui.dylib",
+      "sha256": "fd986d18b7b3b492b2fba794cfd1a6af03d6582fc3e018d9c2b132fe0c026a6a",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libprefs.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libprefs.dylib",
+      "sha256": "a32ae02a8c211a1fb702b64c7776fbfc1aca1b40fdf5ae26618172d523286677",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/librmi.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/librmi.dylib",
+      "sha256": "fb397a38be4416898b083d34c0ff8a2de2488c6fbbf9a7160380d768eceee3bf",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libsplashscreen.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libsplashscreen.dylib",
+      "sha256": "a59002be7ef2b0de19aa28c122c6e40dee2414930811ce33cdd43007ad4b8b7a",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libsyslookup.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libsyslookup.dylib",
+      "sha256": "8cf001567cfeac368e436fa83548ebf6041557c5d71bbe3d53f69c478170c40a",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libverify.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libverify.dylib",
+      "sha256": "e202f8b2384b2ebdb2ba616cabdfed108ab79f244fea4b7c7fe8768482721246",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libzip.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libzip.dylib",
+      "sha256": "9b54dfe9679bf39ce7f05d501a65e086288ff89b8b66baaf4588d2d0c4e79465",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/modules",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/modules",
+      "sha256": "8b4df5c31f2b1fd9e3b374e67e934e228a08caa5b51ac20e8173add8afb0599e",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/psfont.properties.ja",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/psfont.properties.ja",
+      "sha256": "5a4bd51b969bf187ff86d94f4a71fdfbfa602762975fa3c73d264b4575f7c78f",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/psfontj2d.properties",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/psfontj2d.properties",
+      "sha256": "780c565d5af3ee6f68b887b75c041cdf46a0592f67012f12eeb691283e92630a",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/security/blocked.certs",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/security/blocked.certs",
+      "sha256": "2596bb6dda83c66d96c5a252d7b2ae1f24cc1ae3f1890223b4f3591a8d52bf10",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/security/cacerts",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/security/cacerts",
+      "sha256": "b754182d18788dcc3d34213665a027e4f8d1dc620a9fa63e45f7326f3672881e",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/security/default.policy",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/security/default.policy",
+      "sha256": "9b77a722ab832082b8f9312f72da1528989a3ca1b9fa4f9bf32767dfd5ebe099",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/security/public_suffix_list.dat",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/security/public_suffix_list.dat",
+      "sha256": "16b42002aa6f83a7763c4cdbd399ecf738460377d447e362884495545afd60a3",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/server/libjsig.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/server/libjsig.dylib",
+      "sha256": "0b8cf8ef044629c7f2470033f4d6e0f934289d990716cba463c0fd16bcf75b4f",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/server/libjvm.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/server/libjvm.dylib",
+      "sha256": "365039a0b68c8e99a69520d95a8757025323d6e9083a6d30d3014f06d13768ab",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/shaders.metallib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/shaders.metallib",
+      "sha256": "5c06d99e36d98a4bade040412d6454cee1d4aaa90788cfd760f7960c87319460",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/tzdb.dat",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/tzdb.dat",
+      "sha256": "a02e3a23d67255782b11ab81070902235ab564080f0f65ffe2a989cdaa86fe89",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/release",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/release",
+      "sha256": "093110c29fa1fa9c6d9b86f043f06bd4ce88053c2502b6de320659f879b5b613",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Info.plist",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Info.plist",
+      "sha256": "366d62e920adc936180b059963948d7a43fa8def7804ae6e52ba71bafd83796b",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/MacOS/libjli.dylib",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/MacOS/libjli.dylib",
+      "sha256": "bdc3e848abe6b3098c1fcb52c0f5e13a6145968433223f5c4b4a15392b279363",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/_CodeSignature/CodeResources",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/_CodeSignature/CodeResources",
+      "sha256": "d53b5a3a9e2900baa3ac5a44b59e69d7cc41727bd693ee83c506fdca9f7b14be",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.dmg",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.dmg",
+      "sha256": "1a319414f8290f2c2858a16f2aaaf62620e8d2584554e0ae32f661775123fdb9",
+      "symlink": null
+    },
+    {
+      "from": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.dmg.sha256",
+      "to": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.dmg.sha256",
+      "sha256": "3a738c7b432cac1411ced7a4688c47042bacb3b5a708a6eca8f153a8b7b85b3a",
+      "symlink": null
+    }
+  ],
+  "artifacts": [
+    "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app",
+    "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.dmg",
+    "/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.dmg.sha256"
+  ],
+  "dmg_sha256": "1a319414f8290f2c2858a16f2aaaf62620e8d2584554e0ae32f661775123fdb9"
+}

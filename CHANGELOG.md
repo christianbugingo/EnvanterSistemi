@@ -2,6 +2,9 @@
 
 ## 1.3.0 — 6 November 2026
 
+- Prepared an arm64-only local release with checksum sidecar, preserved previous signed artifacts and explicit quarantine/manual-upload instructions. Intel macOS, Linux and Windows are not updated for this release.
+- Included currency symbols consistently in displayed amounts and when reloading original-currency sales, retaining sale-time precision.
+
 - Added guarded, isolated native packaging targets and explicit JavaFX profiles for Mac arm64, Intel Mac and Linux x86_64. Arm64 rebuilt; Intel/Linux packages await native build machines. Windows ZIP retained unchanged.
 - Added native-library/classifier checks, JDK build logs, Linux launcher/desktop entry templates, target-only cleanup and repeatable build/acceptance documentation.
 

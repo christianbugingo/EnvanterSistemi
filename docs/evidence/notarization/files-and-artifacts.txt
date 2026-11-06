@@ -1,0 +1,44 @@
+Changed/added files (absolute paths):
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/packaging/macos/SignedOfflineSmoke.java
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/packaging/macos/entitlements.plist
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/scripts/sign-and-notarize-macos.sh
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/scripts/sign_macos_components.py
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/scripts/verify-signed-macos.py
+/Users/a/Documents/EnvanterSistemi/README.md
+/Users/a/Documents/EnvanterSistemi/docs/NOTARIZATION.md
+/Users/a/Documents/EnvanterSistemi/docs/PACKAGING.md
+/Users/a/Documents/EnvanterSistemi/docs/VERIFICATION.md
+/Users/a/Documents/EnvanterSistemi/docs/evidence/new-artifacts.txt
+/Users/a/Documents/EnvanterSistemi/docs/evidence/notarization/attempt-1-notary-log.json
+/Users/a/Documents/EnvanterSistemi/docs/evidence/notarization/attempt-1-signing.log
+/Users/a/Documents/EnvanterSistemi/docs/evidence/notarization/attempt-1-submission.json
+/Users/a/Documents/EnvanterSistemi/docs/evidence/notarization/attempt-2-full-workflow.log
+/Users/a/Documents/EnvanterSistemi/docs/evidence/notarization/files-and-artifacts.txt
+/Users/a/Documents/EnvanterSistemi/docs/evidence/notarization/notary-log.json
+/Users/a/Documents/EnvanterSistemi/docs/evidence/notarization/offline-startup.log
+/Users/a/Documents/EnvanterSistemi/docs/evidence/notarization/offline-workflow.log
+/Users/a/Documents/EnvanterSistemi/docs/evidence/notarization/sign-and-notarize.log
+/Users/a/Documents/EnvanterSistemi/docs/evidence/notarization/signed-offline.json
+/Users/a/Documents/EnvanterSistemi/docs/evidence/notarization/submission.json
+/Users/a/Documents/EnvanterSistemi/docs/evidence/package-structure.json
+/Users/a/Documents/EnvanterSistemi/docs/evidence/packaging-deleted-files.txt
+
+Published distribution artifacts:
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.dmg
+
+Retained diagnostic/verification artifacts (NOT release downloads):
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.app
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-6yYsJMV7/release/InventorySystem-1.3.0-macos-arm64.dmg
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-HicQSuz5/dmg-content/InventorySystem.app
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/signed-offline-b7iwstr_/InventorySystem.app
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/signed-offline-b7iwstr_/SignedOfflineSmoke.class
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/signed-offline-b7iwstr_/offline-test-agent.jar
+
+Delivered stapled DMG SHA-256: ead72caa52f2746add26bf7e9e51e2cab2c89fa253aad32245db3a71a12b6a8f
+Delivered DMG bytes: 48334624
+Windows ZIP retained unchanged: 70d52d8467371506ea6b32eac52f17959913ba74c3f94f33e5bb2de6959348a5
+
+Accepted submission: 078b7dd4-3248-410d-a981-3eb349dd1462
+Rejected attempt: e6e2c89a-71cd-4369-8f01-0bf86fe5df03
+Apple's upload SHA and delivered SHA differ because stapling adds the ticket after acceptance.

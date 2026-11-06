@@ -1,0 +1,13 @@
+{
+  "dmg_sha256": "1a319414f8290f2c2858a16f2aaaf62620e8d2584554e0ae32f661775123fdb9",
+  "platform": "macos-arm64",
+  "dmg_mounted_readonly": true,
+  "gatekeeper_copied_app": "accepted",
+  "signed_bundle_modified": false,
+  "native_startup": true,
+  "network_access_denied": true,
+  "physical_wifi_changed": false,
+  "real_shop_data_used": false,
+  "workflow": "Signed native launcher/runtime: terms, admin/recovery setup, currency, login, stock receipt, 230 g sale, receipt, FIFO profit, backup and restore passed. No signed app files changed.",
+  "test_data_location": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/signed-offline-sw7fv0y0"
+}

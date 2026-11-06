@@ -14,5 +14,5 @@ public final class Currencies {
     }
     public static List<ShopCurrency> all(){return List.copyOf(ALL.values());}
     public static ShopCurrency get(String code){ShopCurrency c=ALL.get(code);if(c==null)throw AuthService.failure("currency.invalid");return c;}
-    public static ShopCurrency snapshot(String code,int minor){return new ShopCurrency(code==null?"?":code,code==null?"":code,code==null?"":code,minor);}
+    public static ShopCurrency snapshot(String code,int minor){ShopCurrency known=ALL.get(code==null?"":code);return new ShopCurrency(code==null?"?":code,known==null?"":known.name(),known==null?"":known.symbol(),minor);}
 }

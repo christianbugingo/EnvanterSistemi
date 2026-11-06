@@ -8,7 +8,7 @@ public record ShopCurrency(String code,String name,String symbol,int minorUnits)
     public String format(BigDecimal amount){
         if(minorUnits<0)throw services.AuthService.failure("currency.invalid");
         DecimalFormat format=new DecimalFormat("#,##0"+(minorUnits==0?"":"."+"0".repeat(minorUnits)),DecimalFormatSymbols.getInstance(Locale.ROOT));
-        format.setRoundingMode(RoundingMode.HALF_UP);return format.format(amount)+" "+code;
+        format.setRoundingMode(RoundingMode.HALF_UP);String prefix=symbol==null||symbol.isBlank()||symbol.equals(code)?"":symbol+" ";return prefix+format.format(amount)+" "+code;
     }
     @Override public String toString(){return code+" – "+name+" – "+symbol;}
 }

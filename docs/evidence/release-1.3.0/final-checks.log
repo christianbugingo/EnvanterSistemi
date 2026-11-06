@@ -1,0 +1,12 @@
+InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app: valid on disk
+InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app: satisfies its Designated Requirement
+InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.dmg: valid on disk
+InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.dmg: satisfies its Designated Requirement
+Processing: /Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.dmg
+The validate action worked!
+Processing: /Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app
+The validate action worked!
+InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.dmg: accepted
+source=Notarized Developer ID
+InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app: accepted
+source=Notarized Developer ID

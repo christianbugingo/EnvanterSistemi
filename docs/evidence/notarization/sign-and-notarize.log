@@ -1,0 +1,310 @@
+Staging: /Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9
+JDK: /Users/a/Documents/EnvanterSistemi/.tools/jdk/Contents/Home
+Picked up JAVA_TOOL_OPTIONS:  -Duser.home=/Users/a/Documents/EnvanterSistemi/.tools/build-home -Djava.io.tmpdir=/Users/a/Documents/EnvanterSistemi/.tools/tmp
+openjdk version "21.0.13" 2026-10-20 LTS
+OpenJDK Runtime Environment Corretto-21.0.13.0.11 (build 21.0.13+11-LTS)
+OpenJDK 64-Bit Server VM Corretto-21.0.13.0.11 (build 21.0.13+11-LTS, mixed mode, sharing)
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-inogydal/0-libjavafx_iio.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-inogydal/0-libjavafx_iio.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-inogydal/0-libjavafx_iio.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-inogydal/1-libglass.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-inogydal/1-libglass.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-inogydal/1-libglass.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-inogydal/2-libjavafx_font.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-inogydal/2-libjavafx_font.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-inogydal/2-libjavafx_font.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-inogydal/3-libprism_common.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-inogydal/3-libprism_common.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-inogydal/3-libprism_common.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-inogydal/4-libprism_es2.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-inogydal/4-libprism_es2.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-inogydal/4-libprism_es2.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-inogydal/5-libdecora_sse.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-inogydal/5-libdecora_sse.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-inogydal/5-libdecora_sse.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-inogydal/6-libprism_sw.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-inogydal/6-libprism_sw.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/native-sign-inogydal/6-libprism_sw.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/server/libjvm.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/server/libjvm.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/server/libjvm.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/server/libjsig.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/server/libjsig.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/server/libjsig.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libnet.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libnet.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libnet.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libnio.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libnio.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libnio.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libinstrument.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libinstrument.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libinstrument.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libzip.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libzip.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libzip.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libfreetype.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libfreetype.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libfreetype.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjli.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjli.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjli.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libsplashscreen.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libsplashscreen.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libsplashscreen.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjimage.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjimage.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjimage.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxkrb5.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxkrb5.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxkrb5.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxui.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxui.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxui.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/librmi.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/librmi.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/librmi.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libawt_lwawt.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libawt_lwawt.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libawt_lwawt.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjavajpeg.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjavajpeg.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjavajpeg.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libmlib_image.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libmlib_image.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libmlib_image.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libmanagement.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libmanagement.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libmanagement.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjsound.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjsound.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjsound.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjsig.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjsig.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjsig.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libprefs.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libprefs.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libprefs.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libsyslookup.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libsyslookup.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libsyslookup.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjawt.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjawt.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjawt.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libfontmanager.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libfontmanager.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libfontmanager.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/jspawnhelper: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/jspawnhelper: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/jspawnhelper: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxsecurity.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxsecurity.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxsecurity.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/liblcms.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/liblcms.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/liblcms.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libverify.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libverify.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libverify.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libj2gss.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libj2gss.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libj2gss.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjava.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjava.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libjava.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libawt.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libawt.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libawt.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosx.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosx.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosx.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxapp.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxapp.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/Home/lib/libosxapp.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/MacOS/libjli.dylib: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/MacOS/libjli.dylib: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime/Contents/MacOS/libjli.dylib: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/MacOS/InventorySystem: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/MacOS/InventorySystem: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/MacOS/InventorySystem: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/runtime: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app: replacing existing signature
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app: satisfies its Designated Requirement
+Signed and verified 41 native items plus nested bundles and outer app.
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app: satisfies its Designated Requirement
+Executable=/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app/Contents/MacOS/InventorySystem
+Identifier=com.coodiclabs.inventorysystem
+Format=app bundle with Mach-O thin (arm64)
+CodeDirectory v=20500 size=682 flags=0x10000(runtime) hashes=10+7 location=embedded
+VersionPlatform=1
+VersionMin=720896
+VersionSDK=983552
+Hash type=sha256 size=32
+CandidateCDHash sha256=035dc176f5268deb569094499ab20ec434be1a0f
+CandidateCDHashFull sha256=035dc176f5268deb569094499ab20ec434be1a0f89520342304c8755ac7fe93f
+Hash choices=sha256
+CMSDigest=035dc176f5268deb569094499ab20ec434be1a0f89520342304c8755ac7fe93f
+CMSDigestType=2
+Executable Segment base=0
+Executable Segment limit=81920
+Executable Segment flags=0x1
+Page size=16384
+CDHash=035dc176f5268deb569094499ab20ec434be1a0f
+Signature size=8971
+Authority=Developer ID Application: COODIC LABS (T2KX7KN7KU)
+Authority=Developer ID Certification Authority
+Authority=Apple Root CA
+Timestamp=6 Nov 2026 at 15:22:36
+Info.plist entries=19
+TeamIdentifier=T2KX7KN7KU
+Runtime Version=15.2.0
+Sealed Resources version=2 rules=13 files=188
+Internal requirements count=1 size=192
+Total signatures=1
+Chosen signature=1
+created: /Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.dmghdiutil: WARNING: 'hdiutil create -volname -format ...' is deprecated. Please use 'diskutil image create from/blank --volumeName --format ...' instead.
+
+Checksumming Protective Master Boot Record (MBR : 0)…
+Protective Master Boot Record (MBR :: verified   CRC32 $FE6C7BAB
+Checksumming GPT Header (Primary GPT Header : 1)…
+ GPT Header (Primary GPT Header : 1): verified   CRC32 $690F662D
+Checksumming GPT Partition Data (Primary GPT Table : 2)…
+GPT Partition Data (Primary GPT Tabl: verified   CRC32 $9DB6F9CA
+Checksumming  (Apple_Free : 3)…
+                    (Apple_Free : 3): verified   CRC32 $00000000
+Checksumming disk image (Apple_HFS : 4)…
+          disk image (Apple_HFS : 4): verified   CRC32 $DCA17E77
+Checksumming  (Apple_Free : 5)…
+                    (Apple_Free : 5): verified   CRC32 $00000000
+Checksumming GPT Partition Data (Backup GPT Table : 6)…
+GPT Partition Data (Backup GPT Table: verified   CRC32 $9DB6F9CA
+Checksumming GPT Header (Backup GPT Header : 7)…
+  GPT Header (Backup GPT Header : 7): verified   CRC32 $D349D129
+verified   CRC32 $C685957C
+hdiutil: WARNING: 'hdiutil attach -readonly -nobrowse -mountpoint ...' is deprecated. Please use 'diskutil image attach --readOnly --mountOptions nobrowse --mountPoint ...' instead.
+/dev/disk13         	GUID_partition_scheme          	
+/dev/disk13s1       	Apple_HFS                      	/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/preflight-mount
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/preflight-mount/InventorySystem.app: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/preflight-mount/InventorySystem.app: satisfies its Designated Requirement
+hdiutil: WARNING: 'hdiutil detach ...' is deprecated. Please use 'diskutil eject ...' instead.
+"disk13" ejected.
+Executable=/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/preflight-mount/InventorySystem.app/Contents/MacOS/InventorySystem
+Identifier=com.coodiclabs.inventorysystem
+Format=app bundle with Mach-O thin (arm64)
+CodeDirectory v=20500 size=682 flags=0x10000(runtime) hashes=10+7 location=embedded
+VersionPlatform=1
+VersionMin=720896
+VersionSDK=983552
+Hash type=sha256 size=32
+CandidateCDHash sha256=035dc176f5268deb569094499ab20ec434be1a0f
+CandidateCDHashFull sha256=035dc176f5268deb569094499ab20ec434be1a0f89520342304c8755ac7fe93f
+Hash choices=sha256
+CMSDigest=035dc176f5268deb569094499ab20ec434be1a0f89520342304c8755ac7fe93f
+CMSDigestType=2
+Executable Segment base=0
+Executable Segment limit=81920
+Executable Segment flags=0x1
+Page size=16384
+CDHash=035dc176f5268deb569094499ab20ec434be1a0f
+Signature size=8971
+Authority=Developer ID Application: COODIC LABS (T2KX7KN7KU)
+Authority=Developer ID Certification Authority
+Authority=Apple Root CA
+Timestamp=6 Nov 2026 at 15:22:36
+Info.plist entries=19
+TeamIdentifier=T2KX7KN7KU
+Runtime Version=15.2.0
+Sealed Resources version=2 rules=13 files=188
+Internal requirements count=1 size=192
+Total signatures=1
+Chosen signature=1
+
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.dmg: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.dmg: satisfies its Designated Requirement
+Checksumming Protective Master Boot Record (MBR : 0)…
+Protective Master Boot Record (MBR :: verified   CRC32 $FE6C7BAB
+Checksumming GPT Header (Primary GPT Header : 1)…
+ GPT Header (Primary GPT Header : 1): verified   CRC32 $690F662D
+Checksumming GPT Partition Data (Primary GPT Table : 2)…
+GPT Partition Data (Primary GPT Tabl: verified   CRC32 $9DB6F9CA
+Checksumming  (Apple_Free : 3)…
+                    (Apple_Free : 3): verified   CRC32 $00000000
+Checksumming disk image (Apple_HFS : 4)…
+          disk image (Apple_HFS : 4): verified   CRC32 $DCA17E77
+Checksumming  (Apple_Free : 5)…
+                    (Apple_Free : 5): verified   CRC32 $00000000
+Checksumming GPT Partition Data (Backup GPT Table : 6)…
+GPT Partition Data (Backup GPT Table: verified   CRC32 $9DB6F9CA
+Checksumming GPT Header (Backup GPT Header : 7)…
+  GPT Header (Backup GPT Header : 7): verified   CRC32 $D349D129
+verified   CRC32 $C685957C
+hdiutil: verify: checksum of "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.dmg" is VALID
+{"status":"Accepted","message":"Processing complete","id":"574c51af-bf90-46f7-8be8-84d00e28afb6"}
+Successfully downloaded submission log
+  id: 574c51af-bf90-46f7-8be8-84d00e28afb6
+  location: /Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/evidence/notary-log.json
+Processing: /Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.dmg
+Processing: /Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.dmg
+The staple and validate action worked!
+Processing: /Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.dmg
+The validate action worked!
+Processing: /Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app
+Processing: /Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app
+The staple and validate action worked!
+Processing: /Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app
+The validate action worked!
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.dmg: accepted
+source=Notarized Developer ID
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/notarize-arm64-NUvMC5W9/release/InventorySystem-1.3.0-macos-arm64.app: accepted
+source=Notarized Developer ID
+Checksumming Protective Master Boot Record (MBR : 0)…
+Protective Master Boot Record (MBR :: verified   CRC32 $FE6C7BAB
+Checksumming GPT Header (Primary GPT Header : 1)…
+ GPT Header (Primary GPT Header : 1): verified   CRC32 $690F662D
+Checksumming GPT Partition Data (Primary GPT Table : 2)…
+GPT Partition Data (Primary GPT Tabl: verified   CRC32 $9DB6F9CA
+Checksumming  (Apple_Free : 3)…
+                    (Apple_Free : 3): verified   CRC32 $00000000
+Checksumming disk image (Apple_HFS : 4)…
+          disk image (Apple_HFS : 4): verified   CRC32 $DCA17E77
+Checksumming  (Apple_Free : 5)…
+                    (Apple_Free : 5): verified   CRC32 $00000000
+Checksumming GPT Partition Data (Backup GPT Table : 6)…
+GPT Partition Data (Backup GPT Table: verified   CRC32 $9DB6F9CA
+Checksumming GPT Header (Backup GPT Header : 7)…
+  GPT Header (Backup GPT Header : 7): verified   CRC32 $D349D129
+verified   CRC32 $C685957C
+hdiutil: WARNING: 'hdiutil attach -readonly -nobrowse -mountpoint ...' is deprecated. Please use 'diskutil image attach --readOnly --mountOptions nobrowse --mountPoint ...' instead.
+/dev/disk13         	GUID_partition_scheme          	
+/dev/disk13s1       	Apple_HFS                      	/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/signed-offline-sw7fv0y0/mount
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/signed-offline-sw7fv0y0/InventorySystem.app: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/signed-offline-sw7fv0y0/InventorySystem.app: satisfies its Designated Requirement
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/signed-offline-sw7fv0y0/InventorySystem.app: accepted
+source=Notarized Developer ID
+Picked up JAVA_TOOL_OPTIONS:  -Duser.home=/Users/a/Documents/EnvanterSistemi/.tools/build-home -Djava.io.tmpdir=/Users/a/Documents/EnvanterSistemi/.tools/tmp
+Picked up JAVA_TOOL_OPTIONS:  -Duser.home=/Users/a/Documents/EnvanterSistemi/.tools/build-home -Djava.io.tmpdir=/Users/a/Documents/EnvanterSistemi/.tools/tmp
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/signed-offline-sw7fv0y0/InventorySystem.app: valid on disk
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/signed-offline-sw7fv0y0/InventorySystem.app: satisfies its Designated Requirement
+hdiutil: WARNING: 'hdiutil detach ...' is deprecated. Please use 'diskutil eject ...' instead.
+"disk13" ejected.
+{
+  "dmg_sha256": "1a319414f8290f2c2858a16f2aaaf62620e8d2584554e0ae32f661775123fdb9",
+  "platform": "macos-arm64",
+  "dmg_mounted_readonly": true,
+  "gatekeeper_copied_app": "accepted",
+  "signed_bundle_modified": false,
+  "native_startup": true,
+  "network_access_denied": true,
+  "physical_wifi_changed": false,
+  "real_shop_data_used": false,
+  "workflow": "Signed native launcher/runtime: terms, admin/recovery setup, currency, login, stock receipt, 230 g sale, receipt, FIFO profit, backup and restore passed. No signed app files changed.",
+  "test_data_location": "/Users/a/Documents/EnvanterSistemi/InventorySystemi/target/signed-offline-sw7fv0y0"
+}
