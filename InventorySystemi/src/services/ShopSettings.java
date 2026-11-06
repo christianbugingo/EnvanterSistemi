@@ -16,6 +16,9 @@ public final class ShopSettings {
     }
     public static Values current(){try(Connection c=DBConnection.connect()){return read(c);}catch(SQLException ex){throw AuthService.databaseError(ex);}}
     public static ShopCurrency currency(){ShopCurrency c=current().currency();if(c==null)throw AuthService.failure("currency.required");return c;}
+    public static BigDecimal parseTax(String text){try{BigDecimal value=new BigDecimal(text.trim().replace(',','.'));validateTax(value);return value.signum()==0?BigDecimal.ZERO:value;}catch(RuntimeException ex){throw AuthService.failure("tax.invalid");}}
+    public boolean staffProfitVisible(){try(Connection c=DBConnection.connect()){AuthService.require(c,true);return Boolean.parseBoolean(get(c,"staff_profit_visible","false"));}catch(SQLException ex){throw AuthService.databaseError(ex);}}
+    public void setStaffProfitVisible(boolean visible){try(Connection c=DBConnection.connect()){c.setAutoCommit(false);try{var user=AuthService.require(c,true);put(c,"staff_profit_visible",Boolean.toString(visible));AuditService.record(c,user,"SETTINGS_CHANGED","Staff profit access: "+visible);c.commit();}catch(Exception ex){c.rollback();throw ex;}}catch(SQLException ex){throw AuthService.databaseError(ex);}}
     public static void validateTax(BigDecimal rate){if(rate==null||rate.signum()<0||rate.compareTo(new BigDecimal("100"))>0||rate.stripTrailingZeros().scale()>4)throw AuthService.failure("tax.invalid");}
     public void save(String code,BigDecimal tax,String language){
         ShopCurrency next=Currencies.get(code);if(next.minorUnits()<0)throw AuthService.failure("currency.invalid");validateTax(tax);if(!java.util.Set.of("en","tr").contains(language))throw AuthService.failure("language.invalid");
@@ -23,7 +26,7 @@ public final class ShopSettings {
             c.setAutoCommit(false);try{
                 var actor=AuthService.require(c,true);Values previous=read(c);
                 if(previous.currency()==null||!previous.currency().code().equals(next.code()))try(PreparedStatement p=c.prepareStatement("UPDATE products SET price=ROUND(price,?),version=version+1")){p.setInt(1,next.minorUnits());p.executeUpdate();}
-                put(c,"currency",code);put(c,"tax_rate",tax.toPlainString());put(c,"language",language);
+                put(c,"currency",code);put(c,"tax_rate",tax.signum()==0?"0":tax.toPlainString());put(c,"language",language);
                 AuditService.record(c,actor,"SETTINGS_CHANGED",code+" | "+tax+"%");c.commit();
             }catch(Exception ex){c.rollback();throw ex;}
         }catch(SQLException ex){throw AuthService.databaseError(ex);}

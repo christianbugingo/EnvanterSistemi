@@ -8,3 +8,11 @@
 -- Currency, language, tax, legal version/digest/date are local app_settings values.
 SELECT version, applied_at FROM schema_migrations;
 SELECT user_id, username, role, active, must_change_password FROM users;
+-- FIFO migration: src/migrations/V130_batches__fifo.sql
+-- stock_batches: quantity_received/remaining_quantity are pieces or grams.
+-- Nullable total_cost/remaining_cost/cost_per_unit mean cost not recorded.
+-- Optional selling_price applies only to this batch and its original currency.
+-- sale_batch_allocations preserves original batch quantity/cost per sale line.
+-- sales.cost_complete=false excludes the line from the known-cost profit cohort.
+-- app_settings.staff_profit_visible defaults false; profit remains user-scoped.
+SELECT version FROM schema_migrations WHERE version='1.3.0-batches';

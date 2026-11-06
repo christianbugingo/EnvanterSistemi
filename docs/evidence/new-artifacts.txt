@@ -1,0 +1,7 @@
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app (application bundle)
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.dmg
+  bytes: 47469026
+  SHA-256: 92bdac69e131b6f792e175d5f0a6567f95c2fe2c2ad0101faecb62b36514d121
+Retained unchanged: /Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/windows/InventorySystem-Windows-x64.zip
+  SHA-256: 70d52d8467371506ea6b32eac52f17959913ba74c3f94f33e5bb2de6959348a5
+Intel/Linux artifacts: not generated; native hosts required.

@@ -13,7 +13,7 @@ final class Migrations {
     }
     static void before(Connection c) throws SQLException {
         boolean applied=false;
-        if(exists(c,"schema_migrations"))try(Statement s=c.createStatement();ResultSet rs=s.executeQuery("SELECT COUNT(*) FROM schema_migrations WHERE version='1.3.0-global'")){rs.next();applied=rs.getInt(1)>0;}
+        if(exists(c,"schema_migrations"))try(Statement s=c.createStatement();ResultSet rs=s.executeQuery("SELECT COUNT(*) FROM schema_migrations WHERE version='1.3.0-batches'")){rs.next();applied=rs.getInt(1)>0;}
         if(applied)return;
         String url=c.getMetaData().getURL();
         if(url.startsWith("jdbc:h2:file:")) {
@@ -44,13 +44,22 @@ final class Migrations {
         global(c);
     }
     private static void global(Connection c) throws SQLException {
-        try(Statement s=c.createStatement();ResultSet r=s.executeQuery("SELECT COUNT(*) FROM schema_migrations WHERE version='1.3.0-global'")){r.next();if(r.getInt(1)>0)return;}
+        try(Statement s=c.createStatement();ResultSet r=s.executeQuery("SELECT COUNT(*) FROM schema_migrations WHERE version='1.3.0-global'")){r.next();if(r.getInt(1)>0){batches(c);return;}}
         try(var in=Migrations.class.getResourceAsStream("/migrations/V130_global__currency_tax_legal.sql")) {
             String text=new String(java.util.Objects.requireNonNull(in).readAllBytes(),java.nio.charset.StandardCharsets.UTF_8);
             for(String sql:text.split(";"))if(!sql.isBlank())try(Statement s=c.createStatement()){s.execute(sql);}
         }catch(java.io.IOException ex){throw new SQLException(ex);}
         for(var value:services.Currencies.all())try(PreparedStatement p=c.prepareStatement("MERGE INTO currencies KEY(code) VALUES(?,?,?,?)")){p.setString(1,value.code());p.setString(2,value.name());p.setString(3,value.symbol());p.setInt(4,value.minorUnits());p.executeUpdate();}
         try(Statement s=c.createStatement()){s.execute("INSERT INTO schema_migrations(version) VALUES('1.3.0-global')");}
+        batches(c);
+    }
+    private static void batches(Connection c) throws SQLException {
+        try(Statement s=c.createStatement();ResultSet r=s.executeQuery("SELECT COUNT(*) FROM schema_migrations WHERE version='1.3.0-batches'")){r.next();if(r.getInt(1)>0)return;}
+        try(var in=Migrations.class.getResourceAsStream("/migrations/V130_batches__fifo.sql")){
+            String sql=new String(Objects.requireNonNull(in).readAllBytes(),java.nio.charset.StandardCharsets.UTF_8);
+            for(String part:sql.split(";"))if(!part.isBlank())try(Statement s=c.createStatement()){s.execute(part);}
+        }catch(java.io.IOException ex){throw new SQLException(ex);}
+        try(Statement s=c.createStatement()){s.execute("INSERT INTO schema_migrations(version) VALUES('1.3.0-batches')");}
     }
     private static boolean column(Connection c,String table,String col) throws SQLException {try(ResultSet r=c.getMetaData().getColumns(c.getCatalog(),null,table,col)){return r.next();}}
     private static void archive(Connection c,String table,String id) throws SQLException {

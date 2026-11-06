@@ -2,14 +2,26 @@
 
 **COODIC LABS** · Rwanda · tresorbi29@gmail.com · https://coodic.org/
 
-An offline Java 21 / JavaFX application for local shop accounts, products, stock, sales, receipts, reports and backups. It has no network calls, cloud sync, analytics, remote database or payment processing. Currency and optional tax are chosen by the shop; no country's currency is selected by default. Original code is proprietary, all rights reserved. Third-party software retains its own licenses.
+An offline Java 21 / JavaFX application for local shop accounts, products, stock, sales, receipts, reports and backups. It has no network calls, cloud sync, telemetry, remote database or payment processing. Currency and optional tax are chosen by the shop; no country's currency is selected by default. Original code is proprietary, all rights reserved. Third-party software retains its own licenses.
 
 ## Requirements and installation
 
-- **macOS Apple Silicon (arm64):** macOS 11 or later (JavaFX 21 minimum; test on the intended OS version). Open `InventorySystemi/dist/macos/InventorySystem.dmg` and copy the app to Applications, or open the `.app` directly. Close older copies first. This build is not Developer ID signed/notarized; deployment on other Macs requires acceptance testing. Intel Mac and Linux packages are not provided.
-- **Windows x64:** Windows 10/11 x64 deployment target; acceptance testing on the intended PC is required. Extract the **entire** `InventorySystemi/dist/windows/InventorySystem-Windows-x64.zip`, then open `InventorySystem/InventorySystem.exe`. Keep all bundled folders together. `Start InventorySystem.cmd` is a fallback and `Run with console.cmd` provides diagnostics. Windows execution has not been tested on this Mac.
+| Computer | Package / requirements | Real execution status |
+|---|---|---|
+| macOS Apple Silicon (M1 or newer) | arm64, macOS 11+ deployment target; `.app` / `.dmg` | Tested on this arm64 host, including a process-network-denied sale/receipt/backup workflow; other OS versions still need acceptance. |
+| macOS Intel | x86_64 JDK/JavaFX build, macOS 11+ deployment target | **Not built or tested here.** Requires a native Intel Mac; Rosetta is refused. |
+| Linux x86_64 | 64-bit Ubuntu/Debian-based graphical desktop; GTK 3, X11/XWayland, font/OpenGL libraries; `.tar.gz` app image | **Not built or tested here.** No Linux machine was available; no distribution version is certified yet. |
+| Windows 10/11 x64 | Complete portable ZIP, bundled runtime | ZIP structurally verified; **not execution-tested** on a Windows PC. Existing ZIP retained unchanged in this update. |
 
-Both packages include Java, JavaFX and local legal notices; no separate Java installation or internet is required for shop use. The welcome page explains the workflow and offers account creation on a fresh installation.
+Check your Mac: **Apple menu → About This Mac**. “Chip: Apple M…” means arm64; “Processor: Intel…” means x86_64. On Linux, `uname -m` must show `x86_64`.
+
+Mac: open `InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.dmg` and copy the app to Applications, or open `InventorySystem-1.3.0-macos-arm64.app` directly. The Intel builder produces separately named `InventorySystem-1.3.0-macos-x86_64.app/.dmg` when run on an Intel Mac. Close older copies first. Mac builds are ad-hoc signed, not Developer ID signed/notarized.
+
+Linux: on a Linux build machine, the builder creates `InventorySystemi/dist/linux/InventorySystem-1.3.0-linux-x86_64.tar.gz`. Extract the whole archive and run `InventorySystem/launch.sh`. Move the folder to a permanent location before optionally running `InventorySystem/install-desktop.sh` to add its menu entry. Remove `~/.local/share/applications/com.coodiclabs.inventorysystem.desktop` when uninstalling that entry (or the corresponding XDG_DATA_HOME location).
+
+Windows: extract the **entire** `InventorySystemi/dist/windows/InventorySystem-Windows-x64.zip`, then open `InventorySystem/InventorySystem.exe`. Keep bundled folders together. `Start InventorySystem.cmd` is a fallback; `Run with console.cmd` provides diagnostics.
+
+All package formats bundle Java 21, JavaFX and local legal notices. Installed shop use needs no internet or separate Java installation; Linux still needs ordinary graphical system libraries. The welcome page offers account creation on a fresh installation. Every new computer starts a separate shop; replacing an app leaves local data intact.
 
 ## First-run setup
 
@@ -28,15 +40,15 @@ Admin → File → **Admin settings** changes currency, tax and language. Changi
 
 Amounts use consistent grouping and code suffixes, independent of UI language: `1,250 RWF`, `12.50 USD`, `1.234 KWD`. Names and symbols are shown in the currency chooser. Prices and line totals use BigDecimal and HALF_UP at the currency precision. Sales without a recorded currency from older versions remain `?`, with their historical two-decimal amounts; a new shop currency is never silently applied to them. Keep original records to identify those legacy amounts.
 
-Tax rate accepts 0–100%, with up to four decimals. Tax is calculated **once per checkout**, after rounded line totals are summed, at that checkout's currency precision. With tax above zero, the screen, receipt and report show subtotal, tax and total; with zero, the receipt shows only total. Reports keep currencies separate. Tax across unit-separated report rows is allocated with rounding residue on the last unit; voided lines are excluded and remaining checkout tax is recomputed using its original rate. Original receipts retain their original amounts and mark voids.
+The tax field shows “If you do not use tax, enter 00.” Both `00` and `0` store zero; default is 0. Tax rate accepts 0–100%, with up to four decimals. Tax is calculated **once per checkout**, after rounded line totals are summed, at that checkout's currency precision. With tax above zero, the screen, receipt and report show subtotal, tax and total; with zero, the receipt shows only total. Reports keep currencies separate. Tax across unit-separated report rows is allocated with rounding residue on the last unit; voided lines are excluded and remaining checkout tax is recomputed using its original rate. Original receipts retain their original amounts and mark voids.
 
 ## Products, sales and accounts
 
-Choose **Sold by: Piece / Weight (kg)** first. Piece quantities are whole counts; weight stock and sales use integer grams. Price is per piece or kg using the shop currency precision. Product names, category and supplier are required; optional barcodes are unique. Existing stock changes use **Receive / adjust stock**, with a reason. Units cannot change after sales history exists; create another product instead.
+Choose **Sold by: Piece / Weight (kg)** first. Piece quantities are whole counts; weight stock and sales use integer grams. Price is per piece or kg using the shop currency precision. Product names, category and supplier are required; optional barcodes are unique. Use **Receive stock** to record purchases as dated batches, with quantity, total paid and an optional batch-specific selling price. Cost per piece/kg is calculated automatically. Existing products with the same name and unit are detected: receive stock instead, or rename the new product. Product edits change name, barcode, low-stock threshold and default selling price; quantity, unit, category and supplier stay fixed. Stock corrections require a reason. To change a unit, create a new product.
 
-New sale: search/select a product or scan a keyboard-style barcode ending with Enter. Piece scans add one piece; whole quantities such as 5 or 20 can be entered. Weight scans focus the weight prompt. Enter `0.23`, `0.23 kg` or `230 g`. Plain input in the kg field means kg: plain `230` means 230 kg. A live preview recalculates as you type: at 100 RWF/kg, 0.2 kg shows 200 g and 20 RWF; 0.23 kg or 230 g shows 23 RWF. A 5 g line is 1 RWF after HALF_UP rounding, or 0.50 in a two-decimal currency at 100/kg. Under 1000 g displays as grams; 1000 g and above as kg with three decimals.
+New sale: type a name or barcode in the **single product search field**; its dropdown narrows without replacing your text. Select a result or scan a keyboard-style barcode ending with Enter. Piece scans add one piece; whole quantities such as 5 or 20 can be entered. Weight scans focus the weight prompt. Enter `0.23`, `0.23 kg` or `230 g`. Plain input in the kg field means kg: plain `230` means 230 kg. A live preview recalculates as you type: at 100 RWF/kg, 0.2 kg shows 200 g and 20 RWF; 0.23 kg or 230 g shows 23 RWF. A 5 g line is 1 RWF after HALF_UP rounding, or 0.50 in a two-decimal currency at 100/kg. Under 1000 g displays as grams; 1000 g and above as kg without trailing zeros: `1 kg`, `1.25 kg`, `19 kg`, `19.5 kg`. Every whole weight from 1 through 23 kg is covered by sale tests; larger available quantities are supported too.
 
-Select Cash / Card / Other for reporting only and complete the sale. No amount received or change is requested. Stock, sale snapshots, payment type, checkout and receipt record commit together or all roll back. A local receipt file can be regenerated if writing it fails. Admin can void with confirmation and a reason: history/actor/reason are retained and stock restores once. Handle any real refund separately.
+Select Cash / Card / Other for reporting only and complete the sale. No amount received or change is requested. Stock, FIFO batch allocations and costs, sale snapshots, payment type, checkout and receipt record commit together or all roll back. A local receipt file can be regenerated if writing it fails. Admin can void with confirmation and a reason: history/actor/reason are retained and stock and the original batch quantities/costs restore once. Handle any real refund separately.
 
 Admin creates staff in **Staff accounts**, with temporary passwords that must be changed at first login. Staff see their own sales; admin sees all activity and controls products, accounts, settings and backups.
 
@@ -45,6 +57,18 @@ Login-screen **Change password** asks for username/current/new/confirmation. Pol
 **Forgot password:** staff ask their administrator for a temporary reset. Admin uses the saved recovery code, sets a temporary password, saves a replacement recovery code, then changes the temporary password at next login. Old recovery codes stop working. With both password and code lost, restore a usable backup; there is no bypass.
 
 Shortcuts: Ctrl/Cmd+N new sale; Ctrl/Cmd+F search; Ctrl/Cmd+Enter complete sale. English is the default; missing optional Turkish translations fall back to English. View → About shows developer/contact, build, legal acceptance date, database location, full terms and the receipt notice.
+
+## Dashboard, batches and profit
+
+The Dashboard tab has a vector logo, today's sales before tax, completed transaction count, pieces/weight sold and low-stock status. Its payment pie, daily bars and trend line use one light theme. Staff sales/charts are restricted to their own activity; low-stock status describes the shared stock. Admin sees shop totals. Choose a currency to inspect its history separately.
+
+Stock batches are consumed oldest received date first (FIFO), then by batch ID. Each sale stores the exact allocated purchase cost and price/currency snapshots. Optional batch prices apply only while that batch is consumed; an order spanning different prices has separate lines. A changed product default affects future lines without an override, never past sales or purchase costs. Historical batch prices in a different currency are not reinterpreted: after a currency change the current product default is used.
+
+Upgrade preserves products and sales and creates one **opening batch** for each product with stock. Its cost is **not recorded**; no purchase cost is invented. Initial stock entered directly and positive stock corrections also have unknown cost. Prefer creating a product with stock 0 and receiving purchases with the actual total paid. Admin can inspect **Stock batches** from Products. New purchase costs do not retroactively assign costs to old sales.
+
+Profit and Loss offers Today, This week (Monday to today), This month, This year and inclusive Custom dates. Revenue excludes tax and voids. Cost, gross profit and margin use only fully costed sale lines in the chosen currency. Unknown-cost lines and their revenue are listed separately; the result is clearly marked **incomplete**. Foreign-currency batch costs are also treated as unavailable rather than converted. The comparison chart uses the same fully costed revenue cohort. Margin is gross profit / fully costed revenue × 100; no margin is shown for zero revenue. This is gross trading profit, before operating expenses, not full financial accounts.
+
+Staff profit is hidden by default. Admin → File → Admin settings → **Allow staff to view their own profit** enables only each staff member's own figures; the service enforces the restriction as well as the screen.
 
 ## Data, backup, restore and uninstall
 
@@ -81,12 +105,16 @@ Development requires JDK 21, Maven wrapper and Python 3 for packaging. Initial d
 ./mvnw clean test
 ./mvnw javafx:run
 ./mvnw -Dinventory.guiTest=true -Dtest=DesktopSmokeTest test
-bash InventorySystemi/scripts/package-macos.sh
+bash InventorySystemi/scripts/package-macos.sh arm64
+# On a native Intel Mac: bash InventorySystemi/scripts/package-macos.sh x86_64
+# On Linux x86_64: bash InventorySystemi/scripts/package-linux.sh
 python3 InventorySystemi/scripts/package-windows-portable.py
-python3 InventorySystemi/scripts/verify-macos-package.py
+python3 InventorySystemi/scripts/verify-macos-package.py --arch arm64
 ```
 
-Brand/version/platform metadata comes from `app-metadata.properties`. The original logo is bundled locally. Build cleanup is recorded in [docs/DELETED_FILES.txt](docs/DELETED_FILES.txt); it never targets data outside the project. See [VERIFICATION.md](docs/VERIFICATION.md), [CHANGELOG.md](CHANGELOG.md) and [PROJECT_REVIEW.md](docs/PROJECT_REVIEW.md).
+Build commands, prerequisites, target isolation, native-library verification and the machine acceptance checklist are in [PACKAGING.md](docs/PACKAGING.md). Build logs record the JDK path/version/architecture under `InventorySystemi/target/logs/`. Intel/Linux artifacts are pending native build hosts; no cross-built files are labelled as tested.
+
+Brand/version/platform metadata comes from `app-metadata.properties`. In-app branding uses JavaFX vector shapes, with window icons rendered from them in memory. Native package icon files are unchanged. Build cleanup is recorded in [docs/DELETED_FILES.txt](docs/DELETED_FILES.txt); it never targets data outside the project. See [VERIFICATION.md](docs/VERIFICATION.md), [CHANGELOG.md](CHANGELOG.md) and [PROJECT_REVIEW.md](docs/PROJECT_REVIEW.md).
 
 Support: **tresorbi29@gmail.com**. No email, browser or support-data transfer is opened automatically by the app.
 

@@ -9,8 +9,8 @@ class QuantitiesTest {
         assertEquals(230,Quantities.parseGrams("230 g",false));assertEquals(230,Quantities.parseGrams("230",true));
         assertEquals(230000,Quantities.parseGrams("230",false));assertEquals(1250,Quantities.parseGrams("1.250 kg",false));
         assertEquals(230,Quantities.parseGrams("0,23",false));assertEquals(230,Quantities.parseGrams(".23",false));
-        assertEquals("230 g",Quantities.format(new BigDecimal("0.230"),Unit.KG));assertEquals("1.250 kg",Quantities.format(new BigDecimal("1.250"),Unit.KG));
-        assertEquals("1.000 kg",Quantities.format(BigDecimal.ONE,Unit.KG));
+        assertEquals("230 g",Quantities.format(new BigDecimal("0.230"),Unit.KG));assertEquals("1.25 kg",Quantities.format(new BigDecimal("1.250"),Unit.KG));
+        assertEquals("1 kg",Quantities.format(BigDecimal.ONE,Unit.KG));
         for(String bad:new String[]{"-1 g","0.0001 kg","1.2 g","NaN",""})assertThrows(IllegalArgumentException.class,()->Quantities.parseGrams(bad,false));
         assertThrows(IllegalArgumentException.class,()->Unit.PIECE.validate(new BigDecimal("1.5"),false));
     }
@@ -27,7 +27,7 @@ class QuantitiesTest {
         assertEquals(Quantities.total(Quantities.parseGrams("230 g",false),price,rwf),Quantities.total(Quantities.parseGrams("0.23 kg",false),price,rwf));
         assertEquals(new BigDecimal("1"),Quantities.total(5,price,rwf));assertEquals(new BigDecimal("0.50"),Quantities.total(5,price,usd));assertEquals(new BigDecimal("0.500"),Quantities.total(5,price,kwd));
         assertEquals(new BigDecimal("150"),Quantities.total(Quantities.parseGrams("1.5 kg",false),price,rwf));assertEquals(230000,Quantities.parseGrams("230",false));
-        assertEquals("200 g",Quantities.format(new BigDecimal("0.2"),Unit.KG));assertEquals("230 g",Quantities.format(new BigDecimal("0.23"),Unit.KG));assertEquals("1.250 kg",Quantities.format(new BigDecimal("1.250"),Unit.KG));
+        assertEquals("200 g",Quantities.format(new BigDecimal("0.2"),Unit.KG));assertEquals("230 g",Quantities.format(new BigDecimal("0.23"),Unit.KG));assertEquals("1.25 kg",Quantities.format(new BigDecimal("1.250"),Unit.KG));
     }
     @Test void passwordPolicy() {
         for(String bad:new String[]{"short1","abcdefghijk","1234567890","USER123456","ü".repeat(40)+"1"})assertThrows(IllegalStateException.class,()->Passwords.validate("user123456",bad));

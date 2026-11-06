@@ -28,13 +28,15 @@ public final class ShopSettingsDialog {
         });
         TextField tax=new TextField(previous.taxRate().toPlainString());tax.setId("shopTaxRate");
         ComboBox<String> language=new ComboBox<>(javafx.collections.FXCollections.observableArrayList("en","tr"));language.setValue(previous.language());language.setId("shopLanguage");
+        CheckBox staffProfit=new CheckBox(LocaleManager.get("settings.staff.profit"));staffProfit.setId("staffProfitVisible");staffProfit.setSelected(new ShopSettings().staffProfitVisible());
+        Label taxHint=new Label(LocaleManager.get("tax.zero.hint"));taxHint.setId("taxHint");
         Label warning=new Label(LocaleManager.get("currency.warning"));warning.setWrapText(true);warning.setMaxWidth(560);
-        VBox box=new VBox(12,new Label(LocaleManager.get("currency.choose")),currencies,new Label(LocaleManager.get("tax.rate")),tax,new Label(LocaleManager.get("language.label")),language,warning);box.setPadding(new Insets(24));d.getDialogPane().setContent(box);
+        VBox box=new VBox(12,new Label(LocaleManager.get("currency.choose")),currencies,new Label(LocaleManager.get("tax.rate")),tax,taxHint,new Label(LocaleManager.get("language.label")),language,staffProfit,warning);box.setPadding(new Insets(24));d.getDialogPane().setContent(box);
         ButtonType save=new ButtonType(LocaleManager.get("button.save"),ButtonBar.ButtonData.OK_DONE);d.getDialogPane().getButtonTypes().add(save);if(!initial)d.getDialogPane().getButtonTypes().add(new ButtonType(LocaleManager.get("button.cancel"),ButtonBar.ButtonData.CANCEL_CLOSE));
         var button=d.getDialogPane().lookupButton(save);button.setId("saveShopSettings");button.addEventFilter(javafx.event.ActionEvent.ACTION,e->{try{
-            ShopCurrency selected=currencies.getConverter().fromString(currencies.getEditor().getText());if(selected==null)throw AuthService.failure("currency.required");BigDecimal rate;try{rate=new BigDecimal(tax.getText().trim().replace(',','.'));}catch(RuntimeException ex){throw AuthService.failure("tax.invalid");}
+            ShopCurrency selected=currencies.getConverter().fromString(currencies.getEditor().getText());if(selected==null)throw AuthService.failure("currency.required");BigDecimal rate;try{rate=ShopSettings.parseTax(tax.getText());}catch(RuntimeException ex){throw AuthService.failure("tax.invalid");}
             ShopSettings.validateTax(rate);if(previous.currency()!=null&&!previous.currency().code().equals(selected.code())&&!Ui.confirm(LocaleManager.get("currency.warning"))){e.consume();return;}
-            new ShopSettings().save(selected.code(),rate,language.getValue());LocaleManager.setLanguage(language.getValue());
+            new ShopSettings().save(selected.code(),rate,language.getValue());new ShopSettings().setStaffProfitVisible(staffProfit.isSelected());LocaleManager.setLanguage(language.getValue());
         }catch(RuntimeException ex){e.consume();Ui.error(ex.getMessage());}});
         if(initial)d.setOnCloseRequest(e->{if(ShopSettings.current().currency()==null)e.consume();});d.setResultConverter(b->b==save);return d.showAndWait().orElse(false);
     }

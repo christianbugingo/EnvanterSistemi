@@ -17,6 +17,7 @@ class MigrationTest {
             try(Statement s=c.createStatement();ResultSet r=s.executeQuery("SELECT quantity,low_stock FROM products")){r.next();assertEquals(8750,r.getLong(1));assertEquals(230,r.getLong(2));}
             try(Statement s=c.createStatement();ResultSet r=s.executeQuery("SELECT quantity_sold,unit_price,product_name FROM sales")){r.next();assertEquals(230,r.getLong(1));assertEquals("49.99",r.getBigDecimal(2).setScale(2).toPlainString());assertEquals("Apples",r.getString(3));}
             try(Statement s=c.createStatement();ResultSet r=s.executeQuery("SELECT total,payment_method FROM checkouts")){r.next();assertEquals("11.50",r.getBigDecimal(1).setScale(2).toPlainString());assertEquals("CASH",r.getString(2));}
+            try(Statement s=c.createStatement();ResultSet r=s.executeQuery("SELECT remaining_quantity,total_cost FROM stock_batches")){assertTrue(r.next());assertEquals(8750,r.getLong(1));assertNull(r.getBigDecimal(2));}
             assertFalse(Migrations.exists(c,"shifts"));
             try(ResultSet r=c.getMetaData().getColumns(c.getCatalog(),null,"checkouts","cash_received")){assertFalse(r.next());}
             try(Statement s=c.createStatement();ResultSet r=s.executeQuery("SELECT COUNT(*) FROM migration_archive")){r.next();assertEquals(2,r.getInt(1));}
@@ -45,6 +46,17 @@ class MigrationTest {
             org.h2.tools.RunScript.execute(c,input);Files.writeString(dir.resolve("migration-backups"),"blocked");
             assertThrows(SQLException.class,()->DatabaseInitializer.initialize(c));assertTrue(Migrations.exists(c,"shifts"));
             try(ResultSet r=c.getMetaData().getColumns(c.getCatalog(),null,"products","quantity")){r.next();assertEquals(Types.DECIMAL,r.getInt("DATA_TYPE"));}
+        }
+    }
+    @Test void upgradesAnExistingGlobal130DatabaseToOpeningBatches() throws Exception {
+        try(Connection c=DriverManager.getConnection("jdbc:h2:mem:global_upgrade_"+UUID.randomUUID()+";DATABASE_TO_LOWER=TRUE","sa","")){
+            DatabaseInitializer.initialize(c);
+            try(Statement s=c.createStatement()){
+                s.execute("DELETE FROM schema_migrations WHERE version='1.3.0-batches'");s.execute("DROP TABLE sale_batch_allocations");s.execute("DROP TABLE stock_batches");s.execute("ALTER TABLE sales DROP COLUMN cost_complete");s.execute("ALTER TABLE sales DROP COLUMN cost_of_goods");
+                s.execute("INSERT INTO products(name,category,quantity,price,supplier,unit,low_stock) VALUES('Old stock','Food',19000,100,'Farm','KG',1000)");
+            }
+            DatabaseInitializer.initialize(c);DatabaseInitializer.initialize(c);
+            try(Statement s=c.createStatement();ResultSet r=s.executeQuery("SELECT remaining_quantity,total_cost FROM stock_batches")){assertTrue(r.next());assertEquals(19000,r.getLong(1));assertNull(r.getBigDecimal(2));assertFalse(r.next());}
         }
     }
     @Test void freshSchemaHasIntegerQuantitiesAndNoDefaultUsers() throws Exception {

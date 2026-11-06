@@ -2,7 +2,7 @@
   "version": "1.3.0",
   "vendor": "COODIC LABS",
   "bundle_identifier": "com.coodiclabs.inventorysystem",
-  "matching_application_classes": 53,
+  "matching_application_classes": 64,
   "windows_zip_crc": "passed",
   "windows_native_version_resource": "passed",
   "mac_plist_metadata": "passed",

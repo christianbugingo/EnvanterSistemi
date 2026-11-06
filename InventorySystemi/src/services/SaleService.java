@@ -60,14 +60,18 @@ public class SaleService {
                         ps.setInt(1,sale.getProductId());try(ResultSet rs=ps.executeQuery()) {if(!rs.next())throw AuthService.failure("error.stale");product=ProductService.read(rs);}
                     }
                     BigDecimal quantity=product.getUnit().validate(sale.getQuantitySold(),false);
-                    if(sale.getPrice().compareTo(product.getPrice())!=0 || sale.getUnit()!=product.getUnit())throw AuthService.failure("sale.price.changed");
+                    if(sale.getUnit()!=product.getUnit())throw AuthService.failure("sale.price.changed");
+                    var batchUse=BatchService.consume(c,product.getProductId(),product.getUnit().toStored(quantity),settings.currency());
+                    for(var allocation:batchUse.allocations())if(sale.getPrice().compareTo(allocation.sellingPrice()==null||!allocation.currency().code().equals(settings.currency().code())?product.getPrice():allocation.sellingPrice())!=0)throw AuthService.failure("sale.price.changed");
                     try(PreparedStatement ps=c.prepareStatement("UPDATE products SET quantity=quantity-?,version=version+1 WHERE product_id=? AND quantity>=?")) {
                         ps.setLong(1,product.getUnit().toStored(quantity));ps.setInt(2,product.getProductId());ps.setLong(3,product.getUnit().toStored(quantity));if(ps.executeUpdate()!=1)throw AuthService.failure("sale.stock.changed");
                     }
                     try(PreparedStatement ps=c.prepareStatement("INSERT INTO sales(product_id,user_id,quantity_sold,sale_date,unit_price,unit,product_name,checkout_id,line_no,net_amount,currency_code,currency_minor,tax_rate) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)",Statement.RETURN_GENERATED_KEYS)) {
-                        ps.setInt(1,product.getProductId());ps.setInt(2,actor.id());ps.setLong(3,product.getUnit().toStored(quantity));ps.setDate(4,java.sql.Date.valueOf(LocalDate.now()));ps.setBigDecimal(5,product.getPrice());ps.setString(6,product.getUnit().name());ps.setString(7,product.getName());ps.setString(8,checkoutId);ps.setInt(9,index);ps.setBigDecimal(10,sale.getTotal());ps.setString(11,settings.currency().code());ps.setInt(12,settings.currency().minorUnits());ps.setBigDecimal(13,settings.taxRate());ps.executeUpdate();
+                        ps.setInt(1,product.getProductId());ps.setInt(2,actor.id());ps.setLong(3,product.getUnit().toStored(quantity));ps.setDate(4,java.sql.Date.valueOf(LocalDate.now()));ps.setBigDecimal(5,sale.getPrice());ps.setString(6,product.getUnit().name());ps.setString(7,product.getName());ps.setString(8,checkoutId);ps.setInt(9,index);ps.setBigDecimal(10,sale.getTotal());ps.setString(11,settings.currency().code());ps.setInt(12,settings.currency().minorUnits());ps.setBigDecimal(13,settings.taxRate());ps.executeUpdate();
                         try(ResultSet rs=ps.getGeneratedKeys()) {rs.next();sale.setSaleId(rs.getInt(1));}
                     }
+                    BatchService.allocate(c,sale.getSaleId(),batchUse);
+                    try(PreparedStatement cost=c.prepareStatement("UPDATE sales SET cost_of_goods=?,cost_complete=? WHERE sale_id=?")){cost.setBigDecimal(1,batchUse.cost());cost.setBoolean(2,batchUse.complete());cost.setInt(3,sale.getSaleId());cost.executeUpdate();}
                     sale.setCheckoutId(checkoutId);sale.setProductName(product.getName());sale.setSoldBy(actor.username());
                     AuditService.record(c,actor,"SALE_CREATED","#"+sale.getSaleId()+" | "+product.getName()+" | "+quantity+" "+product.getUnit().name()+" | "+sale.getTotal()+" | "+checkoutId);
                 }
@@ -77,6 +81,24 @@ public class SaleService {
                 c.commit();return result;
             } catch(Exception e) {c.rollback();throw e;}
         } catch(SQLException e) {throw AuthService.databaseError(e);}
+    }
+    /** Split a requested quantity at FIFO price boundaries without consuming stock. */
+    public List<Sale> quoteProduct(int productId,int userId,java.math.BigDecimal quantity){
+        try(Connection c=DBConnection.connect()){
+            c.setAutoCommit(false);var actor=AuthService.require(c,false);if(actor.id()!=userId)throw AuthService.failure("msg.access.denied");
+            var settings=ShopSettings.read(c);Product product=BatchService.lockProduct(c,productId);long left=product.getUnit().toStored(product.getUnit().validate(quantity,false));
+            List<Sale> result=new ArrayList<>();
+            try(PreparedStatement p=c.prepareStatement("SELECT remaining_quantity,selling_price,currency_code FROM stock_batches WHERE product_id=? AND remaining_quantity>0 ORDER BY received_date,batch_id")){
+                p.setInt(1,productId);try(ResultSet r=p.executeQuery()){while(left>0&&r.next()){
+                    long take=Math.min(left,r.getLong(1));var price=r.getBigDecimal(2);if(price==null||!Objects.equals(r.getString(3),settings.currency().code()))price=product.getPrice();
+                    if(!result.isEmpty()&&result.getLast().getPrice().compareTo(price)==0){var previous=result.removeLast();take+=product.getUnit().toStored(previous.getQuantitySold());}
+                    Sale line=new Sale(0,productId,userId,product.getUnit().fromStored(take),java.time.LocalDate.now());line.setUnit(product.getUnit());line.setPrice(price);line.setProductName(product.getName());line.setFinancialSnapshot(settings.currency(),settings.taxRate());result.add(line);
+                    // Only this batch's portion is removed from the outstanding request.
+                    left-=Math.min(left,r.getLong(1));
+                }}
+            }
+            if(left!=0)throw AuthService.failure("sale.stock.changed");c.commit();return result;
+        }catch(SQLException ex){throw AuthService.databaseError(ex);}
     }
     public Checkout loadCheckout(String id) {
         try(Connection c=DBConnection.connect()) {return load(c,id,AuthService.require(c,false));}
@@ -105,6 +127,7 @@ public class SaleService {
                 try(PreparedStatement ps=c.prepareStatement("SELECT product_id,quantity_sold,voided,checkout_id FROM sales WHERE sale_id=? FOR UPDATE")) {
                     ps.setInt(1,id);try(ResultSet rs=ps.executeQuery()) {if(!rs.next()||rs.getBoolean("voided"))throw AuthService.failure("sale.already.void");productId=rs.getInt(1);quantity=rs.getLong(2);checkoutId=rs.getString(4);}
                 }
+                Product current=BatchService.lockProduct(c,productId);BatchService.restore(c,id,productId,current.getUnit(),quantity);
                 try(PreparedStatement ps=c.prepareStatement("UPDATE products SET quantity=quantity+?,version=version+1 WHERE product_id=?")) {ps.setLong(1,quantity);ps.setInt(2,productId);if(ps.executeUpdate()!=1)throw AuthService.failure("error.stale");}
                 try(PreparedStatement ps=c.prepareStatement("UPDATE sales SET voided=TRUE,voided_by=?,void_reason=? WHERE sale_id=?")) {ps.setInt(1,actor.id());ps.setString(2,reason.trim());ps.setInt(3,id);ps.executeUpdate();}
                 AuditService.record(c,actor,"SALE_VOIDED","#"+id+" | "+quantity+" | "+reason.trim());c.commit();

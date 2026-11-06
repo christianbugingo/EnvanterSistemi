@@ -1,0 +1,38 @@
+Files changed/added in the native packaging update (absolute paths):
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/pom.xml
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/scripts/package-macos.sh
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/scripts/package-common.sh
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/scripts/package-linux.sh
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/scripts/package_target.py
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/scripts/test_package_target.py
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/scripts/release_tools.py
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/scripts/verify-macos-package.py
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/scripts/verify-release.py
+/Users/a/Documents/EnvanterSistemi/README.md
+/Users/a/Documents/EnvanterSistemi/CHANGELOG.md
+/Users/a/Documents/EnvanterSistemi/docs/SHOP_SETUP.md
+/Users/a/Documents/EnvanterSistemi/docs/PROJECT_REVIEW.md
+/Users/a/Documents/EnvanterSistemi/docs/PACKAGING.md
+/Users/a/Documents/EnvanterSistemi/docs/VERIFICATION.md
+/Users/a/Documents/EnvanterSistemi/docs/evidence/tests-multiplatform.log
+/Users/a/Documents/EnvanterSistemi/docs/evidence/packaging-target-tests.log
+/Users/a/Documents/EnvanterSistemi/docs/evidence/arm64-architecture.log
+/Users/a/Documents/EnvanterSistemi/docs/evidence/packaging-macos-arm64.log
+/Users/a/Documents/EnvanterSistemi/docs/evidence/mac-offline.json
+/Users/a/Documents/EnvanterSistemi/docs/evidence/package-structure.json
+/Users/a/Documents/EnvanterSistemi/docs/evidence/intel-host-guard.log
+/Users/a/Documents/EnvanterSistemi/docs/evidence/linux-host-guard.log
+/Users/a/Documents/EnvanterSistemi/docs/evidence/packaging-deleted-files.txt
+/Users/a/Documents/EnvanterSistemi/docs/evidence/new-artifacts.txt
+/Users/a/Documents/EnvanterSistemi/docs/evidence/packaging-deliverables.txt
+
+Newly created artifacts:
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.app
+/Users/a/Documents/EnvanterSistemi/InventorySystemi/dist/macos/InventorySystem-1.3.0-macos-arm64.dmg
+
+arm64 macOS: rebuilt; packaging script and Maven configuration changed.
+Intel macOS: NOT BUILT; native Intel Mac/x86_64 JDK unavailable.
+Linux x86_64: NOT BUILT; native Linux x86_64 host/JDK unavailable.
+Windows: NOT REBUILT; application Java and Windows builder unchanged. SHA-256 verified identical.
+
+No application Java or shop data changed in this update.

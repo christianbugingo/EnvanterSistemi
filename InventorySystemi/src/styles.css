@@ -52,3 +52,23 @@
 .step-card { -fx-background-color: white; -fx-background-radius: 16; -fx-effect: dropshadow(gaussian, #bdcfe2, 12, 0.15, 0, 4); }
 .step-number { -fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2178d4; }
 .home-footer { -fx-text-fill: #526777; }
+
+/* Native analytics: one light palette for both roles. */
+.analytics { -fx-background-color: #f3f6fb; }
+.kpi-card { -fx-background-color: white; -fx-background-radius: 12; -fx-border-color: #e2e8f0; -fx-border-radius: 12; -fx-min-width: 185; }
+.kpi-value { -fx-font-size: 25; -fx-font-weight: bold; -fx-text-fill: #163347; }
+.kpi-status { -fx-font-size: 12; -fx-text-fill: #61758b; }
+.section-title { -fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #163347; }
+.status-good { -fx-text-fill: #14755b; -fx-font-weight: bold; }
+.status-watch { -fx-text-fill: #9b6400; -fx-font-weight: bold; }
+.status-action { -fx-text-fill: #bd3941; -fx-font-weight: bold; }
+.chart { -fx-background-color: white; -fx-background-radius: 12; -fx-padding: 15; }
+.chart-title { -fx-font-size: 16; -fx-text-fill: #163347; }
+.chart-plot-background { -fx-background-color: #f8fafc; }
+.chart-vertical-grid-lines, .chart-horizontal-grid-lines { -fx-stroke: #e7edf5; }
+.default-color0.chart-bar { -fx-bar-fill: #3186cc; }
+.default-color0.chart-series-line { -fx-stroke: #189b82; -fx-stroke-width: 3; }
+.default-color0.chart-pie { -fx-pie-color: #3186cc; }
+.default-color1.chart-pie { -fx-pie-color: #19a68d; }
+.default-color2.chart-pie { -fx-pie-color: #ef9b40; }
+.search-suggestions { -fx-border-color: #3186cc; -fx-background-color: white; -fx-pref-width: 540; }

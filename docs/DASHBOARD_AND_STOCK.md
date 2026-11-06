@@ -1,0 +1,14 @@
+# Dashboard and stock workflow
+
+This release stays in Java 21, JavaFX and local H2. No web UI, network service or extra application runtime was added.
+
+1. **Dashboard:** the first tab shows today's revenue before tax, completed checkouts, pieces/weight sold and shared low-stock status. Payment pie, daily bars and a trend show original-currency values. Staff queries use their own user ID; admin queries cover the shop. Vector shapes draw the in-app logo; package icons are unchanged.
+2. **Tax:** the visible hint says “If you do not use tax, enter 00.” Both `00` and `0` store zero.
+3. **Sale search:** one name/barcode field narrows a dropdown while preserving typed text. Choose a piece product to add one; choose weight to focus the weight field. Barcode + Enter selects directly.
+4. **Weight:** grams remain integers in storage. `230 g`, `1 kg`, `1.25 kg`, `19 kg`, `19.5 kg` display without unnecessary zeros. A plain number in a kg field means kg. The preview calculates price immediately. Whole kg sales from 1 through 23 are tested explicitly.
+5. **Batches:** select an existing product → Receive stock. Enter pieces/kg, actual total paid, received date and optionally this batch's selling price. Inspect Stock batches. FIFO follows received date then batch ID. Duplicate name/unit detection offers receiving stock instead; rename a genuinely different product. Product editing does not change existing purchase costs. Opening stock from migration or direct adjustments has unknown cost.
+6. **Profit:** choose Today, This week, This month, This year or Custom dates. Revenue excludes tax/voids. Cost, gross profit, margin and comparison bars cover fully costed lines only; unknown-cost revenue is disclosed and marks the result incomplete. No exchange conversion or operating-expense accounting is performed. Staff profit is hidden until an admin enables it in Admin settings, and remains scoped to their own sales.
+7. **Verification:** see VERIFICATION.md and evidence/. Migration tests use disposable copied fixture databases, never a live shop. Windows execution remains a required Windows-PC acceptance check.
+8. **Reinstall:** close the old app; replace it with the new Mac bundle or newly extracted Windows portable folder. Keep the shop data folder. The first upgrade automatically backs up the database and creates unknown-cost opening batches without removing products or sales. See DELETED_FILES.txt and evidence/deleted-this-update.txt for generated-file cleanup; no source file was deleted in this update.
+
+For a disposable RWF example: receive 10 biscuits for 1000, then 10 for 1010, default selling price 150. Sell 5 then 10. Revenue is 2250, FIFO cost 1505, gross profit 745, margin 33.11%; five biscuits remain from the second batch. Leave batch prices blank for this example. Do not change a real shop's currency just to test it.

@@ -39,15 +39,16 @@ class DesktopSmokeTest {
                     ((TextField)stage.getScene().lookup("#loginUsername")).setText("admin");
                     ((PasswordField)stage.getScene().lookup("#loginPassword")).setText("AdminTest123!");
                     ((Button)stage.getScene().lookup("#signIn")).fire();
-                    TabPane tabs=(TabPane)stage.getScene().lookup(".tab-pane");assertEquals(5,tabs.getTabs().size());
-                    assertEquals(LocaleManager.get("tab.staff"),tabs.getTabs().get(3).getText());
+                    TabPane tabs=(TabPane)stage.getScene().lookup(".tab-pane");assertEquals(6,tabs.getTabs().size());
+                    assertEquals(LocaleManager.get("tab.staff"),tabs.getTabs().get(4).getText());
                     stage.getScene().getRoot().applyCss(); assertTranslated(stage.getScene().getRoot());
+                    assertNotNull(stage.getScene().lookup("#analyticsDashboard"));assertNotNull(stage.getScene().lookup("#paymentChart"));assertEquals("en".equals(language)?"0":"1",((Label)stage.getScene().lookup("#kpiTransactions")).getText());
                     snapshot(stage.getScene().getRoot(),language+"-admin");
                     Platform.runLater(()->guard(done,()->{DialogPane about=dialog(stage);about.applyCss();assertTrue(about.lookupAll(".label").stream().anyMatch(n->n instanceof Label l&&l.getText().contains(LegalService.acceptedAt())&&l.getText().contains("COODIC LABS")));((Button)about.lookupButton(about.getButtonTypes().getFirst())).fire();}));
                     menu(stage,LocaleManager.get("about.title")).fire();
                     AddProductDialog product=new AddProductDialog(null);product.show();product.getDialogPane().applyCss();assertTranslated(product.getDialogPane());
                     ((RadioButton)product.getDialogPane().lookup("#soldByWeight")).fire();
-                    ((TextField)product.getDialogPane().lookup("#nameField")).setText("Bulk rice");
+                    ((TextField)product.getDialogPane().lookup("#nameField")).setText("Bulk rice "+language);
                     ((TextField)product.getDialogPane().lookup("#categoryField")).setText("Food");
                     ((TextField)product.getDialogPane().lookup("#supplierField")).setText("Farm");
                     ((TextField)product.getDialogPane().lookup("#quantityField")).setText("230 g");
@@ -57,14 +58,15 @@ class DesktopSmokeTest {
                     assertEquals(new BigDecimal("0.230"),product.getResult().getQuantity());new ProductService().addProduct(product.getResult());
                     var rows=new ProductService().loadProducts();AddSaleDialog sale=new AddSaleDialog(rows,AuthService.current().id());sale.show();
                     sale.getDialogPane().applyCss();assertTranslated(sale.getDialogPane());
-                    @SuppressWarnings("unchecked") ComboBox<Product> combo=(ComboBox<Product>)sale.getDialogPane().lookup("#saleProduct");combo.setValue(rows.getFirst());
+                    TextField merged=(TextField)sale.getDialogPane().lookup("#productSearch");merged.setText("App");
+                    @SuppressWarnings("unchecked") ListView<Product> suggestions=(ListView<Product>)sale.getDialogPane().lookup("#productSuggestions");assertEquals(1,suggestions.getItems().size());assertEquals("App",merged.getText());merged.fireEvent(new javafx.event.ActionEvent());
                     ((TextField)sale.getDialogPane().lookup("#saleQuantity")).setText("0.23 kg");
                     ((Button)sale.getDialogPane().lookup("#addCartItem")).fire();
                     @SuppressWarnings("unchecked") TableView<Sale> table=(TableView<Sale>)sale.getDialogPane().lookup(".table-view");assertEquals(1,table.getItems().size());
                     assertEquals(new BigDecimal("0.230"),table.getItems().getFirst().getQuantitySold());
-                    TextField scan=(TextField)sale.getDialogPane().lookup("#barcodeSearch");scan.setText("8691234567890");scan.fireEvent(new javafx.event.ActionEvent());
+                    TextField scan=(TextField)sale.getDialogPane().lookup("#productSearch");scan.setText("8691234567890");scan.fireEvent(new javafx.event.ActionEvent());
                     assertEquals(2,table.getItems().size());assertEquals("Milk",table.getItems().get(1).getProductName());
-                    combo.setValue(rows.get(1));((TextField)sale.getDialogPane().lookup("#saleQuantity")).setText("4");((Button)sale.getDialogPane().lookup("#addCartItem")).fire();
+                    ((TextField)sale.getDialogPane().lookup("#saleQuantity")).setText("4");((Button)sale.getDialogPane().lookup("#addCartItem")).fire();
                     assertEquals(2,table.getItems().size());assertEquals(new BigDecimal("5.000"),table.getItems().get(1).getQuantitySold());
                     assertNull(sale.getDialogPane().lookup("#cashReceived"));assertEquals(PaymentMethod.CASH,sale.getPaymentMethod());
                     snapshot(sale.getDialogPane(),language+"-sale-dialog");
@@ -88,7 +90,8 @@ class DesktopSmokeTest {
                 });
                 ((Button)stage.getScene().lookup("#signIn")).fire();
                 assertFalse(AuthService.current().mustChangePassword());
-                assertEquals(2,((TabPane)stage.getScene().lookup(".tab-pane")).getTabs().size());
+                assertEquals(3,((TabPane)stage.getScene().lookup(".tab-pane")).getTabs().size());
+                assertEquals("0",((Label)stage.getScene().lookup("#kpiTransactions")).getText());assertFalse(new DashboardService().canViewProfit());
                 snapshot(stage.getScene().getRoot(),"en-staff");
                 menu(stage,LocaleManager.get("menu.logout")).fire();
                 // Login-screen password change without opening the dashboard.
@@ -130,6 +133,7 @@ class DesktopSmokeTest {
                     DialogPane code=dialog(stage);assertTrue(code.lookupButton(code.getButtonTypes().getFirst()).isDisabled());assertFalse(((TextArea)code.lookup("#recoveryCode")).getText().isBlank());((CheckBox)code.lookup("#recoverySaved")).setSelected(true);
                     Platform.runLater(()->guard(done,()->{
                         DialogPane settings=dialog(stage);@SuppressWarnings("unchecked") ComboBox<ShopCurrency> currencies=(ComboBox<ShopCurrency>)settings.lookup("#shopCurrency");assertNull(currencies.getValue());
+                        assertEquals(LocaleManager.get("tax.zero.hint"),((Label)settings.lookup("#taxHint")).getText());((TextField)settings.lookup("#shopTaxRate")).setText("00");
                         ((TextField)settings.lookup("#currencySearch")).setText("RWF");assertEquals(1,currencies.getItems().size());assertEquals("RWF",currencies.getItems().getFirst().code());
                         Platform.runLater(()->guard(done,()->{DialogPane information=dialog(stage);((Button)information.lookupButton(information.getButtonTypes().getFirst())).fire();}));
                         ((Button)settings.lookup("#saveShopSettings")).fire();
@@ -141,8 +145,8 @@ class DesktopSmokeTest {
         AuthService owner=new AuthService();owner.login("firstowner","FirstOwnerPassword123!");
         Product weight=new Product(0,"Test weight","Food",new BigDecimal("2"),new BigDecimal("100"),"Farm",Unit.KG,BigDecimal.ZERO,0);weight.setBarcode("WEIGHT100");new ProductService().addProduct(weight);
         AddSaleDialog weighted=new AddSaleDialog(new ProductService().loadProducts(),AuthService.current().id());weighted.show();
-        TextField barcode=(TextField)weighted.getDialogPane().lookup("#barcodeSearch");barcode.setText("WEIGHT100");barcode.fireEvent(new javafx.event.ActionEvent());
-        TextField quantity=(TextField)weighted.getDialogPane().lookup("#saleQuantity");quantity.setText("0.2 kg");assertEquals("200 g · 20 RWF",((Label)weighted.getDialogPane().lookup("#weightPreview")).getText());
+        TextField barcode=(TextField)weighted.getDialogPane().lookup("#productSearch");barcode.setText("WEIGHT100");barcode.fireEvent(new javafx.event.ActionEvent());
+        TextField quantity=(TextField)weighted.getDialogPane().lookup("#saleQuantity");assertSame(quantity,weighted.getDialogPane().getScene().getFocusOwner());quantity.setText("0.2 kg");assertEquals("200 g · 20 RWF",((Label)weighted.getDialogPane().lookup("#weightPreview")).getText());
         quantity.setText("0.23 kg");assertEquals("230 g · 23 RWF",((Label)weighted.getDialogPane().lookup("#weightPreview")).getText());quantity.setText("230 g");assertEquals("230 g · 23 RWF",((Label)weighted.getDialogPane().lookup("#weightPreview")).getText());
         quantity.setText("5 g");assertEquals("5 g · 1 RWF",((Label)weighted.getDialogPane().lookup("#weightPreview")).getText());weighted.close();owner.logout();
         var legal=LegalText.render(LegalService.text("TERMS.md"));String text=((javafx.scene.layout.VBox)legal.getContent()).getChildren().stream().filter(n->n instanceof javafx.scene.text.TextFlow).map(n->((javafx.scene.text.TextFlow)n).getChildren().stream().map(t->((javafx.scene.text.Text)t).getText()).collect(java.util.stream.Collectors.joining())).collect(java.util.stream.Collectors.joining("\n"));assertFalse(text.contains("##"));assertFalse(text.contains("**"));

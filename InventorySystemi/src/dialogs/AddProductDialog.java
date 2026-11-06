@@ -16,18 +16,19 @@ public class AddProductDialog extends Dialog<Product> {
         TextField name=new TextField(existing==null?"":existing.getName()); name.setId("nameField");
         TextField category=new TextField(existing==null?"":existing.getCategory()); category.setId("categoryField");
         TextField supplier=new TextField(existing==null?"":existing.getSupplier()); supplier.setId("supplierField");
-        TextField quantity=new TextField(existing==null?"0":existing.getQuantity().toPlainString()); quantity.setId("quantityField");
+        TextField quantity=new TextField(existing==null?"0":existing.getQuantity().stripTrailingZeros().toPlainString()); quantity.setId("quantityField");
         quantity.setDisable(existing!=null);
         TextField barcode=new TextField(existing==null?"":existing.getBarcode()); barcode.setId("barcodeField");
-        TextField price=new TextField(existing==null?"":existing.getPrice().toPlainString()); price.setId("priceField");
-        TextField threshold=new TextField(existing==null?"10":existing.getLowStock().toPlainString()); threshold.setId("lowStockField");
+        TextField price=new TextField(existing==null?"":existing.getPrice().stripTrailingZeros().toPlainString()); price.setId("priceField");
+        TextField threshold=new TextField(existing==null?"10":existing.getLowStock().stripTrailingZeros().toPlainString()); threshold.setId("lowStockField");
         ComboBox<Unit> unit=new ComboBox<>(); unit.getItems().addAll(Unit.values()); unit.setValue(existing==null?Unit.PIECE:existing.getUnit()); unit.setId("unitField");
+        if(existing!=null){category.setDisable(true);supplier.setDisable(true);unit.setDisable(true);}
         Label priceLabel=new Label(LocaleManager.get("product.price.unit",unit.getValue().label()));
         unit.valueProperty().addListener((o,a,b)->priceLabel.setText(LocaleManager.get("product.price.unit",b.label())));
         GridPane grid=new GridPane(); grid.setPadding(new Insets(20)); grid.setHgap(12); grid.setVgap(12);
         ToggleGroup soldBy=new ToggleGroup();RadioButton piece=new RadioButton(LocaleManager.get("unit.piece")),weight=new RadioButton(LocaleManager.get("unit.weight"));
         piece.setToggleGroup(soldBy);weight.setToggleGroup(soldBy);piece.setSelected(unit.getValue()==Unit.PIECE);weight.setSelected(unit.getValue()==Unit.KG);
-        piece.setId("soldByPiece");weight.setId("soldByWeight");
+        piece.setId("soldByPiece");weight.setId("soldByWeight");piece.setDisable(existing!=null);weight.setDisable(existing!=null);
         soldBy.selectedToggleProperty().addListener((o,a,b)->{unit.setValue(b==weight?Unit.KG:Unit.PIECE);if(existing==null){quantity.setText("0");threshold.setText("0");}});
         unit.valueProperty().addListener((o,a,b)->{piece.setSelected(b==Unit.PIECE);weight.setSelected(b==Unit.KG);});
         quantity.textProperty().addListener((o,a,b)->{if(unit.getValue()==Unit.PIECE&&!b.matches("[0-9]*"))quantity.setText(a);});
@@ -53,6 +54,8 @@ public class AddProductDialog extends Dialog<Product> {
                 BigDecimal amount=LocaleManager.decimal(price.getText());
                 if(amount.stripTrailingZeros().scale()>services.ShopSettings.currency().minorUnits() || amount.compareTo(new BigDecimal("9999999999.99"))>0) throw services.AuthService.failure("msg.invalid.price");
                 if(!barcode.getText().isBlank() && !barcode.getText().trim().matches("[A-Za-z0-9._-]{1,64}")) throw services.AuthService.failure("barcode.invalid");
+                var duplicate=new services.ProductService().findDuplicate(name.getText(),unit.getValue(),existing==null?0:existing.getProductId());
+                if(duplicate!=null){e.consume();if(Ui.confirm(LocaleManager.get("product.duplicate"))){if(ReceiveStockDialog.show(duplicate))close();}else{name.requestFocus();name.selectAll();}return;}
                 result[0]=new Product(existing==null?0:existing.getProductId(),name.getText().trim(),category.getText().trim(),qty,amount,supplier.getText().trim(),unit.getValue(),low,existing==null?0:existing.getVersion());
                 result[0].setBarcode(barcode.getText());
             } catch(RuntimeException ex) { e.consume(); Ui.error(ex.getMessage()); }

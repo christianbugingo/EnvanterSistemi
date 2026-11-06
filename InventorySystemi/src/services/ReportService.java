@@ -41,5 +41,5 @@ public class ReportService {
     }
     /** Deliberately refuses to add different currencies. */
     public BigDecimal revenue(List<ReportEntry> rows){if(rows.stream().map(r->r.currency().code()).distinct().count()>1)throw AuthService.failure("currency.mixed");return rows.stream().map(ReportEntry::getTotalRevenue).reduce(BigDecimal.ZERO,BigDecimal::add);}
-    public String summary(List<ReportEntry> rows){Map<String,BigDecimal> values=new TreeMap<>();Map<String,ShopCurrency> currencies=new HashMap<>();for(var r:rows){values.merge(r.currency().code(),r.getTotalRevenue(),BigDecimal::add);currencies.put(r.currency().code(),r.currency());}return values.entrySet().stream().map(e->currencies.get(e.getKey()).format(e.getValue())).collect(java.util.stream.Collectors.joining(" · "));}
+    public String summary(List<ReportEntry> rows){if(rows.isEmpty())return gui.LocaleManager.money(BigDecimal.ZERO);Map<String,BigDecimal> values=new TreeMap<>();Map<String,ShopCurrency> currencies=new HashMap<>();for(var r:rows){values.merge(r.currency().code(),r.getTotalRevenue(),BigDecimal::add);currencies.put(r.currency().code(),r.currency());}return values.entrySet().stream().map(e->currencies.get(e.getKey()).format(e.getValue())).collect(java.util.stream.Collectors.joining(" · "));}
 }

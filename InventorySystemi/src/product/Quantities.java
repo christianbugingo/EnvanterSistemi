@@ -22,7 +22,7 @@ public final class Quantities {
     public static String format(BigDecimal value,Unit unit) {
         if(unit==Unit.PIECE)return LocaleManager.quantity(value)+" "+unit.label();
         long grams=unit.toStored(value);
-        return Math.abs(grams)<1000?grams+" g":BigDecimal.valueOf(grams,3).setScale(3).toPlainString()+" kg";
+        return Math.abs(grams)<1000?grams+" g":BigDecimal.valueOf(grams,3).stripTrailingZeros().toPlainString()+" kg";
     }
     public static BigDecimal total(long grams,BigDecimal perKg,ShopCurrency currency){return currency.round(perKg.multiply(BigDecimal.valueOf(grams)).movePointLeft(3));}
     public static BigDecimal total(long grams,BigDecimal perKg) {return perKg.multiply(BigDecimal.valueOf(grams)).divide(new BigDecimal("1000"),2,RoundingMode.HALF_UP);}

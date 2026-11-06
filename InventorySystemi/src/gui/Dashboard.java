@@ -37,6 +37,7 @@ public class Dashboard {
     private TextField search;
     private Stage stage;
     private Timeline refresh;
+    private AnalyticsPane analytics;
     private AuthService.User user;
     public String getCurrentUser() { return user.username(); }
     public String getCurrentRole() { return user.role(); }
@@ -46,9 +47,12 @@ public class Dashboard {
         stage=primaryStage; Branding.apply(stage); stage.setTitle(LocaleManager.get("title.dashboard",user.username(),LocaleManager.get("role."+user.role())));
         BorderPane root=new BorderPane(); Ui.style(root); root.setPadding(new Insets(12));
         overview=new Label(); overview.setStyle("-fx-font-size:18; -fx-font-weight:bold; -fx-padding:12;");
-        HBox brandHeader=new HBox(12,Branding.logo(48),overview);brandHeader.setAlignment(javafx.geometry.Pos.CENTER_LEFT);brandHeader.setPadding(new Insets(8));
+        Label appName=new Label("Inventory System");appName.getStyleClass().add("section-title");Label roleLabel=new Label(LocaleManager.get("role."+user.role())+" · "+user.username());
+        Region spacer=new Region();HBox.setHgrow(spacer,Priority.ALWAYS);overview.setWrapText(true);
+        HBox brandHeader=new HBox(16,Branding.logo(56),new VBox(4,appName,roleLabel,overview),spacer,Ui.button("button.add.sale",this::addSale));brandHeader.setAlignment(javafx.geometry.Pos.CENTER_LEFT);brandHeader.setPadding(new Insets(12));
         root.setTop(new VBox(MenuBarBuilder.createMenuBar(stage,this),brandHeader));
         TabPane tabs=new TabPane(); tabs.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
+        analytics=new AnalyticsPane();ScrollPane analyticsScroll=new ScrollPane(analytics);analyticsScroll.setFitToWidth(true);tabs.getTabs().add(tab("tab.dashboard",analyticsScroll));
         tabs.getTabs().add(tab("tab.products",productSection())); tabs.getTabs().add(tab("tab.sales",salesSection()));
         if(user.isAdmin()) {
             tabs.getTabs().add(tab("tab.reports",reportsSection()));
@@ -59,7 +63,7 @@ public class Dashboard {
         stage.setScene(new Scene(root,1280,760)); stage.setMinWidth(1050); stage.setMinHeight(620); stage.setMaximized(true); stage.show();
         stage.setOnCloseRequest(e->{stopRefresh();auth.logout();});
         stage.getScene().getAccelerators().put(new javafx.scene.input.KeyCodeCombination(javafx.scene.input.KeyCode.N,javafx.scene.input.KeyCombination.SHORTCUT_DOWN),()->Ui.run(this::addSale));
-        stage.getScene().getAccelerators().put(new javafx.scene.input.KeyCodeCombination(javafx.scene.input.KeyCode.F,javafx.scene.input.KeyCombination.SHORTCUT_DOWN),()->{tabs.getSelectionModel().select(0);search.requestFocus();});
+        stage.getScene().getAccelerators().put(new javafx.scene.input.KeyCodeCombination(javafx.scene.input.KeyCode.F,javafx.scene.input.KeyCombination.SHORTCUT_DOWN),()->{tabs.getSelectionModel().select(1);search.requestFocus();});
         refreshAllData();
         refresh=new Timeline(new KeyFrame(Duration.seconds(10),e->{
             try { refreshAllData(); }
@@ -74,8 +78,10 @@ public class Dashboard {
         search=new TextField(); search.setPromptText(LocaleManager.get("search.placeholder")); search.textProperty().addListener((o,a,b)->filterProducts());
         HBox actions=buttons(Ui.button("button.refresh",this::refreshAllData));
         if(user.isAdmin()) {
-            actions.getChildren().addAll(Ui.button("button.add",()->new AddProductDialog(null).showAndWait().ifPresent(p->{products.addProduct(p);refreshAllData();})),
+            actions.getChildren().addAll(Ui.button("button.add",()->{new AddProductDialog(null).showAndWait().ifPresent(products::addProduct);refreshAllData();}),
                 Ui.button("button.update",()->new AddProductDialog(selected(productTable)).showAndWait().ifPresent(p->{products.updateProduct(p);refreshAllData();})),
+                Ui.button("batch.receive",()->{if(ReceiveStockDialog.show(selected(productTable)))refreshAllData();}),
+                Ui.button("batch.history",this::batchHistory),
                 Ui.button("stock.adjust",this::adjustStock),
                 Ui.button("button.delete",()->{Product p=selected(productTable);if(Ui.confirm(LocaleManager.get("confirm.product.delete",p.getName()))) {products.deleteProduct(p.getProductId());refreshAllData();}}));
         }
@@ -177,6 +183,7 @@ public class Dashboard {
         return section(new Label(LocaleManager.get("activity.hint")),activityTable,Ui.button("button.refresh",this::refreshAllData));
     }
     public void refreshAllData() {
+        if(analytics!=null)analytics.refresh();
         productRows=products.loadProducts(); filterProducts(); saleTable.setItems(sales.loadSales());
         long low=productRows.stream().filter(Product::isLowStock).count();
         if(user.isAdmin()) {
@@ -202,15 +209,15 @@ public class Dashboard {
     }
     public void exportProductsCSV() {
         List<List<?>> rows=new ArrayList<>(); rows.add(headers("column.id","column.name","column.category","column.quantity","column.unit","column.price","column.supplier"));
-        for(Product p:products.loadProducts()) rows.add(List.of(p.getProductId(),p.getName(),p.getCategory(),p.getQuantity(),p.getUnit().name(),p.getPrice(),p.getSupplier())); export("products",rows);
+        for(Product p:products.loadProducts()) rows.add(List.of(p.getProductId(),p.getName(),p.getCategory(),p.getQuantity().stripTrailingZeros().toPlainString(),p.getUnit().name(),p.getPrice(),p.getSupplier())); export("products",rows);
     }
     public void exportSalesCSV() {
         List<List<?>> rows=new ArrayList<>(); rows.add(headers("column.sale.id","column.product.name","column.quantity","column.unit","column.price","column.total","column.date","column.sold.by","column.status","checkout.id","payment.method"));
-        for(Sale s:sales.loadSales()) rows.add(List.of(s.getSaleId(),s.getProductName(),s.getQuantitySold(),s.getUnit().name(),s.getPriceLabel(),s.getTotalLabel(),s.getSaleDate(),s.getSoldBy(),LocaleManager.get(s.isVoided()?"sale.voided":"sale.completed"),s.getCheckoutId(),s.getPaymentLabel())); export("sales",rows);
+        for(Sale s:sales.loadSales()) rows.add(List.of(s.getSaleId(),s.getProductName(),s.getQuantitySold().stripTrailingZeros().toPlainString(),s.getUnit().name(),s.getPriceLabel(),s.getTotalLabel(),s.getSaleDate(),s.getSoldBy(),LocaleManager.get(s.isVoided()?"sale.voided":"sale.completed"),s.getCheckoutId(),s.getPaymentLabel())); export("sales",rows);
     }
     public void exportReportCSV() {
         List<List<?>> rows=new ArrayList<>(); rows.add(headers("column.date","column.unit","column.quantity","column.subtotal","column.tax","column.total.revenue","payment.method","column.currency"));
-        for(ReportEntry r:reports.load(start.getValue(),end.getValue())) rows.add(List.of(r.date(),r.unit().name(),r.totalQuantity(),r.getSubtotalLabel(),r.getTaxLabel(),r.getTotalLabel(),r.getPaymentLabel(),r.currency().code())); export("report",rows);
+        for(ReportEntry r:reports.load(start.getValue(),end.getValue())) rows.add(List.of(r.date(),r.unit().name(),r.totalQuantity().stripTrailingZeros().toPlainString(),r.getSubtotalLabel(),r.getTaxLabel(),r.getTotalLabel(),r.getPaymentLabel(),r.currency().code())); export("report",rows);
     }
     private List<?> headers(String... keys) { return Arrays.stream(keys).map(LocaleManager::get).toList(); }
     private void export(String name,List<List<?>> rows) {
@@ -220,11 +227,15 @@ public class Dashboard {
         catch(java.io.IOException e) { throw new IllegalStateException(LocaleManager.get("msg.export.failed",e.getMessage()),e); }
     }
     private <T> T selected(TableView<T> table) { T selected=table.getSelectionModel().getSelectedItem(); if(selected==null)throw AuthService.failure("msg.no.selection");return selected; }
+    private void batchHistory(){
+        Product p=selected(productTable);Dialog<Void> d=new Dialog<>();d.setTitle(LocaleManager.get("batch.history"));d.setHeaderText(p.getName());Ui.style(d.getDialogPane());
+        TableView<StockBatch> table=Ui.table();table.getColumns().add(Ui.column("batch.date",StockBatch::receivedDate));table.getColumns().add(Ui.column("batch.remaining",StockBatch::quantityLabel));table.getColumns().add(Ui.column("batch.paid",StockBatch::costLabel));table.getColumns().add(Ui.column("batch.cost.per.unit",b->b.costPerUnit()==null?LocaleManager.get("cost.unknown"):b.costPerUnit().stripTrailingZeros().toPlainString()+" "+b.currency().code()));table.setItems(FXCollections.observableArrayList(new BatchService().load(p.getProductId())));table.setPrefSize(800,380);d.getDialogPane().setContent(table);d.getDialogPane().getButtonTypes().add(new ButtonType(LocaleManager.get("button.close"),ButtonBar.ButtonData.CANCEL_CLOSE));d.showAndWait();
+    }
     public void settings(){if(dialogs.ShopSettingsDialog.show(false))showDashboard(stage,user.username(),user.role());}
     public void about(){
         Dialog<Void> d=new Dialog<>();d.setTitle(LocaleManager.get("about.title"));Ui.style(d.getDialogPane());
         Label text=new Label(LocaleManager.get("about.global",database.BuildInfo.version(),database.BuildInfo.date(),services.LegalService.acceptedAt(),DBConnection.location()));text.setWrapText(true);text.setMaxWidth(650);
-        javafx.scene.layout.VBox box=new javafx.scene.layout.VBox(20,text,Ui.button("legal.full",dialogs.LegalDialog::view));box.setPadding(new Insets(25));d.getDialogPane().setContent(box);d.getDialogPane().getButtonTypes().add(new ButtonType(LocaleManager.get("button.close"),ButtonBar.ButtonData.CANCEL_CLOSE));d.showAndWait();
+        javafx.scene.layout.VBox box=new javafx.scene.layout.VBox(20,Branding.logo(72),text,Ui.button("legal.full",dialogs.LegalDialog::view));box.setPadding(new Insets(25));d.getDialogPane().setContent(box);d.getDialogPane().getButtonTypes().add(new ButtonType(LocaleManager.get("button.close"),ButtonBar.ButtonData.CANCEL_CLOSE));d.showAndWait();
     }
     public void recoveryCode() {if(Ui.confirm(LocaleManager.get("recovery.replace.confirm")))dialogs.RecoveryDialog.saveCode(auth.generateRecoveryCode());}
     public void changePassword() { PasswordDialog.change(false); }

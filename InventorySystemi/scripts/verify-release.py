@@ -8,10 +8,10 @@ import struct
 from metadata import metadata,ROOT
 from windows_icon import read_resources
 project=ROOT/'InventorySystemi';dist=project/'dist';meta=metadata()
-app=dist/'macos/InventorySystem.app'
+app=dist/f"macos/InventorySystem-{meta['version']}-macos-arm64.app"
 with (app/'Contents/Info.plist').open('rb') as f:info=plistlib.load(f)
 for key,value in {'CFBundleName':meta['product.name'],'CFBundleIdentifier':meta['bundle.identifier'],'CFBundleShortVersionString':meta['version'],'NSHumanReadableCopyright':meta['copyright'],'Developer':meta['vendor']}.items():assert info[key]==value,(key,info.get(key))
-assert (dist/'macos/InventorySystem.dmg').stat().st_size>1_000_000
+assert (dist/f"macos/InventorySystem-{meta['version']}-macos-arm64.dmg").stat().st_size>1_000_000
 macjar=next((app/'Contents/app').glob('inventory-system-*.jar'))
 archive=dist/'windows/InventorySystem-Windows-x64.zip'
 with zipfile.ZipFile(archive) as win:
@@ -40,6 +40,6 @@ with zipfile.ZipFile(archive) as win:
     jarname=next(n for n in win.namelist() if '/app/inventory-system-' in n and n.endswith('.jar'))
     with zipfile.ZipFile(macjar) as a,zipfile.ZipFile(io.BytesIO(win.read(jarname))) as b:
         classes=[n for n in a.namelist() if n.endswith('.class')];assert all(a.read(n)==b.read(n) for n in classes)
-        for resource in ('currencies/catalogue.tsv','app-metadata.properties','migrations/V130_global__currency_tax_legal.sql','legal/TERMS.md','legal/PRIVACY.md','legal/THIRD-PARTY-NOTICES.txt','branding/inventory-logo.png'):assert a.read(resource)==b.read(resource),resource
+        for resource in ('currencies/catalogue.tsv','app-metadata.properties','migrations/V130_global__currency_tax_legal.sql','migrations/V130_batches__fifo.sql','legal/TERMS.md','legal/PRIVACY.md','legal/THIRD-PARTY-NOTICES.txt','branding/inventory-logo.png'):assert a.read(resource)==b.read(resource),resource
 result={'version':meta['version'],'vendor':meta['vendor'],'bundle_identifier':meta['bundle.identifier'],'matching_application_classes':len(classes),'windows_zip_crc':'passed','windows_native_version_resource':'passed','mac_plist_metadata':'passed','no_shop_data_in_windows_zip':True,'legal_resources':'passed','windows_execution_tested':False}
 output=ROOT/'docs/evidence/package-structure.json';output.parent.mkdir(exist_ok=True);output.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))
