@@ -8,7 +8,8 @@ PROJECT = Path(__file__).resolve().parent.parent
 DIST = PROJECT / 'dist'
 
 def version():
-    return ET.parse(PROJECT / 'pom.xml').getroot().find('{http://maven.apache.org/POM/4.0.0}version').text
+    from metadata import metadata
+    return metadata()['version']
 
 def clean_stage(name):
     if name not in ('release-macos', 'release-windows'):

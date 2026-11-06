@@ -1,6 +1,7 @@
 package services;
 
 import database.*;
+import services.LegalService;
 import product.*;
 import java.math.BigDecimal;
 import java.sql.*;
@@ -18,14 +19,14 @@ class SaleServiceTest {
     @BeforeEach void setup() throws Exception {
         System.setProperty("DB_URL","jdbc:h2:mem:test_"+UUID.randomUUID()+";MODE=MySQL;DATABASE_TO_LOWER=TRUE;DB_CLOSE_DELAY=-1;LOCK_TIMEOUT=10000");
         System.setProperty("DB_USER","sa"); System.setProperty("DB_PASSWORD","");
-        DatabaseInitializer.initialize(); auth=new AuthService(); auth.createFirstAdmin("admin","AdminTest123!");
-        adminId=auth.login("admin","AdminTest123!").id(); products=new ProductService(); sales=new SaleService();
+        DatabaseInitializer.initialize(); auth=new AuthService(); LegalService.accept();auth.createFirstAdmin("admin","AdminTest123!");
+        adminId=auth.login("admin","AdminTest123!").id();new ShopSettings().save("USD",BigDecimal.ZERO,"en"); products=new ProductService(); sales=new SaleService();
         products.addProduct(new Product(0,"Keyboard","Electronics",5,100,"Supplier"));
     }
     @AfterEach void cleanup() {
         AuthService.clearSession(); System.clearProperty("DB_URL");System.clearProperty("DB_USER");System.clearProperty("DB_PASSWORD");
     }
-    Sale item(double quantity) { return item(new BigDecimal(Double.toString(quantity)),Unit.PIECE,new BigDecimal("100")); }
+    Sale item(long quantity) { return item(BigDecimal.valueOf(quantity),Unit.PIECE,new BigDecimal("100")); }
     Sale item(BigDecimal quantity,Unit unit,BigDecimal price) {
         Sale s=new Sale(0,1,AuthService.current().id(),quantity,LocalDate.now());s.setPrice(price);s.setUnit(unit);return s;
     }
@@ -60,11 +61,11 @@ class SaleServiceTest {
         products.addProduct(new Product(0,"Apples","Fruit",new BigDecimal("10.000"),new BigDecimal("49.99"),"Farm",Unit.KG,new BigDecimal("2.000"),0));
         Sale kg=new Sale(0,2,adminId,new BigDecimal("1.250"),LocalDate.now());kg.setUnit(Unit.KG);kg.setPrice(new BigDecimal("49.99"));
         sales.addMultipleSales(List.of(item(1),kg));
-        assertEquals(0,value("SELECT quantity FROM products WHERE product_id=2").compareTo(new BigDecimal("8.750")));
+        assertEquals(0,value("SELECT quantity FROM products WHERE product_id=2").compareTo(new BigDecimal("8750")));
         assertEquals(new BigDecimal("62.49"),kg.getTotal());
         var report=new ReportService().load(LocalDate.now(),LocalDate.now());assertEquals(2,report.size());
         assertEquals(0,new ReportService().revenue(report).compareTo(new BigDecimal("162.49")));
-        assertThrows(IllegalArgumentException.class,()->sales.addMultipleSales(List.of(item(0.5))));
+        assertThrows(IllegalArgumentException.class,()->sales.addMultipleSales(List.of(item(new BigDecimal("0.5"),Unit.PIECE,new BigDecimal("100")))));
         assertThrows(IllegalArgumentException.class,()->Unit.KG.validate(new BigDecimal("0.0001"),false));
         assertThrows(IllegalArgumentException.class,()->Unit.KG.validate(BigDecimal.ZERO,false));
     }
@@ -101,7 +102,7 @@ class SaleServiceTest {
         assertThrows(IllegalStateException.class,()->sales.voidSale(saleId));
         Sale forged=new Sale(0,1,adminId,1,LocalDate.now());forged.setPrice(100);
         assertThrows(IllegalStateException.class,()->sales.addMultipleSales(List.of(forged)));
-        auth.login("admin","AdminTest123!");sales.addMultipleSales(List.of(item(1)));
+        auth.login("admin","AdminTest123!");new ShopSettings().save("USD",BigDecimal.ZERO,"en");sales.addMultipleSales(List.of(item(1)));
         assertTrue(new AuditService().load().stream().anyMatch(a->a.username().equals("cashier")&&a.action().equals("SALE_CREATED")));
         auth.login("cashier","MyPrivatePass123!");assertEquals(1,sales.loadSales().size());
         assertEquals(staff.id(),sales.loadSales().getFirst().getUserId());
@@ -114,15 +115,15 @@ class SaleServiceTest {
         // Simulate a reset/disable by another running PC while this session remains open.
         try(Connection c=DBConnection.connect();Statement s=c.createStatement()) {s.executeUpdate("UPDATE users SET active=FALSE WHERE user_id="+staffId);}
         assertThrows(IllegalStateException.class,()->sales.addMultipleSales(List.of(item(1))));
-        auth.login("admin","AdminTest123!");auth.setStaffActive(staffId,true);auth.resetStaffPassword(staffId,"ResetAgain123!");
+        auth.login("admin","AdminTest123!");new ShopSettings().save("USD",BigDecimal.ZERO,"en");auth.setStaffActive(staffId,true);auth.resetStaffPassword(staffId,"ResetAgain123!");
         assertThrows(IllegalStateException.class,()->auth.login("cashier","PrivatePass123!"));
         assertTrue(auth.login("cashier","ResetAgain123!").mustChangePassword());
     }
     @Test void legacyPlaintextLoginIsUpgradedAndPasswordsNeverEnterAudit() throws Exception {
         try(Connection c=DBConnection.connect();Statement s=c.createStatement()) {s.executeUpdate("INSERT INTO users(username,password,role) VALUES('legacy','LegacyPass123!','staff')");}
         auth.login("legacy","LegacyPass123!");
-        try(Connection c=DBConnection.connect();Statement s=c.createStatement();ResultSet rs=s.executeQuery("SELECT password FROM users WHERE username='legacy'")) {rs.next();assertTrue(rs.getString(1).startsWith("pbkdf2$"));}
-        auth.login("admin","AdminTest123!");
+        try(Connection c=DBConnection.connect();Statement s=c.createStatement();ResultSet rs=s.executeQuery("SELECT password FROM users WHERE username='legacy'")) {rs.next();assertTrue(rs.getString(1).startsWith("$2a$12$"));}
+        auth.login("admin","AdminTest123!");new ShopSettings().save("USD",BigDecimal.ZERO,"en");
         assertTrue(new AuditService().load().stream().noneMatch(a->a.details().contains("Pass123")));
         assertThrows(IllegalStateException.class,()->auth.createFirstAdmin("second","AdminTest123!"));
         assertThrows(IllegalStateException.class,()->auth.createStaff("admin","TempPass123!"));

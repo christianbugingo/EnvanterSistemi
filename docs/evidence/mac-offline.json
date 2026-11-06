@@ -1,0 +1,9 @@
+{
+  "platform": "macos-arm64",
+  "native_startup": true,
+  "bundled_runtime_workflow": true,
+  "checks": "Native bundled runtime: setup, login, product, weighted sale, receipt, backup and restore passed.",
+  "real_shop_data_used": false,
+  "network_physically_disabled": false,
+  "process_network_access_denied": true
+}

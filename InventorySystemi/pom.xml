@@ -4,17 +4,19 @@
   <groupId>com.inventorysystem</groupId><artifactId>inventory-system</artifactId><version>1.3.0</version>
   <properties><maven.compiler.release>21</maven.compiler.release><project.build.sourceEncoding>UTF-8</project.build.sourceEncoding><javafx.version>21.0.6</javafx.version></properties>
   <dependencies>
+    <dependency><groupId>org.mindrot</groupId><artifactId>jbcrypt</artifactId><version>0.4</version></dependency>
+    <dependency><groupId>ch.qos.logback</groupId><artifactId>logback-classic</artifactId><version>1.5.18</version></dependency>
     <dependency><groupId>org.openjfx</groupId><artifactId>javafx-controls</artifactId><version>${javafx.version}</version></dependency>
     <dependency><groupId>com.h2database</groupId><artifactId>h2</artifactId><version>2.3.232</version></dependency>
     <dependency><groupId>org.junit.jupiter</groupId><artifactId>junit-jupiter</artifactId><version>5.11.4</version><scope>test</scope></dependency>
   </dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory><testSourceDirectory>test</testSourceDirectory>
-    <resources><resource><directory>src</directory><includes><include>*.properties</include><include>*.css</include><include>branding/*.png</include></includes></resource></resources>
+    <resources><resource><directory>..</directory><targetPath>legal</targetPath><includes><include>LICENSE.txt</include><include>TERMS.md</include><include>PRIVACY.md</include><include>THIRD-PARTY-NOTICES.txt</include><include>legal-licenses/**</include></includes></resource><resource><directory>..</directory><includes><include>app-metadata.properties</include></includes></resource><resource><directory>build-resources</directory><filtering>true</filtering></resource><resource><directory>src</directory><includes><include>*.properties</include><include>*.css</include><include>*.xml</include><include>migrations/*.sql</include><include>currencies/*.tsv</include><include>legal/*</include><include>branding/*.png</include></includes></resource></resources>
     <plugins>
       <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-compiler-plugin</artifactId><version>3.13.0</version><configuration><release>21</release></configuration></plugin>
       <plugin><groupId>org.openjfx</groupId><artifactId>javafx-maven-plugin</artifactId><version>0.0.8</version><configuration><mainClass>main.Main</mainClass></configuration></plugin>
-      <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-surefire-plugin</artifactId><version>3.5.2</version></plugin>
+      <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-surefire-plugin</artifactId><version>3.5.2</version><configuration><argLine>-Duser.home=${project.basedir}/../.tools/test-home -Djava.io.tmpdir=${project.basedir}/../.tools/tmp</argLine></configuration></plugin>
       <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-jar-plugin</artifactId><version>3.4.2</version><configuration><archive><manifest><addClasspath>true</addClasspath><classpathPrefix>lib/</classpathPrefix><mainClass>main.Main</mainClass></manifest></archive></configuration></plugin>
       <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-dependency-plugin</artifactId><version>3.8.1</version></plugin>
     </plugins>

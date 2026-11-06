@@ -1,0 +1,22 @@
+Inventory System 1.3.0 — COODIC LABS
+Original application code: proprietary; third-party components retain their licenses.
+
+Runtime dependencies (including transitive components):
+- OpenJFX javafx-base, javafx-graphics, javafx-controls 21.0.6: GPL version 2 with Classpath Exception. See legal-licenses/javafx/ and bundled runtime/legal/.
+- H2 Database 2.3.232: dual licensed MPL 2.0 / EPL 1.0; this distribution selects MPL 2.0. See legal-licenses/h2/.
+- SLF4J API 2.0.17: MIT. See legal-licenses/slf4j/.
+- Logback Classic and Core 1.5.18: dual licensed EPL 1.0 / LGPL 2.1; this distribution selects EPL 1.0. See legal-licenses/logback/.
+- jBCrypt 0.4 (org.mindrot): ISC-style permissive license. See legal-licenses/jbcrypt/.
+- Amazon Corretto/OpenJDK 21 bundled runtime: GPL 2 with Classpath Exception and additional component notices. The complete runtime/legal directory is retained in each package. The Windows launcher derives from the bundled jdk.jpackage module and has custom icon/version resources.
+
+Development/test dependencies (not installed in runtime libraries):
+- JUnit Jupiter aggregator, API, Params and Engine 5.11.4; JUnit Platform Commons and Engine 1.11.4: EPL 2.0. See legal-licenses/junit/.
+- OpenTest4J 1.3.0: Apache 2.0. See legal-licenses/opentest4j/.
+- API Guardian 1.1.2: Apache 2.0. See legal-licenses/apiguardian/.
+- Maven wrapper and Apache Maven plugins: Apache 2.0; JavaFX Maven plugin: Apache 2.0. See legal-licenses/apache/.
+
+Flyway is not used and is not a dependency. Database migrations use the application's versioned SQL runner.
+
+Currency metadata is generated from java.util.Currency and checked against the ISO 4217 maintenance agency's current currency list. Currency codes may be used free of charge per https://www.iso.org/iso-4217-currency-codes.html. Source: https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml. Catalogue refresh is a developer build task only; the application makes no request to these services.
+
+License texts and original notices are bundled under legal-licenses/ and the runtime/legal folders. These third-party rights are not restricted by the proprietary application license. Review redistribution/source-availability obligations with counsel before commercial release; notices alone do not establish compliance.

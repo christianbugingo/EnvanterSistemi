@@ -13,7 +13,7 @@ public final class LocaleManager {
     }
     public static String getLanguage() { return locale.getLanguage(); }
     public static String get(String key, Object... args) {
-        String pattern=bundle.getString(key);
+        String pattern=bundle.containsKey(key)?bundle.getString(key):ResourceBundle.getBundle("messages",Locale.ENGLISH).getString(key);
         return args.length==0?pattern:new MessageFormat(pattern,locale).format(args);
     }
     public static String quantity(BigDecimal value) {
@@ -21,9 +21,8 @@ public final class LocaleManager {
         return format.format(value);
     }
     public static String money(BigDecimal value) {
-        NumberFormat format=NumberFormat.getCurrencyInstance(locale);
-        format.setCurrency(Currency.getInstance(database.AppConfig.get("SHOP_CURRENCY","TRY")));
-        return format.format(value);
+        var currency=services.ShopSettings.current().currency();
+        return currency==null?services.Currencies.snapshot(null,2).format(value):currency.format(value);
     }
     public static BigDecimal decimal(String text) {
         if(text==null || !text.trim().matches("[+]?(?:[0-9]+(?:[.,][0-9]+)?|[.,][0-9]+)")) throw new IllegalArgumentException(get("validation.number"));

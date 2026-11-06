@@ -1,0 +1,2 @@
+44a21b6e37af0b173dab6ee4976ed5105a46a3edbe01cd5a315c54f7da599e5b  InventorySystemi/dist/macos/InventorySystem.dmg
+ec5f45c03a496da6203165ad240a87d58cc719b25df6f3dffdde9c4a3e6a67dd  InventorySystemi/dist/windows/InventorySystem-Windows-x64.zip

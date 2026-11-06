@@ -1,50 +1,47 @@
-# Offline shop: one laptop, separate logins
+# Shop setup and acceptance
 
-This replaces the earlier shared-MySQL plan. No internet, Wi-Fi, server or cloud account is required to use the packaged application. Admin and staff take turns on the same laptop and operating-system profile. Each app login has its own role; all logins use the same local database.
+## Install and first run
 
-## First setup
+Use the Apple Silicon Mac app/DMG or extract the complete Windows x64 ZIP and open InventorySystem.exe. Java is bundled. Windows must be tested on the intended PC. Close older app copies before upgrading.
 
-1. Close older app windows. Open the latest Mac app, or extract the entire Windows ZIP and open InventorySystem.exe.
-2. Choose Create first administrator if the database is empty. Otherwise sign in with your existing account. No account is automatically reset during an update.
-3. In Staff accounts, create a username and a temporary password (8–128 characters). Staff signs in and replaces that password. Admin can later reset it or disable the account.
-4. Create shop products. Piece quantities must be whole numbers; kg quantities allow 3 decimal places. Selling price is per selected unit. A unique barcode is optional. Barcode scanners must behave like a keyboard and send Enter; camera and weighing-scale drivers are not included.
-5. Use Receive / adjust stock to record deliveries, losses or corrections, with a reason. Price/name/category edits do not silently change stock.
+The welcome page offers Create your administrator account. Read and accept the local Terms/Privacy Notice before setup can continue. Create your own administrator, save/print the one-time recovery code and acknowledge saving it. Then search/select the shop currency explicitly. Set optional tax (0–100%, up to four decimals) and English or Turkish. There is no default currency or login password.
 
-## Cashier handover
+Legal documents are drafts: the governing-law placeholder and all clauses marked for lawyer review must be resolved before commercial distribution. Acceptance is local and does not send data to COODIC LABS.
 
-Open a shift with the cash physically in the drawer. Enter sales, selecting cash or card bookkeeping for each checkout. Cash received must cover the total; the receipt includes change.
+Sign in and create staff in Staff accounts. Give temporary passwords privately; staff must replace them at first login. Admin can reset/disable staff with confirmation. Use the same OS profile when sharing one laptop. A fresh PC creates an independent shop; restoring a backup moves a copy, without synchronization.
 
-At handover, count the drawer and close the shift. A discrepancy must have a note. Sign out. The next staff member signs in and opens the next shift. Only one shift may remain open on this laptop. An administrator can close a forgotten staff shift using the actual counted cash and a note. Signing out does not discard an open shift.
+## Test a sale
 
-Expected cash = opening cash + non-voided cash sale line totals. The cashier must perform any recorded cash refund manually. Card payments do not affect the cash count and must be confirmed separately on a real card terminal. The app does not connect to payment networks.
+For an explicit two-decimal test shop, choose USD and tax 0 in Admin settings. Add Milk as Piece, stock 20, price 30.00, and Apples as Weight, stock 10 kg, price/kg 49.99. Add five milk cartons and 230 g apples. Subtotal/total is 161.50 USD; stock becomes 15 cartons and 9.770 kg. Choose Cash/Card/Other and complete without an amount entry.
 
-## Back up and restore
+With tax 18%, a separate 230 g apples-only sale has subtotal 11.50 USD, tax 2.07 USD and total 13.57 USD. Tax is rounded once per checkout. A zero-tax receipt contains only total. Barcode scanners must type a code plus Enter: piece adds one, weight focuses its prompt. Plain weight numbers are kg; `0.23 kg` and `230 g` both mean 230 g.
 
-Admin → File → Back up database saves a consistent ZIP while the app is open. It includes the database, not the separate receipt text folder. Receipts for 1.2 checkouts can be regenerated from the database; back up older receipt files separately if required. Backup files contain business data and account hashes, so store them privately.
+Change currency to RWF with confirmation. Prices are reinterpreted and rounded, not exchanged: verify them. New amounts have zero decimals; old USD receipts still show USD with two decimals. Reports keep currencies separate. Old records with no currency stay `?` rather than being relabelled. Set your real shop currency/tax after disposable testing.
 
-To restore on the same or another laptop:
+## Password tests
 
-1. Close every InventorySystem window on that laptop.
-2. Keep a copy of its current `~/.inventorysystem/inventory.mv.db` (Windows: `%USERPROFILE%\.inventorysystem\inventory.mv.db`) before replacing anything.
-3. Extract the backup ZIP into a temporary folder. Copy its `inventory.mv.db` to that user data location. Create `.inventorysystem` if necessary. Replace only after preserving the previous database.
-4. Start the same or newer app version. Sign in with an account from the restored backup and verify product quantities and recent sales.
+Use Change password on the login screen with username/current/new/confirmation. Minimum 10 characters, one letter and one digit, not username/recent passwords; maximum 72 UTF-8 bytes. Five failures lock for five minutes and show a countdown.
 
-Do not copy a live database file while the app is writing; use the backup command. A copy moved to another laptop is an independent shop database, not a synchronized second register. This offline edition does not merge independently modified copies.
+Staff Forgot password instructs them to ask the administrator for a temporary reset. Admin Forgot password consumes the saved recovery code, sets a temporary password, and displays a replacement code that must be saved. Change the temporary password at next login. Signed-in admins can replace the code from File. Existing admins should generate/save a code after upgrading if needed.
 
-## Final-project acceptance test
+If password and recovery code are both lost, restore a backup with credentials/code you still know. Restoring does not discover an unknown password. With no usable credentials or backup, preserve the database; there is no bypass.
 
-Disconnect Wi-Fi and Ethernet before starting.
+## Back up, restore, uninstall
 
-1. Admin signs in, creates a staff account, signs out. Staff changes its temporary password. Confirm its temporary password no longer works.
-2. Admin adds `Milk`, Piece, quantity 20, price 30.00, barcode `8691234567890`; and `Apples`, kg, quantity 10.000, price 49.99.
-3. Admin receives 5 more milk cartons with reason `Supplier delivery`. Quantity must become 25 and activity must record the adjustment.
-4. Staff signs in, opens a shift with 100.00, scans/enters the milk barcode twice, and adds 1.250 kg of apples. Checkout total: 122.49. Enter 150.00 cash. Change: 27.51. Stocks: 23 cartons and 8.750 kg.
-5. Select one sale line and reprint its receipt. All lines from that checkout, its ID, payment, cash received and change must be present.
-6. Record one additional milk carton as Card. Confirm expected drawer cash remains 222.49. Card selection records the external payment, not an actual charge.
-7. Try an oversell, fractional piece quantity and insufficient cash: each must be rejected without partial stock/payment changes.
-8. Admin may void a sale while the shift is open. Its stock restores once and expected cash decreases if the sale was cash. The cashier gives the corresponding cash refund manually. A second void must fail.
-9. Close the shift using its expected cash value. Try a different count without a note: it must fail. With a discrepancy note it may close and record the difference. Closed-shift sales must not be voidable.
-10. Admin checks Reports, Staff activity, Staff accounts and Shifts / cash. Staff must not see admin-only tabs/actions. Sign out and restart while still offline; data must persist.
-11. Admin creates a backup and verifies the restore procedure on a disposable copy. Repeat this checklist on the Windows test PC using the extracted portable app.
+Admin → File → Back up database creates a consistent ZIP with accounts, settings, acceptance, snapshots and receipt records. Receipts can be regenerated from the database; keep older standalone receipt files separately if needed. Backups include private business data and hashes. Store copies separately from the laptop.
 
-Changing the interface language must translate buttons/dialogs and number formatting, while keeping product data and the shop currency intact.
+Automatic pre-migration ZIPs are next to the database under migration-backups/. A failed backup stops the migration. They supplement regular user-controlled backups.
+
+To restore: close all app windows, preserve any destination database, extract the backup to a temporary folder, and copy inventory.mv.db to ~/.inventorysystem/ on Mac or %USERPROFILE%\.inventorysystem\ on Windows (or your configured DB_URL location). Open the same/newer app, sign in with restored credentials and verify stock/history. Do not copy a live database. Independently modified copies do not merge.
+
+To uninstall: close the app and remove only its app bundle or extracted portable application folder. Local data remains. Preserve exports/backups and comply with local retention rules before any separate manual data deletion.
+
+## Tax and Legal
+
+Receipts are simple sales records, not tax or fiscal invoices. The shop owner must follow local tax, invoicing and fiscal-device rules. An entered rate does not certify compliance. No card charge, cash transfer or automatic refund is performed.
+
+## Deployment checklist
+
+On disposable data, disconnect networking and test welcome/setup/legal acceptance, recovery saving, chosen currency, staff first-login password change, weight and piece sales, tax, oversell/fractional-piece rejection, reprint, void with reason, report currency separation and restart persistence. Create a backup and restore it to a disposable location. Repeat on the Windows x64 PC. Inspect About for acceptance date and database location. Physical scanner/printer/scale and disconnected-network deployment tests remain shop-specific.
+
+Support: COODIC LABS · tresorbi29@gmail.com · https://coodic.org/ · Rwanda. The app does not open or contact support automatically.

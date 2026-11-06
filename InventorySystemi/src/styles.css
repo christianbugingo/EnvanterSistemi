@@ -44,3 +44,11 @@
 .dialog-pane { -fx-padding: 12; }
 .dialog-pane > .header-panel { -fx-background-color: #eaf0f9; -fx-padding: 15; }
 .dialog-pane > .header-panel .label { -fx-text-fill: #1e3a5f; }
+
+.button:focused, .text-field:focused, .combo-box:focused, .radio-button:focused { -fx-border-color: #268bd2; -fx-border-width: 2; -fx-border-radius: 4; }
+
+.welcome { -fx-background-color: linear-gradient(to bottom right, #e8f2ff, #f8fafc); }
+.home-title { -fx-font-size: 34px; -fx-font-weight: bold; -fx-text-fill: #18344a; }
+.step-card { -fx-background-color: white; -fx-background-radius: 16; -fx-effect: dropshadow(gaussian, #bdcfe2, 12, 0.15, 0, 4); }
+.step-number { -fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2178d4; }
+.home-footer { -fx-text-fill: #526777; }

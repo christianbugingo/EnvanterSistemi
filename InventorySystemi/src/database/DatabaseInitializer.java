@@ -9,6 +9,7 @@ public final class DatabaseInitializer {
         try (Connection c = DBConnection.connect()) { initialize(c); }
     }
     static void initialize(Connection c) throws SQLException {
+        Migrations.before(c);
         execute(c, "CREATE TABLE IF NOT EXISTS users (user_id INT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(100) NOT NULL UNIQUE, password VARCHAR(255) NOT NULL, role VARCHAR(30) NOT NULL)");
         execute(c, "CREATE TABLE IF NOT EXISTS products (product_id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255) NOT NULL, category VARCHAR(255) NOT NULL, quantity DECIMAL(14,3) NOT NULL DEFAULT 0 CHECK(quantity >= 0), price DECIMAL(12,2) NOT NULL CHECK(price >= 0), supplier VARCHAR(255) NOT NULL)");
         execute(c, "CREATE TABLE IF NOT EXISTS sales (sale_id INT AUTO_INCREMENT PRIMARY KEY, product_id INT NOT NULL, user_id INT NOT NULL, quantity_sold DECIMAL(14,3) NOT NULL CHECK(quantity_sold > 0), sale_date DATE NOT NULL, CONSTRAINT fk_sales_product FOREIGN KEY(product_id) REFERENCES products(product_id), CONSTRAINT fk_sales_user FOREIGN KEY(user_id) REFERENCES users(user_id))");
@@ -24,35 +25,20 @@ public final class DatabaseInitializer {
         add(c, "sales", "created_at", "TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP");
         add(c, "products", "barcode", "VARCHAR(64)");
         execute(c, "CREATE UNIQUE INDEX IF NOT EXISTS ux_product_barcode ON products(barcode)");
-        execute(c, "CREATE TABLE IF NOT EXISTS shifts (shift_id BIGINT AUTO_INCREMENT PRIMARY KEY, user_id INT NOT NULL REFERENCES users(user_id), opened_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, closed_at TIMESTAMP, opening_cash DECIMAL(14,2) NOT NULL, expected_cash DECIMAL(14,2), closing_cash DECIMAL(14,2), difference DECIMAL(14,2), note VARCHAR(500) NOT NULL DEFAULT '')");
-        execute(c, "CREATE TABLE IF NOT EXISTS checkouts (checkout_id VARCHAR(36) PRIMARY KEY, user_id INT NOT NULL REFERENCES users(user_id), shift_id BIGINT REFERENCES shifts(shift_id), payment_method VARCHAR(10) NOT NULL, total DECIMAL(14,2) NOT NULL, cash_received DECIMAL(14,2), change_due DECIMAL(14,2), fingerprint VARCHAR(64) NOT NULL, created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP)");
-        // Older versions required cash/shift fields. Keep their records but allow simple sales.
-        for(String column:new String[]{"shift_id","cash_received","change_due"}) {
-            try(ResultSet info=c.getMetaData().getColumns(c.getCatalog(),null,"checkouts",column)) {
-                if(info.next() && info.getInt("NULLABLE")==DatabaseMetaData.columnNoNulls)
-                    execute(c,"ALTER TABLE checkouts ALTER COLUMN "+column+" DROP NOT NULL");
-            }
-        }
+        execute(c, "CREATE TABLE IF NOT EXISTS checkouts (checkout_id VARCHAR(36) PRIMARY KEY, user_id INT NOT NULL REFERENCES users(user_id), payment_method VARCHAR(10) NOT NULL, total DECIMAL(14,2) NOT NULL, fingerprint VARCHAR(64) NOT NULL, created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP)");
         add(c, "sales", "checkout_id", "VARCHAR(36) REFERENCES checkouts(checkout_id)");
         add(c, "sales", "line_no", "INT");
         // Legacy sales have no original price snapshot: use the current price once, then freeze it.
         execute(c, "UPDATE sales SET unit_price = (SELECT price FROM products WHERE products.product_id = sales.product_id) WHERE unit_price IS NULL");
         execute(c, "UPDATE sales SET product_name = (SELECT name FROM products WHERE products.product_id = sales.product_id) WHERE product_name IS NULL");
-        decimalQuantity(c, "products", "quantity");
-        decimalQuantity(c, "sales", "quantity_sold");
+
         execute(c, "CREATE TABLE IF NOT EXISTS audit_log (audit_id BIGINT AUTO_INCREMENT PRIMARY KEY, user_id INT NOT NULL, username VARCHAR(100) NOT NULL, action VARCHAR(40) NOT NULL, details VARCHAR(2000) NOT NULL, workstation VARCHAR(255) NOT NULL, created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP)");
         execute(c, "CREATE TABLE IF NOT EXISTS app_settings (setting_key VARCHAR(100) PRIMARY KEY, setting_value VARCHAR(255) NOT NULL)");
-        // A single row lock serializes first-admin creation across multiple PCs.
+        // Serialize first-administrator creation.
         try (PreparedStatement ps = c.prepareStatement("INSERT INTO app_settings(setting_key, setting_value) SELECT 'bootstrap', '1' WHERE NOT EXISTS (SELECT 1 FROM app_settings WHERE setting_key='bootstrap')")) {
             try { ps.executeUpdate(); } catch (SQLException ex) { if (!"23505".equals(ex.getSQLState()) && ex.getErrorCode() != 1062) throw ex; }
         }
-    }
-    private static void decimalQuantity(Connection c, String table, String column) throws SQLException {
-        try (ResultSet rs = c.getMetaData().getColumns(c.getCatalog(), null, table, column)) {
-            if (rs.next() && rs.getInt("DECIMAL_DIGITS") == 3) return;
-        }
-        boolean mysql = c.getMetaData().getDatabaseProductName().equalsIgnoreCase("MySQL");
-        execute(c, "ALTER TABLE " + table + (mysql ? " MODIFY COLUMN " : " ALTER COLUMN ") + column + " DECIMAL(14,3) NOT NULL");
+        Migrations.apply(c);
     }
     private static void add(Connection c, String table, String column, String definition) throws SQLException {
         try (ResultSet rs = c.getMetaData().getColumns(c.getCatalog(), null, table, column)) { if (rs.next()) return; }

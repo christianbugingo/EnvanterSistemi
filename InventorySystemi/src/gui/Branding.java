@@ -10,7 +10,7 @@ public final class Branding {
     private static final Image LOGO=new Image(Objects.requireNonNull(Branding.class.getResource("/branding/inventory-logo.png")).toExternalForm());
     private Branding() { }
     public static void apply(Stage stage) { stage.getIcons().setAll(LOGO); }
-    public static ImageView logo(double size) {
+    public static ImageView logo(int size) {
         ImageView view=new ImageView(LOGO); view.setFitWidth(size);view.setFitHeight(size);
         view.setPreserveRatio(true);view.setSmooth(true);view.setAccessibleText("Inventory System");
         return view;

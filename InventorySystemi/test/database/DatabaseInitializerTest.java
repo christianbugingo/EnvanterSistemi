@@ -67,12 +67,12 @@ class DatabaseInitializerTest {
             DatabaseInitializer.initialize(c);
             DatabaseInitializer.initialize(c);
             try (Statement st = c.createStatement(); ResultSet rs = st.executeQuery("SELECT p.quantity,p.unit,s.unit_price,s.product_name,u.password FROM products p JOIN sales s ON p.product_id=s.product_id JOIN users u ON u.user_id=s.user_id")) {
-                rs.next(); assertEquals("7.000",rs.getBigDecimal(1).toPlainString());assertEquals("PIECE",rs.getString(2));
-                assertEquals("12.50",rs.getBigDecimal(3).toPlainString());assertEquals("Legacy",rs.getString(4));assertEquals("OldPassword!",rs.getString(5));
+                rs.next(); assertEquals("7",rs.getBigDecimal(1).toPlainString());assertEquals("PIECE",rs.getString(2));
+                assertEquals("12.50",rs.getBigDecimal(3).setScale(2).toPlainString());assertEquals("Legacy",rs.getString(4));assertEquals("OldPassword!",rs.getString(5));
             }
             try (Statement st=c.createStatement()) { st.execute("UPDATE products SET price=99.99 WHERE product_id=1"); }
             DatabaseInitializer.initialize(c);
-            try (Statement st=c.createStatement(); ResultSet rs=st.executeQuery("SELECT unit_price FROM sales")) {rs.next();assertEquals("12.50",rs.getBigDecimal(1).toPlainString());}
+            try (Statement st=c.createStatement(); ResultSet rs=st.executeQuery("SELECT unit_price FROM sales")) {rs.next();assertEquals("12.50",rs.getBigDecimal(1).setScale(2).toPlainString());}
         }
     }
 }

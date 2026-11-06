@@ -1,0 +1,10 @@
+{
+  "distinct_deleted_generated_paths": 1241,
+  "protected_shop_data_deleted": false,
+  "outside_project_modified_by_cleanup": false,
+  "retained_release_artifacts": [
+    "InventorySystemi/dist/macos/InventorySystem.app",
+    "InventorySystemi/dist/macos/InventorySystem.dmg",
+    "InventorySystemi/dist/windows/InventorySystem-Windows-x64.zip"
+  ]
+}

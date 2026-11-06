@@ -73,10 +73,10 @@ def _encode(tree,base_rva):
     return bytes(output)
 
 
-def embed_icon(executable,icon):
+def embed_icon(executable,icon,metadata=None):
     executable=Path(executable);original=executable.read_bytes();data=bytearray(original)
     pe,optional,table,sections=_layout(data);tree=read_resources(data)
-    previous={k:v for k,v in tree.items() if k not in (3,14)}
+    previous={k:v for k,v in tree.items() if k not in (3,14,16)}
     ico=Path(icon).read_bytes();reserved,kind,count=struct.unpack_from('<HHH',ico)
     if reserved!=0 or kind!=1 or not 1<=count<=32:raise ValueError('Invalid ICO file')
     icons={};group=bytearray(struct.pack('<HHH',0,1,count))
@@ -87,6 +87,7 @@ def embed_icon(executable,icon):
         icons[index+1]={1033:(blob,0)}
         group.extend(ico[offset:offset+12]);group.extend(struct.pack('<H',index+1))
     tree[3]=icons;tree[14]={101:{1033:(bytes(group),0)}}
+    if metadata is not None:tree[16]={1:{1033:(version_info(metadata),0)}}
     section_align,file_align=struct.unpack_from('<II',data,optional+32)
     align=lambda value,step:(value+step-1)//step*step
     va=align(max(va+max(size,raw_size) for va,size,raw,raw_size in sections),section_align)
@@ -102,8 +103,24 @@ def embed_icon(executable,icon):
     struct.pack_into('<II',data,optional+112+2*8,va,len(blob))
     struct.pack_into('<II',data,optional+112+4*8,0,0) # Never retain an invalid certificate after a resource change.
     rebuilt=read_resources(data)
-    if {k:v for k,v in rebuilt.items() if k not in (3,14)}!=previous:raise ValueError('Non-icon resources changed')
+    if {k:v for k,v in rebuilt.items() if k not in (3,14,16)}!=previous:raise ValueError('Non-icon resources changed')
     if rebuilt[3]!=icons:raise ValueError('Embedded icon verification failed')
     for _,_,position,size in sections:
         if data[position:position+size]!=original[position:position+size]:raise ValueError('Original executable sections changed')
     executable.write_bytes(data)
+
+
+def version_info(metadata):
+    def block(key,value=b'',children=(),kind=0,length=None):
+        data=bytearray(b'\0'*6+key.encode('utf-16le')+b'\0\0')
+        data.extend(b'\0'*((-len(data))%4));data.extend(value)
+        for child in children:data.extend(b'\0'*((-len(data))%4));data.extend(child)
+        size=len(data);struct.pack_into('<HHH',data,0,size,len(value) if length is None else length,kind)
+        return bytes(data)
+    v=[int(n) for n in metadata['version'].split('.')]+[0];ms=(v[0]<<16)|v[1];ls=(v[2]<<16)|v[3]
+    fixed=struct.pack('<13I',0xFEEF04BD,0x10000,ms,ls,ms,ls,0x3f,0,0x40004,1,0,0,0)
+    fields={'CompanyName':metadata['vendor'],'ProductName':metadata['product.name'],'FileDescription':metadata['description'],'FileVersion':metadata['version'],'ProductVersion':metadata['version'],'LegalCopyright':metadata['copyright'],'OriginalFilename':'InventorySystem.exe','InternalName':metadata['app.name']}
+    strings=[block(k,(v+'\0').encode('utf-16le'),kind=1,length=len((v+'\0').encode('utf-16le'))//2) for k,v in fields.items()]
+    info=block('StringFileInfo',children=[block('040904B0',children=strings,kind=1,length=0)],kind=1,length=0)
+    var=block('VarFileInfo',children=[block('Translation',struct.pack('<HH',1033,1200))],kind=1,length=0)
+    return block('VS_VERSION_INFO',fixed,[info,var])

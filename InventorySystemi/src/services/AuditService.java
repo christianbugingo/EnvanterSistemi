@@ -26,7 +26,8 @@ public final class AuditService {
         } catch(SQLException e) { throw AuthService.databaseError(e); }
     }
     private static String workstation() {
-        try { return java.net.InetAddress.getLocalHost().getHostName(); }
-        catch(Exception e) { return System.getProperty("os.name", "Desktop"); }
+        String name=System.getenv("COMPUTERNAME");
+        if(name==null || name.isBlank())name=System.getenv("HOSTNAME");
+        return name==null||name.isBlank()?System.getProperty("os.name","Desktop"):name.substring(0,Math.min(name.length(),255));
     }
 }

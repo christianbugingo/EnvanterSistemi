@@ -1,23 +1,43 @@
-# Verification — 3 November 2026, offline version 1.2.1
+# Verification — 6 November 2026, Inventory System 1.3.0
 
-Host: Apple Silicon macOS, Corretto JDK 21, JavaFX 21.
+Host: Apple Silicon macOS, JDK 21, JavaFX 21.0.6. Tests and package checks use disposable project-local homes/databases. The live ~/.inventorysystem database, receipts, logs and backups were not opened or modified. Downloads and /Applications were not touched.
 
 | Check | Result |
 |---|---|
-| Clean build and service/unit tests | 24 passed; no failures/errors. The opt-in desktop test is skipped in the normal run. |
-| Desktop test | Passed separately in English/Turkish: role switching, required password change, barcode cart entry, weighted quantities and cash input. |
-| Offline database workflows | Tested checkout retry protection, cash/card separation, change, insufficient cash, shift opening/closing/discrepancies, single active shift, closed-shift void prevention and retained sale history. |
-| Backup and restore | A persistent temporary H2 database was backed up and restored; login, product and stock data survived. |
-| Mac release | Native .app and DMG built; final app launched using its bundled runtime and disposable data without startup errors. |
-| Windows portable release | ZIP built with InventorySystem.exe, Windows x64 Java runtime and Windows JavaFX. ZIP CRC, launcher/classpath paths, PE x64 architecture, DLL architecture, module resolution and matching Mac/Windows app-JAR hashes checked. |
-| Old release cleanup | Only dist/macos and dist/windows remain as application release folders; earlier generated app caches removed. Shop data was not removed or used for these checks. |
+| `./mvnw clean test` | **49 discovered; 48 passed, one opt-in desktop test skipped; zero failures/errors.** |
+| Separate desktop test | **Passed** using real JavaFX scenes/event dispatch (TestFX equivalent). Welcome page, declining terms without creating an account, required acceptance, admin creation, mandatory recovery-code acknowledgment, searchable RWF selection, login, password change, offline recovery, forced temporary-password replacement, weight product, multi-piece/230 g sale, completion without amount entry, and About acceptance date/contact. English and Turkish are exercised. Fresh shops reach signup before login, currency can be typed in one dropdown, legal headings render without Markdown markers, and the home page has no email/website. |
+| UI exception check | Final UI run has no uncaught application exception. The known JavaFX unnamed-module configuration warning remains. The login timer now stops when its window is hidden. |
+| Currency and money | Bundled 178-entry ISO catalogue loads, with 165 priceable currencies; RWF/JPY 0, USD 2, KWD 3; stable grouping and RWF formatting; HALF_UP rounding; old currency/tax snapshots survive settings changes; unlike currencies are never added together. First currency selection rounds pre-existing product prices. |
+| Tax | Zero/nonzero rate, range/precision validation, one calculation per checkout, three-decimal currency, unit-separated report allocation, original receipt preservation and post-void remaining tax. |
+| Weight/stock | Flexible kg/g parsing, exact integer grams, normalized display, whole pieces, and live/persisted totals use the same calculation. At 100 RWF/kg, 200 g = 20 RWF and 230 g = 23 RWF. Equivalent kg/g inputs, 5 g rounding in 0/2/3-decimal currencies, arbitrary quantities, historical weight-price snapshots, oversell and concurrent checkout protection are tested. |
+| Passwords | BCrypt cost 12, salts, legacy PBKDF2/plaintext upgrade compatibility, no plaintext copied into history on legacy staff reset, policy/history, one-time/replaced recovery codes, failed-attempt audit and exact five-minute timing using a controlled clock. |
+| Legal | Setup/login service gate rejects unaccepted terms. UI cannot accept until checked; declining creates no account. Version, content digest and date are stored; About shows acceptance. Full terms/privacy/notices are bundled locally. Legal validity is not certified. |
+| Migration and restore | Empty DB and a file copy generated from the actual 1.2.1 schema, preserving account/product/sale/payment values. Integer conversion, a historical 230 g sale, restart idempotence, interrupted conversion, automatic backup restore and backup failure before schema changes. Global money/currency/tax/legal migration runs as part of initialization. |
+| Transactions and roles | Forced receipt-record failure rolls back stock, sale lines, checkout/payment and audit. Retry protection, price snapshots, unit-history protection, reasoned one-time voids, admin/staff boundaries including financial settings, reset/disable and backup denial. |
+| Translations | English literal UI keys are required. Turkish missing keys are reported from the raw translation file as warnings and use English fallback; they do not fail the build. |
 
-The Windows executable has **not** been run on Windows. Test it there using the checklist in [SHOP_SETUP.md](SHOP_SETUP.md). The release is a portable ZIP, not a tested MSI installer. The app's offline database restriction is tested before any remote JDBC connection can occur; physically disconnect networking during final acceptance on each laptop as an additional deployment check.
+## Packages and offline checks
 
-The desktop test logs JavaFX's classpath/unnamed-module warning; it did not log an application exception. Barcode input was simulated as keyboard text plus Enter; physical scanner and scale hardware were not tested. Card selection records an externally completed payment and does not process a charge. Native app signing/notarization is not configured.
+The final release targets are Mac Apple Silicon `.app`/`.dmg` and a Windows x64 portable ZIP. Native Mac metadata and Windows PE version resources are checked against app-metadata.properties, including COODIC LABS, product/version/copyright and bundle identifier com.coodiclabs.inventorysystem. Both distributions include legal texts and third-party license files. Final verification passed: Application class files match across platforms; Mac metadata, ad-hoc signature, Windows native version resource, ZIP CRC, classpath and legal resources passed. A structural check compares application classes and verifies Windows ZIP CRC, native x64 architecture, libraries, classpath entries, legal resources and absence of shop data.
 
-The GUI test normally writes target/ui-previews. Previews retained during packaging are in the ignored .tools/ui-previews-1.2 folder at the repository root.
+The Mac package check uses a disposable copy of the native launcher and bundled runtime. `/usr/bin/sandbox-exec` denies all process network access while it starts and creates an administrator/product, records a weighted sale, generates a receipt, creates a backup and restores it. System Wi-Fi settings are left unchanged to respect the project-only restriction. The final native startup, sale, receipt, backup and restore checks passed; results are recorded in `docs/evidence/mac-offline.json` and `package-structure.json` for the delivered build.
 
-Branding update: the supplied PNG is included byte-for-byte in the JAR. The English/Turkish desktop check verified that the stage icon loads and captured the branded login/dashboard. The Mac bundle's ICNS matches the generated logo asset. The Windows native launcher receives six icon sizes; its previous code sections and non-icon resources are verified unchanged after resource embedding. Version 1.2.1 package validation includes the original image, native icons and matching application JARs. Windows execution remains untested.
+Commands:
 
-Latest branding previews are in `.tools/ui-previews-1.2.1` at the repository root.
+```
+./mvnw clean test
+./mvnw -Dinventory.guiTest=true -Dtest=DesktopSmokeTest test
+python3 InventorySystemi/scripts/verify-macos-package.py
+python3 InventorySystemi/scripts/verify-release.py
+```
+
+## Not verified / release limitations
+
+- **Windows execution and offline sale/receipt/backup on a Windows PC have not been tested.** A Windows ZIP structural check cannot establish those results.
+- **Physical Wi-Fi-off testing on the Mac has not been performed.** Network access is denied to the test processes instead; no system network settings are changed.
+- macOS 11 minimum is from the [JavaFX 21 release information](https://openjfx.io/highlights/21/); this app has only been run on the current host, not every supported OS release. Windows 10/11 x64 are deployment targets requiring acceptance.
+- Mac packages are ad-hoc signed after metadata changes, not Developer ID signed/notarized. Windows is not publisher-signed. Public installer trust/reputation is not verified.
+- No physical scanner, scale, printer, fiscal device, long-running shop load or power-loss test.
+- **Legal review is required before commercial release.** Complete `[GOVERNING COUNTRY — REQUIRED PLACEHOLDER; LAWYER REVIEW REQUIRED]` in TERMS.md. Counsel must review all marked terms, privacy/ownership representations, consumer rights, liability/warranty limits, tax wording and third-party redistribution/source-availability obligations. Actual contact details are filled; no email placeholder remains.
+
+Cleanup paths are listed in DELETED_FILES.txt (distinct generated file paths, including build outputs removed during packaging). Final evidence is retained under docs/evidence and snapshots under .tools/ui-previews-1.3.0 before generated target output is removed. No claim of legal compliance or readiness on every computer is made.

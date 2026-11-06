@@ -10,8 +10,8 @@ import java.util.*;
 
 public class SaleService {
     private static Sale read(ResultSet rs) throws SQLException {
-        Sale sale=new Sale(rs.getInt("sale_id"),rs.getInt("product_id"),rs.getInt("user_id"),rs.getBigDecimal("quantity_sold"),rs.getDate("sale_date").toLocalDate());
-        sale.setProductName(rs.getString("product_name"));sale.setPrice(rs.getBigDecimal("unit_price"));sale.setUnit(Unit.valueOf(rs.getString("unit")));sale.setSoldBy(rs.getString("sold_by"));sale.setVoided(rs.getBoolean("voided"));sale.setCheckoutId(rs.getString("checkout_id"));sale.setPaymentMethod(rs.getString("payment_method")==null?null:PaymentMethod.valueOf(rs.getString("payment_method")));return sale;
+        Sale sale=new Sale(rs.getInt("sale_id"),rs.getInt("product_id"),rs.getInt("user_id"),Unit.valueOf(rs.getString("unit")).fromStored(rs.getLong("quantity_sold")),rs.getDate("sale_date").toLocalDate());
+        sale.setFinancialSnapshot(Currencies.snapshot(rs.getString("currency_code"),rs.getInt("currency_minor")),rs.getBigDecimal("tax_rate"));sale.setProductName(rs.getString("product_name"));sale.setPrice(rs.getBigDecimal("unit_price"));sale.setUnit(Unit.valueOf(rs.getString("unit")));sale.setSoldBy(rs.getString("sold_by"));sale.setVoided(rs.getBoolean("voided"));sale.setCheckoutId(rs.getString("checkout_id"));sale.setPaymentMethod(rs.getString("payment_method")==null?null:PaymentMethod.valueOf(rs.getString("payment_method")));return sale;
     }
     public ObservableList<Sale> loadSales() {
         try(Connection c=DBConnection.connect()) {
@@ -23,14 +23,14 @@ public class SaleService {
         } catch(SQLException e) {throw AuthService.databaseError(e);}
     }
     public void addMultipleSales(List<Sale> items) {recordSale(items,UUID.randomUUID().toString());}
-    /** Record quantities and totals only; no drawer shift or payment entry is required. */
-    public Checkout recordSale(List<Sale> items,String checkoutId) {
+    /** Record a checkout with a reporting-only payment type. */
+    public Checkout recordSale(List<Sale> items,String checkoutId) {return recordSale(items,PaymentMethod.CASH,checkoutId);}
+    public Checkout recordSale(List<Sale> items,PaymentMethod method,String checkoutId) {
+        Objects.requireNonNull(method);
         if(items==null || items.isEmpty() || items.stream().anyMatch(Objects::isNull))throw AuthService.failure("sale.empty");
         try {UUID.fromString(checkoutId);}catch(RuntimeException e){throw AuthService.failure("checkout.invalid");}
-        BigDecimal total=items.stream().map(Sale::getTotal).reduce(BigDecimal.ZERO,BigDecimal::add);
-        if(total.signum()<0 || total.compareTo(new BigDecimal("999999999999.99"))>0)throw AuthService.failure("payment.invalid.amount");
-        PaymentMethod method=PaymentMethod.UNRECORDED;
-        String fingerprint=fingerprint(items);
+
+        String fingerprint=fingerprint(items,method);
         try(Connection c=DBConnection.connect()) {
             c.setAutoCommit(false);
             try {
@@ -44,8 +44,13 @@ public class SaleService {
                         }
                     }
                 }
-                try(PreparedStatement ps=c.prepareStatement("INSERT INTO checkouts(checkout_id,user_id,shift_id,payment_method,total,cash_received,change_due,fingerprint) VALUES(?,?,?,?,?,?,?,?)")) {
-                    ps.setString(1,checkoutId);ps.setInt(2,actor.id());ps.setNull(3,Types.BIGINT);ps.setString(4,method.name());ps.setBigDecimal(5,total);ps.setNull(6,Types.DECIMAL);ps.setNull(7,Types.DECIMAL);ps.setString(8,fingerprint);ps.executeUpdate();
+                var settings=ShopSettings.read(c);if(settings.currency()==null)throw AuthService.failure("currency.required");
+                for(Sale sale:items){if(sale.getCurrency()!=null&&(!sale.getCurrency().code().equals(settings.currency().code())||sale.getTaxRate().compareTo(settings.taxRate())!=0))throw AuthService.failure("settings.changed");sale.setFinancialSnapshot(settings.currency(),settings.taxRate());}
+                BigDecimal subtotal=items.stream().map(Sale::getTotal).reduce(BigDecimal.ZERO,BigDecimal::add);
+                var amounts=Amounts.calculate(subtotal,settings.taxRate(),settings.currency());BigDecimal total=amounts.total();
+                if(total.signum()<0||total.compareTo(new BigDecimal("999999999999.9999"))>0)throw AuthService.failure("payment.invalid.amount");
+                try(PreparedStatement ps=c.prepareStatement("INSERT INTO checkouts(checkout_id,user_id,payment_method,total,fingerprint,currency_code,currency_minor,tax_rate,subtotal,tax_amount) VALUES(?,?,?,?,?,?,?,?,?,?)")) {
+                    ps.setString(1,checkoutId);ps.setInt(2,actor.id());ps.setString(3,method.name());ps.setBigDecimal(4,total);ps.setString(5,fingerprint);ps.setString(6,settings.currency().code());ps.setInt(7,settings.currency().minorUnits());ps.setBigDecimal(8,settings.taxRate());ps.setBigDecimal(9,amounts.subtotal());ps.setBigDecimal(10,amounts.tax());ps.executeUpdate();
                 }
                 var indices=java.util.stream.IntStream.range(0,items.size()).boxed().sorted(Comparator.comparingInt(i->items.get(i).getProductId())).toList();
                 for(int index:indices) {
@@ -57,17 +62,19 @@ public class SaleService {
                     BigDecimal quantity=product.getUnit().validate(sale.getQuantitySold(),false);
                     if(sale.getPrice().compareTo(product.getPrice())!=0 || sale.getUnit()!=product.getUnit())throw AuthService.failure("sale.price.changed");
                     try(PreparedStatement ps=c.prepareStatement("UPDATE products SET quantity=quantity-?,version=version+1 WHERE product_id=? AND quantity>=?")) {
-                        ps.setBigDecimal(1,quantity);ps.setInt(2,product.getProductId());ps.setBigDecimal(3,quantity);if(ps.executeUpdate()!=1)throw AuthService.failure("sale.stock.changed");
+                        ps.setLong(1,product.getUnit().toStored(quantity));ps.setInt(2,product.getProductId());ps.setLong(3,product.getUnit().toStored(quantity));if(ps.executeUpdate()!=1)throw AuthService.failure("sale.stock.changed");
                     }
-                    try(PreparedStatement ps=c.prepareStatement("INSERT INTO sales(product_id,user_id,quantity_sold,sale_date,unit_price,unit,product_name,checkout_id,line_no) VALUES(?,?,?,?,?,?,?,?,?)",Statement.RETURN_GENERATED_KEYS)) {
-                        ps.setInt(1,product.getProductId());ps.setInt(2,actor.id());ps.setBigDecimal(3,quantity);ps.setDate(4,java.sql.Date.valueOf(LocalDate.now()));ps.setBigDecimal(5,product.getPrice());ps.setString(6,product.getUnit().name());ps.setString(7,product.getName());ps.setString(8,checkoutId);ps.setInt(9,index);ps.executeUpdate();
+                    try(PreparedStatement ps=c.prepareStatement("INSERT INTO sales(product_id,user_id,quantity_sold,sale_date,unit_price,unit,product_name,checkout_id,line_no,net_amount,currency_code,currency_minor,tax_rate) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)",Statement.RETURN_GENERATED_KEYS)) {
+                        ps.setInt(1,product.getProductId());ps.setInt(2,actor.id());ps.setLong(3,product.getUnit().toStored(quantity));ps.setDate(4,java.sql.Date.valueOf(LocalDate.now()));ps.setBigDecimal(5,product.getPrice());ps.setString(6,product.getUnit().name());ps.setString(7,product.getName());ps.setString(8,checkoutId);ps.setInt(9,index);ps.setBigDecimal(10,sale.getTotal());ps.setString(11,settings.currency().code());ps.setInt(12,settings.currency().minorUnits());ps.setBigDecimal(13,settings.taxRate());ps.executeUpdate();
                         try(ResultSet rs=ps.getGeneratedKeys()) {rs.next();sale.setSaleId(rs.getInt(1));}
                     }
                     sale.setCheckoutId(checkoutId);sale.setProductName(product.getName());sale.setSoldBy(actor.username());
                     AuditService.record(c,actor,"SALE_CREATED","#"+sale.getSaleId()+" | "+product.getName()+" | "+quantity+" "+product.getUnit().name()+" | "+sale.getTotal()+" | "+checkoutId);
                 }
                 AuditService.record(c,actor,"CHECKOUT_CREATED",checkoutId+" | "+method.name()+" | "+total);
-                Checkout result=load(c,checkoutId,actor);c.commit();return result;
+                Checkout result=load(c,checkoutId,actor);
+                try(PreparedStatement receipt=c.prepareStatement("INSERT INTO receipt_records(checkout_id,content) VALUES(?,?)")){receipt.setString(1,checkoutId);receipt.setString(2,utils.ReceiptGenerator.render(result));receipt.executeUpdate();}
+                c.commit();return result;
             } catch(Exception e) {c.rollback();throw e;}
         } catch(SQLException e) {throw AuthService.databaseError(e);}
     }
@@ -84,29 +91,28 @@ public class SaleService {
                 try(PreparedStatement line=c.prepareStatement("SELECT s.*,u.username AS sold_by,ch.payment_method FROM sales s JOIN users u ON s.user_id=u.user_id LEFT JOIN checkouts ch ON s.checkout_id=ch.checkout_id WHERE s.checkout_id=? ORDER BY line_no,sale_id")) {
                     line.setString(1,id);try(ResultSet rows=line.executeQuery()) {while(rows.next())lines.add(read(rows));}
                 }
-                return new Checkout(id,rs.getString("username"),PaymentMethod.valueOf(rs.getString("payment_method")),rs.getBigDecimal("total"),rs.getBigDecimal("cash_received"),rs.getBigDecimal("change_due"),rs.getTimestamp("created_at").toLocalDateTime(),List.copyOf(lines));
+                return new Checkout(id,rs.getString("username"),PaymentMethod.valueOf(rs.getString("payment_method")),Currencies.snapshot(rs.getString("currency_code"),rs.getInt("currency_minor")).round(rs.getBigDecimal("total")),rs.getTimestamp("created_at").toLocalDateTime(),List.copyOf(lines),Currencies.snapshot(rs.getString("currency_code"),rs.getInt("currency_minor")),rs.getBigDecimal("tax_rate"),Currencies.snapshot(rs.getString("currency_code"),rs.getInt("currency_minor")).round(rs.getBigDecimal("subtotal")),Currencies.snapshot(rs.getString("currency_code"),rs.getInt("currency_minor")).round(rs.getBigDecimal("tax_amount")));
             }
         }
     }
-    public void voidSale(int id) {
+    public void voidSale(int id) {voidSale(id,gui.LocaleManager.get("void.default.reason"));}
+    public void voidSale(int id,String reason) {
+        if(reason==null || reason.isBlank() || reason.length()>500)throw AuthService.failure("void.reason.required");
         try(Connection c=DBConnection.connect()) {
             c.setAutoCommit(false);
             try {
-                var actor=AuthService.require(c,true);int productId;BigDecimal quantity;String checkoutId;
+                var actor=AuthService.require(c,true);int productId;long quantity;String checkoutId;
                 try(PreparedStatement ps=c.prepareStatement("SELECT product_id,quantity_sold,voided,checkout_id FROM sales WHERE sale_id=? FOR UPDATE")) {
-                    ps.setInt(1,id);try(ResultSet rs=ps.executeQuery()) {if(!rs.next()||rs.getBoolean("voided"))throw AuthService.failure("sale.already.void");productId=rs.getInt(1);quantity=rs.getBigDecimal(2);checkoutId=rs.getString(4);}
+                    ps.setInt(1,id);try(ResultSet rs=ps.executeQuery()) {if(!rs.next()||rs.getBoolean("voided"))throw AuthService.failure("sale.already.void");productId=rs.getInt(1);quantity=rs.getLong(2);checkoutId=rs.getString(4);}
                 }
-                if(checkoutId!=null)try(PreparedStatement ps=c.prepareStatement("SELECT s.closed_at FROM checkouts ch JOIN shifts s ON ch.shift_id=s.shift_id WHERE ch.checkout_id=? FOR UPDATE")) {
-                    ps.setString(1,checkoutId);try(ResultSet rs=ps.executeQuery()) {if(rs.next()&&rs.getString(1)!=null)throw AuthService.failure("sale.shift.closed");}
-                }
-                try(PreparedStatement ps=c.prepareStatement("UPDATE products SET quantity=quantity+?,version=version+1 WHERE product_id=?")) {ps.setBigDecimal(1,quantity);ps.setInt(2,productId);if(ps.executeUpdate()!=1)throw AuthService.failure("error.stale");}
-                try(PreparedStatement ps=c.prepareStatement("UPDATE sales SET voided=TRUE WHERE sale_id=?")) {ps.setInt(1,id);ps.executeUpdate();}
-                AuditService.record(c,actor,"SALE_VOIDED","#"+id+" | "+quantity);c.commit();
+                try(PreparedStatement ps=c.prepareStatement("UPDATE products SET quantity=quantity+?,version=version+1 WHERE product_id=?")) {ps.setLong(1,quantity);ps.setInt(2,productId);if(ps.executeUpdate()!=1)throw AuthService.failure("error.stale");}
+                try(PreparedStatement ps=c.prepareStatement("UPDATE sales SET voided=TRUE,voided_by=?,void_reason=? WHERE sale_id=?")) {ps.setInt(1,actor.id());ps.setString(2,reason.trim());ps.setInt(3,id);ps.executeUpdate();}
+                AuditService.record(c,actor,"SALE_VOIDED","#"+id+" | "+quantity+" | "+reason.trim());c.commit();
             } catch(Exception e) {c.rollback();throw e;}
         } catch(SQLException e) {throw AuthService.databaseError(e);}
     }
-    private static String fingerprint(List<Sale> items) {
-        StringBuilder text=new StringBuilder("SALE");
+    private static String fingerprint(List<Sale> items,PaymentMethod method) {
+        StringBuilder text=new StringBuilder(method.name());
         for(Sale s:items)text.append('|').append(s.getProductId()).append(':').append(s.getQuantitySold().stripTrailingZeros().toPlainString()).append(':').append(s.getPrice().stripTrailingZeros().toPlainString()).append(':').append(s.getUnit().name());
         try {return HexFormat.of().formatHex(java.security.MessageDigest.getInstance("SHA-256").digest(text.toString().getBytes(java.nio.charset.StandardCharsets.UTF_8)));}
         catch(java.security.NoSuchAlgorithmException e){throw new IllegalStateException(e);}

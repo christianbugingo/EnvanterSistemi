@@ -16,7 +16,7 @@ public class ProductService {
         } catch(SQLException e) { throw AuthService.databaseError(e); }
     }
     static Product read(ResultSet rs) throws SQLException {
-        Product p=new Product(rs.getInt("product_id"),rs.getString("name"),rs.getString("category"),rs.getBigDecimal("quantity"),rs.getBigDecimal("price"),rs.getString("supplier"),Unit.valueOf(rs.getString("unit")),rs.getBigDecimal("low_stock"),rs.getInt("version"));
+        Product p=new Product(rs.getInt("product_id"),rs.getString("name"),rs.getString("category"),Unit.valueOf(rs.getString("unit")).fromStored(rs.getLong("quantity")),rs.getBigDecimal("price"),rs.getString("supplier"),Unit.valueOf(rs.getString("unit")),Unit.valueOf(rs.getString("unit")).fromStored(rs.getLong("low_stock")),rs.getInt("version"));
         p.setBarcode(rs.getString("barcode")); return p;
     }
     public void addProduct(Product p) { save(p,false); }
@@ -39,7 +39,7 @@ public class ProductService {
                 }
                 String sql=update ? "UPDATE products SET name=?, category=?, quantity=?, price=?, supplier=?, unit=?, low_stock=?, barcode=?, version=version+1 WHERE product_id=? AND version=?" : "INSERT INTO products(name,category,quantity,price,supplier,unit,low_stock,barcode) VALUES(?,?,?,?,?,?,?,?)";
                 try(PreparedStatement ps=c.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS)) {
-                    ps.setString(1,p.getName().trim()); ps.setString(2,p.getCategory().trim()); ps.setBigDecimal(3,p.getQuantity()); ps.setBigDecimal(4,p.getPrice()); ps.setString(5,p.getSupplier().trim()); ps.setString(6,p.getUnit().name()); ps.setBigDecimal(7,p.getLowStock());
+                    ps.setString(1,p.getName().trim()); ps.setString(2,p.getCategory().trim()); ps.setLong(3,p.getUnit().toStored(p.getQuantity())); ps.setBigDecimal(4,p.getPrice()); ps.setString(5,p.getSupplier().trim()); ps.setString(6,p.getUnit().name()); ps.setLong(7,p.getUnit().toStored(p.getLowStock()));
                     ps.setString(8,p.getBarcode().isEmpty()?null:p.getBarcode());
                     if(update) { ps.setInt(9,p.getProductId()); ps.setInt(10,p.getVersion()); }
                     if(ps.executeUpdate()!=1) throw AuthService.failure("error.stale");
@@ -74,7 +74,7 @@ public class ProductService {
                 }
                 before.getUnit().validate(delta.abs(),false);
                 BigDecimal after=before.getUnit().validate(before.getQuantity().add(delta),true);
-                try(PreparedStatement ps=c.prepareStatement("UPDATE products SET quantity=?,version=version+1 WHERE product_id=?")) {ps.setBigDecimal(1,after);ps.setInt(2,id);ps.executeUpdate();}
+                try(PreparedStatement ps=c.prepareStatement("UPDATE products SET quantity=?,version=version+1 WHERE product_id=?")) {ps.setLong(1,before.getUnit().toStored(after));ps.setInt(2,id);ps.executeUpdate();}
                 AuditService.record(c,actor,"STOCK_ADJUSTED","#"+id+" | "+before.getQuantity()+" → "+after+" | "+reason.trim()); c.commit();
             } catch(Exception e) {c.rollback();throw e;}
         } catch(SQLException e) {throw AuthService.databaseError(e);}
@@ -90,6 +90,6 @@ public class ProductService {
             if(text==null || text.isBlank() || text.length()>255) throw AuthService.failure("validation.product");
         if(!p.getBarcode().isEmpty() && !p.getBarcode().matches("[A-Za-z0-9._-]{1,64}")) throw AuthService.failure("barcode.invalid");
         p.getUnit().validate(p.getQuantity(),true); p.getUnit().validate(p.getLowStock(),true);
-        if(p.getPrice()==null || p.getPrice().signum()<0 || p.getPrice().compareTo(new BigDecimal("9999999999.99"))>0 || p.getPrice().stripTrailingZeros().scale()>2) throw AuthService.failure("msg.invalid.price");
+        if(p.getPrice()==null || p.getPrice().signum()<0 || p.getPrice().compareTo(new BigDecimal("9999999999.99"))>0 || p.getPrice().stripTrailingZeros().scale()>ShopSettings.currency().minorUnits()) throw AuthService.failure("msg.invalid.price");
     }
 }

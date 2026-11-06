@@ -10,10 +10,10 @@ public class ProductTableView extends TableView<Product> {
         getColumns().add(Ui.column("column.name",Product::getName));
         getColumns().add(Ui.column("column.barcode",Product::getBarcode));
         getColumns().add(Ui.column("column.category",Product::getCategory));
-        getColumns().add(Ui.numberColumn("column.quantity",Product::getQuantity,false));
+        getColumns().add(Ui.column("column.quantity",p->product.Quantities.format(p.getQuantity(),p.getUnit())));
         getColumns().add(Ui.column("column.unit",p->p.getUnit().label()));
         getColumns().add(Ui.numberColumn("column.price",Product::getPrice,true));
-        getColumns().add(Ui.numberColumn("product.threshold",Product::getLowStock,false));
+        getColumns().add(Ui.column("product.threshold",p->product.Quantities.format(p.getLowStock(),p.getUnit())));
         getColumns().add(Ui.column("column.supplier",Product::getSupplier));
         setRowFactory(t->new TableRow<>() {
             @Override protected void updateItem(Product p,boolean empty) { super.updateItem(p,empty); setStyle(!empty && p!=null && p.isLowStock()?"-fx-background-color:#fff0cc;":""); }

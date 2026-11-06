@@ -17,7 +17,7 @@ class ReceiptGeneratorTest {
             System.setProperty("user.home", directory.toString());
             Sale sale = new Sale(0, 1, 1, 2, LocalDate.now());
             sale.setProductName("Türkçe ürün");
-            sale.setPrice(12.50);
+            sale.setPrice(new java.math.BigDecimal("12.50"));
             ReceiptGenerator.generateAndSaveReceipt(List.of(sale), "tester");
             ReceiptGenerator.generateAndSaveReceipt(List.of(sale), "tester");
             try (var files = Files.list(directory.resolve(".inventorysystem/receipts"))) {

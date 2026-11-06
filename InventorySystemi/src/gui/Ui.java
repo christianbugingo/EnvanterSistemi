@@ -11,7 +11,7 @@ public final class Ui {
         if(key.contains("delete") || key.contains("void")) b.getStyleClass().add("danger");
         return b;
     }
-    public static void run(Runnable action) { try { action.run(); } catch(RuntimeException ex) { error(ex.getMessage()); } }
+    public static void run(Runnable action) { try { action.run(); } catch(RuntimeException ex) { if(ex.getCause()!=null)org.slf4j.LoggerFactory.getLogger(Ui.class).error("Operation failed",ex);error(ex.getMessage()); } }
     public static void error(String message) { alert(Alert.AlertType.ERROR,"alert.error",message); }
     public static void info(String message) { alert(Alert.AlertType.INFORMATION,"alert.information",message); }
     public static void alert(Alert.AlertType type,String title,String message) {

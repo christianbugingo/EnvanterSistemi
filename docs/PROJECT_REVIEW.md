@@ -1,16 +1,15 @@
-# Offline edition: delivered scope and next steps
+# Release scope — Inventory System 1.3.0
 
-Version 1.2 deliberately uses one laptop with role-based logins rather than a network server. The shared-MySQL template, driver and multi-PC test have been retired. There is no runtime internet requirement.
+COODIC LABS's offline desktop application supports independent shops on Apple Silicon macOS and Windows x64. Installed use needs no developer tools, internet, database server, payment network or cloud account.
 
-Implemented priorities:
+The application includes a graphical welcome page, required local legal acceptance, first-administrator/recovery setup, searchable shop currency, optional percentage tax, staff permissions, piece/integer-gram stock, live sale pricing, immutable financial snapshots, transactional checkout/receipt records, reporting by original currency, reasoned voids, backups, audit history, password controls, English/Turkish UI, rotating logs and branded native packages.
 
-- Unique optional product barcodes; keyboard-style barcode scanning with Enter; piece scanning adds one item and kg scanning requests the weight.
-- Checkout IDs grouping sale lines, persisted cash/card bookkeeping, cash received/change and repeat-checkout protection.
-- One active shift per laptop, opening floats, counted/expected cash, discrepancy notes, and admin review of staff shifts.
-- Sale-time price snapshots, unit/payment-separated reports, receipt regeneration and retained voids. Voids cannot rewrite a closed shift.
-- Reasoned stock receiving/adjustments, admin database backups and a verified restore procedure.
-- Self-contained Mac and Windows x64 portable releases with one current package per platform. Older generated apps are removed only after a new build succeeds.
+A currency change reinterprets current product prices with an explicit warning; it performs no exchange calculation. Older sales without recorded currency remain marked ?. Reports never add unlike currencies. Tax is a user-configured calculation aid and is rounded once per checkout. Source currency metadata: Java currency API and the current ISO 4217 register, bundled locally.
 
-Possible next work, if needed: supervised post-shift returns with refund/payment records, cash-in/cash-out transactions, stock adjustment reports, pagination and staff/date filters, printer/PDF receipts, electronic-scale integration, installer signing, and login throttling. None requires adding a cloud dependency. A backend can remain out of scope unless simultaneous registers are requested later.
+Limits: one local database per OS profile; no synchronization or merging independently modified copies. Card selection does not process payment. Hardware scales, camera scanners, fiscal devices and automatic refunds are not implemented. Operating-system/database file access is outside application role protection.
 
-Important scope: card selection does not process a charge. USB keyboard scanners are supported, while camera barcode recognition and scale hardware have not been tested. Shift accounting assumes no unrecorded cash movements beyond opening float, cash sales and same-shift voids. A receipt is not a fiscal invoice. People with direct access to the operating-system profile/database files remain outside the application's role boundary.
+## Tax and Legal
+
+Receipts are simple sales records, not tax or fiscal invoices. Shop owners must follow local tax and fiscal-device rules. Terms/Privacy are drafts requiring lawyer review, including the governing-country placeholder and redistribution/source-availability obligations for third-party software. The application cannot be described as legally approved for every country.
+
+Further deployment work: actual Windows acceptance, testing on each target Mac/Windows version and peripheral device, signing/notarization, installer reputation and legally reviewed commercial terms. See VERIFICATION.md for measured checks and unresolved items.

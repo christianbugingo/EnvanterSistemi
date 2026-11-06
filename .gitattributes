@@ -1,0 +1,5 @@
+# Preserve upstream notices and generated ISO/schema snapshots verbatim.
+legal-licenses/** -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+InventorySystemi/src/currencies/iso-current.xml -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+InventorySystemi/test-fixtures/** -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+docs/evidence/*.log -text whitespace=-blank-at-eol,-blank-at-eof

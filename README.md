@@ -1,73 +1,93 @@
-# Inventory System 1.2.1 — offline desktop edition
+# Inventory System 1.3.0
 
-One laptop can be used by the owner or staff, depending on who signs in. The application stores everything in an embedded local H2 database. **Using the packaged app requires no internet, database server, or separate Java installation.** The first developer build may download Maven/JavaFX; that is separate from using the installed app.
+**COODIC LABS** · Rwanda · tresorbi29@gmail.com · https://coodic.org/
 
-Use the same macOS/Windows user profile when sharing the laptop. Different operating-system profiles have separate home directories and therefore separate shop databases. Signing out of the app does not erase stock, accounts, shifts or sales.
+An offline Java 21 / JavaFX application for local shop accounts, products, stock, sales, receipts, reports and backups. It has no network calls, cloud sync, analytics, remote database or payment processing. Currency and optional tax are chosen by the shop; no country's currency is selected by default. Original code is proprietary, all rights reserved. Third-party software retains its own licenses.
 
-## Latest applications
+## Requirements and installation
 
-- Mac (Apple Silicon): `InventorySystemi/dist/macos/InventorySystem.app`; installer `InventorySystemi/dist/macos/InventorySystem.dmg`.
-- Windows x64: `InventorySystemi/dist/windows/InventorySystem-Windows-x64.zip`. Extract the **whole ZIP**, then double-click `InventorySystem/InventorySystem.exe`. Java, Windows JavaFX, and the native Windows launcher are bundled. `Start InventorySystem.cmd` is a fallback; `Run with console.cmd` shows startup diagnostics.
+- **macOS Apple Silicon (arm64):** macOS 11 or later (JavaFX 21 minimum; test on the intended OS version). Open `InventorySystemi/dist/macos/InventorySystem.dmg` and copy the app to Applications, or open the `.app` directly. Close older copies first. This build is not Developer ID signed/notarized; deployment on other Macs requires acceptance testing. Intel Mac and Linux packages are not provided.
+- **Windows x64:** Windows 10/11 x64 deployment target; acceptance testing on the intended PC is required. Extract the **entire** `InventorySystemi/dist/windows/InventorySystem-Windows-x64.zip`, then open `InventorySystem/InventorySystem.exe`. Keep all bundled folders together. `Start InventorySystem.cmd` is a fallback and `Run with console.cmd` provides diagnostics. Windows execution has not been tested on this Mac.
 
-The Windows package is assembled on this Mac and must be tested on a Windows PC. It is a portable application, not an MSI installer. The optional `scripts/package-windows.ps1` builds an MSI when run on Windows with JDK 21 and its required installer tooling.
+Both packages include Java, JavaFX and local legal notices; no separate Java installation or internet is required for shop use. The welcome page explains the workflow and offers account creation on a fresh installation.
 
-Close the previous app before opening the new version. Back up an existing database before upgrading. Existing local products, users and sale history are preserved through additive schema upgrades. Legacy sales without checkout/payment information remain marked as older records; their missing payment method is not invented.
+## First-run setup
 
-## Daily workflow
+1. Open the app. Choose **Create your administrator account** on the welcome page.
+2. Read Terms and Privacy (including the full local documents), tick acceptance and continue. Declining prevents setup/login. The accepted version, document digest and date are stored locally. **These legal documents are a draft requiring lawyer review; the governing-law placeholder must be completed before commercial distribution.**
+3. A fresh installation opens administrator signup before showing a login form. Create your administrator with your own username and password. No default credentials are seeded.
+4. Save or print the recovery code immediately, then tick **I have saved this code**. It is shown once and stored only as a hash.
+5. Type or select in the single searchable currency dropdown by code, name or symbol. Choose your currency explicitly. The bundled catalogue covers current ISO monetary/fund codes with defined minor units (178 ISO entries; 165 priceable entries in this build), using Java currency metadata and the ISO register. Non-monetary test/precious-metal codes without defined minor units are not selectable. RWF and JPY use 0 decimals, USD 2, KWD 3. Choose optional tax, default 0%, and language, default English.
+6. Sign in and add products and staff. Existing installations without a currency must have an administrator choose it before selling. Existing administrators should generate/save a recovery code from File if they do not have one.
 
-1. At first launch, choose **Create first administrator** and set your own password. Existing accounts keep their passwords; no default account/password is seeded.
-2. Admin uses **Staff accounts** to create staff with temporary passwords. Staff must choose a different password on their first login.
-3. Admin adds products with a Piece or kg unit, per-unit selling price, optional unique barcode, and low-stock threshold. Existing stock is changed through **Receive / adjust stock**, with a required reason.
-4. The cashier signs in and opens a shift in **Shifts / cash**, entering the opening cash float. Only one shift can be open on this laptop.
-5. Use **New sale**. Search by name or scan a barcode using a keyboard-style USB scanner configured to send Enter. A piece barcode adds one item; a kg barcode selects the product and asks for its weight. kg supports three decimal places; pieces require whole quantities.
-6. Choose **Cash** or **Card (record only)**. Cash requires the amount received and displays change. Card selection is bookkeeping: complete the actual payment separately on the shop's card terminal.
-7. Complete the sale. Its checkout ID groups every sale line and payment details. The receipt is saved locally. **Reprint receipt** recreates it from the database, including any voided-line markers. Older pre-1.2 lines have no grouped receipt; use CSV export for those.
-8. Before handing the laptop to another person, count cash and close the shift. The expected amount is opening cash plus non-voided cash sales; card sales do not increase the drawer. A discrepancy requires a note. Then sign out and let the next person sign in/open a shift.
-9. Admin reviews all staff sales, shifts, reports and **Staff activity**, even while offline. Staff can see their own sales/shifts and cannot manage products, accounts, shop-wide reports, backups or voids.
+Each fresh computer starts an independent shop. Copying the application does not copy another shop's accounts or data. Admin and staff share data when using the same operating-system profile. Independent installations do not synchronize or merge.
 
-Admins can void sale lines while their shift is still open. Voids preserve history, restore stock once and reduce expected cash for a cash sale. Sales in a closed shift cannot be voided because that would rewrite a completed cash count. Post-shift refunds need a separate return workflow and are not implemented here. Give any cash refund manually when recording a cash void; the app does not dispense or transfer money.
+## Shop settings, currencies and tax
 
-Prices/names/units are snapshotted at sale time. Reports group quantities by unit and payment method and sum the same rounded line amounts as receipts. Later product edits do not rewrite history. Receipts add no arbitrary tax and are not fiscal invoices.
+Admin → File → **Admin settings** changes currency, tax and language. Changing currency requires confirmation: existing sales retain their original currency, precision and tax. Current product prices are interpreted in the new currency and rounded to its minor units; **no exchange conversion** occurs. Review prices before selling.
 
-## Local data and backups
+Amounts use consistent grouping and code suffixes, independent of UI language: `1,250 RWF`, `12.50 USD`, `1.234 KWD`. Names and symbols are shown in the currency chooser. Prices and line totals use BigDecimal and HALF_UP at the currency precision. Sales without a recorded currency from older versions remain `?`, with their historical two-decimal amounts; a new shop currency is never silently applied to them. Keep original records to identify those legacy amounts.
 
-Data: `~/.inventorysystem/inventory.mv.db` on Mac, `%USERPROFILE%\.inventorysystem\inventory.mv.db` on Windows. Receipts: the `receipts` subfolder. App updates/cleanup never remove these files.
+Tax rate accepts 0–100%, with up to four decimals. Tax is calculated **once per checkout**, after rounded line totals are summed, at that checkout's currency precision. With tax above zero, the screen, receipt and report show subtotal, tax and total; with zero, the receipt shows only total. Reports keep currencies separate. Tax across unit-separated report rows is allocated with rounding residue on the last unit; voided lines are excluded and remaining checkout tax is recomputed using its original rate. Original receipts retain their original amounts and mark voids.
 
-Admin: **File → Back up database** creates a consistent ZIP, including accounts, stock, sales, shifts and activity. Keep backups somewhere separate from the laptop. Restore instructions and the complete acceptance checklist are in [docs/SHOP_SETUP.md](docs/SHOP_SETUP.md).
+## Products, sales and accounts
 
-`.env` is optional. Defaults are already offline. A file at `~/.inventorysystem/.env`, `.env` in the launch directory, or `InventorySystemi/.env` in the repository is read at startup (first one found). `INVENTORY_ENV_FILE` can choose a file explicitly. JVM properties override environment variables, which override file settings. `SHOP_CURRENCY` defaults to TRY. Remote database URLs are rejected in this edition; remove stale MySQL settings instead of starting a server.
+Choose **Sold by: Piece / Weight (kg)** first. Piece quantities are whole counts; weight stock and sales use integer grams. Price is per piece or kg using the shop currency precision. Product names, category and supplier are required; optional barcodes are unique. Existing stock changes use **Receive / adjust stock**, with a reason. Units cannot change after sales history exists; create another product instead.
 
-## Development and tests
+New sale: search/select a product or scan a keyboard-style barcode ending with Enter. Piece scans add one piece; whole quantities such as 5 or 20 can be entered. Weight scans focus the weight prompt. Enter `0.23`, `0.23 kg` or `230 g`. Plain input in the kg field means kg: plain `230` means 230 kg. A live preview recalculates as you type: at 100 RWF/kg, 0.2 kg shows 200 g and 20 RWF; 0.23 kg or 230 g shows 23 RWF. A 5 g line is 1 RWF after HALF_UP rounding, or 0.50 in a two-decimal currency at 100/kg. Under 1000 g displays as grams; 1000 g and above as kg with three decimals.
 
-From the repository root:
+Select Cash / Card / Other for reporting only and complete the sale. No amount received or change is requested. Stock, sale snapshots, payment type, checkout and receipt record commit together or all roll back. A local receipt file can be regenerated if writing it fails. Admin can void with confirmation and a reason: history/actor/reason are retained and stock restores once. Handle any real refund separately.
+
+Admin creates staff in **Staff accounts**, with temporary passwords that must be changed at first login. Staff see their own sales; admin sees all activity and controls products, accounts, settings and backups.
+
+Login-screen **Change password** asks for username/current/new/confirmation. Policy: at least 10 characters, one letter and one digit, different from username and recent passwords; maximum 72 UTF-8 bytes. BCrypt cost 12 protects passwords; older hashes upgrade on successful login. Five failed attempts lock an account for five minutes with a visible countdown; failures are audited.
+
+**Forgot password:** staff ask their administrator for a temporary reset. Admin uses the saved recovery code, sets a temporary password, saves a replacement recovery code, then changes the temporary password at next login. Old recovery codes stop working. With both password and code lost, restore a usable backup; there is no bypass.
+
+Shortcuts: Ctrl/Cmd+N new sale; Ctrl/Cmd+F search; Ctrl/Cmd+Enter complete sale. English is the default; missing optional Turkish translations fall back to English. View → About shows developer/contact, build, legal acceptance date, database location, full terms and the receipt notice.
+
+## Data, backup, restore and uninstall
+
+Default data: `~/.inventorysystem/inventory.mv.db` on Mac; `%USERPROFILE%\.inventorysystem\inventory.mv.db` on Windows. Receipts and rotating logs use `receipts/` and `logs/` beneath that directory. Different OS profiles have different data.
+
+Admin → File → **Back up database** saves a consistent ZIP including accounts, recovery hashes, settings, sales and receipt records. Before any pending schema upgrade, the app makes an automatic local ZIP under `migration-backups/` next to the database; failure stops the upgrade. Keep your own backups separately too.
+
+Restore: close every app window, preserve the current database, extract a backup into a temporary folder, and copy its `inventory.mv.db` to the data location (or configured DB_URL location). Start the same or newer app and verify accounts, stock and recent sales. Do not copy a database while it is being written. See [SHOP_SETUP.md](docs/SHOP_SETUP.md).
+
+Uninstall: close the app, remove its app bundle (Mac) or extracted portable folder (Windows). This does not delete shop data. Preserve/export your database, receipts and backups before considering any separate manual data deletion; follow local retention requirements.
+
+## Tax and Legal
+
+Receipts are simple sales records, not tax or fiscal invoices. The shop owner is responsible for following local tax, invoicing and fiscal-device rules. The optional percentage is not country-specific tax logic or compliance certification. Read [TERMS.md](TERMS.md), [PRIVACY.md](PRIVACY.md), [LICENSE.txt](LICENSE.txt) and [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt). Legal drafts require qualified review before commercial release.
+
+## Optional configuration
+
+No configuration file is needed for normal use. `SHOP_CURRENCY` has been removed; settings are in the database.
+
+| Key | Purpose |
+|---|---|
+| `DB_URL` | Optional local H2 file URL; remote URLs are rejected. |
+| `DB_USER` | Embedded DB user, default `sa`; separate from app accounts. |
+| `DB_PASSWORD` | Embedded DB password, empty by default. |
+| `INVENTORY_ENV_FILE` | Environment variable selecting a configuration file. |
+
+Otherwise configuration is read from `~/.inventorysystem/.env`, working-directory `.env`, then `InventorySystemi/.env`. JVM properties override environment variables, which override file values. No initial account/password keys exist.
+
+## Development, verification and packaging
+
+Development requires JDK 21, Maven wrapper and Python 3 for packaging. Initial dependency/runtime downloads are build tasks only. `.tools/jdk` is used when JAVA_HOME is unset. The local Maven repository is `.tools/m2`; tests use disposable project-local homes and temporary data.
 
 ```sh
-./mvnw clean package
+./mvnw clean test
 ./mvnw javafx:run
-./mvnw test
-# Desktop required; disposable database and test windows:
 ./mvnw -Dinventory.guiTest=true -Dtest=DesktopSmokeTest test
-```
-
-JDK 21 is required for development. This checkout's ignored `.tools/jdk` is used automatically when JAVA_HOME is unset. Maven is supplied by the wrapper. VS Code tasks build/run/test the project.
-
-Build both platforms on this Mac, in this order:
-
-```sh
 bash InventorySystemi/scripts/package-macos.sh
 python3 InventorySystemi/scripts/package-windows-portable.py
+python3 InventorySystemi/scripts/verify-macos-package.py
 ```
 
-Windows packaging downloads/caches a Windows JDK on the first build. Both delivered apps run offline afterward. The native portable Windows launcher uses the bundled JDK's [OpenJDK launcher template](https://github.com/openjdk/jdk21u/blob/master/src/jdk.jpackage/windows/classes/jdk/jpackage/internal/WindowsAppImageBuilder.java); its notices are retained in the package.
+Brand/version/platform metadata comes from `app-metadata.properties`. The original logo is bundled locally. Build cleanup is recorded in [docs/DELETED_FILES.txt](docs/DELETED_FILES.txt); it never targets data outside the project. See [VERIFICATION.md](docs/VERIFICATION.md), [CHANGELOG.md](CHANGELOG.md) and [PROJECT_REVIEW.md](docs/PROJECT_REVIEW.md).
 
-Each successful package replaces the previous build for that platform. Known old versioned apps/installers in the project's `dist/` and earlier generated app caches are removed. The latest Mac and Windows packages are both kept. Failed builds keep the last complete release. This cleanup does not search Downloads or /Applications and does not delete shop data.
+Support: **tresorbi29@gmail.com**. No email, browser or support-data transfer is opened automatically by the app.
 
-See [verification results](docs/VERIFICATION.md) and [scope/recommendations](docs/PROJECT_REVIEW.md). Mac signing/notarization, Windows execution, electronic-scale integration, card processing and a post-shift return workflow are not claimed as complete.
-
-## Logo and other computers
-
-The supplied artwork is stored unchanged at `InventorySystemi/src/branding/inventory-logo.png`. It is bundled inside the application JAR and displayed on the login screen, dashboard and window icon. Native icons are in `InventorySystemi/assets/`. On macOS, `python3 InventorySystemi/scripts/create-icons.py` regenerates the ICNS/ICO files from that source. The portable Windows builder embeds the ICO into the launcher while preserving its code and other resources.
-
-The current Mac package targets **Apple Silicon (arm64)**. The Windows ZIP targets **Windows x64** and includes its own Java/JavaFX runtime. The Mac UI has been tested; Windows execution still needs testing on a Windows PC. Intel Macs, native Windows ARM and Linux do not have tested packages in this release. The Mac app is not Developer ID signed/notarized.
-
-On a fresh computer, create its first administrator or restore your database backup. Installed apps do not contain your current users/products and do not synchronize computers automatically. Use the offline acceptance checklist before relying on a new machine for shop work.
+After an update, reinstall/replace the old app with the newly built 1.3.0 package. Your existing local accounts, stock and sales are kept. Do not delete the shop data folder.

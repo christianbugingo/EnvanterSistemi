@@ -1,0 +1,16 @@
+Copyright © 2026 COODIC LABS. All rights reserved.
+Product: Inventory System 1.3.0
+
+This source code and its original assets are proprietary to COODIC LABS.
+No permission to copy, modify, distribute, sublicense, resell, or publish the source
+code is granted by possession of this repository. Use of purchased application
+copies is subject to TERMS.md and any separate written agreement.
+Mandatory rights provided by applicable law remain unaffected.
+Third-party software is governed by its own licenses; see THIRD-PARTY-NOTICES.txt.
+
+Contact: tresorbi29@gmail.com
+Website: https://coodic.org/
+Developer country: Rwanda
+
+LEGAL REVIEW REQUIRED: confirm ownership of all original code/artwork and review
+this notice together with TERMS.md before commercial distribution.
